@@ -14,7 +14,7 @@ export default function(eleventyConfig) {
     "styles.css",
     "notacouch-icon.png",
     "notacouch-icon-256.png",
-    "body-images"
+    "blog-images"
   ];
   assets.forEach(function passAsset(asset) {
     eleventyConfig.addPassthroughCopy(asset);
