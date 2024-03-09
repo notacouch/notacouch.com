@@ -1,3 +1,5 @@
+import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
+
 export default function(eleventyConfig) {
 
   // Manage JS expectations in Liquid
@@ -39,4 +41,6 @@ export default function(eleventyConfig) {
     tags = Array.from(tagSet).sort();
     return tags;
   });
+
+  eleventyConfig.addPlugin(eleventyAutoCacheBuster);
 }

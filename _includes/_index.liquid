@@ -34,7 +34,30 @@
       href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/fill/style.css"
     />
     <link rel="stylesheet" href="/styles.css" />
-    {% comment %} TODO: highlightjs {% endcomment %}
+    
+    {% if content contains "language-html" %}
+      {% capture hljs %}
+      import hljs from "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/es/highlight.min.js"
+      {% endcapture %}
+      {% capture hljsImportHtml %}
+      import hljsHtml from "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/es/languages/xml.min.js";
+      {% endcapture %}
+      {% capture hljsRegisterHtml %}
+      hljs.registerLanguage("html", hljsHtml);
+      {% endcapture %}
+    {% endif %}
+    {% if hljs %}
+    <script type="module">
+      {{ hljs }}
+      {{ hljsImportHtml }}
+      {{ hljsRegisterHtml }}
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("figure > code").forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+    {% endif %}
   </head>
   <body class="{{ body_class }}">
     <nav class="grid main-nav" aria-labelledby="main-nav-label">

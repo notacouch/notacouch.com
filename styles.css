@@ -207,6 +207,11 @@ header {
   font-family: karmina-sans, sans-serif;
 }
 
+h1,
+h2 {
+  font-weight: 600;
+}
+
 .hurrr {
   border-width: 0;
   /* border-top: 5px solid #eaddcf; */
