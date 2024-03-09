@@ -1,0 +1,150 @@
+---
+title: Diamond-Guide.com (2000), do things different
+tags: ["Frontend", "Work"]
+date: 2024-02-16 12:00:00Z
+modified: 2024-03-05 12:00:00Z
+subtitle: I did a considerable portion of the frontend development for Brainlink&rsquo;s full service design and development of this large e-commerce site.
+---
+
+<nav class="toc" aria-labelledby="toc">
+  <h2 class="toc__header" id="toc">Table of Contents</h2>
+  <ol class="toc__ol">
+    <li><a href="#layout-2000">Layout in the year 2000</a></li>
+    <li><a href="#scrolling-news-ticker">Scrolling News Ticker</a></li>
+    <li><a href="#conclusion">In conclusion, keep things new</a></li>
+  </ol>
+</nav>
+<figure
+  class="figure figure--img figure--img--before-after figure--img--before grid__figure"
+>
+  <img
+    class="figure__img"
+    src="/blog-images/diamond-guide-before-brainlink-crop.png"
+    alt="Screenshots of Diamond-Guide.com in the year 2000 before Brainlink's work"
+  />
+  <figcaption>Diamond-Guide.com (2000) before Brainlink</figcaption>
+</figure>
+<figure
+  class="figure figure--img figure--img--before-after figure--img--after grid__figure"
+>
+  <img
+    class="figure__img"
+    src="/blog-images/diamond-guide-after-brainlink-crop.png"
+    alt="Screenshot of Diamond-Guide.com in the year 2000 with Brainlink's design"
+  />
+  <figcaption>Diamond-Guide.com (2000) after Brainlink</figcaption>
+</figure>
+<!-- TODO: link to diamond-guide.com wayback machine -->
+<p>
+  This was our team&rsquo;s largest project to date. Diamond-Guide.com was a
+  massive website that provided tons of information on jewelry and really tried
+  to hold their users&rsquo; hands. They had a lot of imagery and they wanted
+  pretty much their entire website to be images. And I mean entire website.
+</p>
+<p>
+  Diamonds? Images.<br />
+  Jewelry? Images.<br />
+  Menu?? Images!<br />
+  Body text?1! IMAGES!
+</p>
+<!-- TODO: animated image of slapping images on either the site or the sun -->
+<h2 id="layout-2000">Layout in the year 2000</h2>
+<p>
+  In the year 2000, how did one code the frontend for a site that had enough
+  images to block out the light of the sun? That&rsquo;s right. In the dark
+  (i.e. table-based layouts). With knives (i.e. Adobe Photoshop slice tool).
+</p>
+<p>
+  Our designers got to work with materials provided to them. They&rsquo;d pass
+  me full comps and slice them up in Photoshop based on how I&rsquo;d lay them
+  out. For the unfamiliar, layout via CSS was not really a thing. To achieve
+  positioning, you created tables with rows all for the purpose of sizing
+  columns to your needs and nested tables as much as needed. To achieve
+  additional precision, you used spacer GIFs, 1&times;1 pixel transparent GIFs,
+  which you could size exactly how you wanted via <code>width</code> and
+  <code>height</code> attributes to push things around or otherwise occupy empty
+  space:
+</p>
+
+<hr class="grid__row-reset" />
+
+<figure class="figure figure--img figure--img--body grid__figure">
+  <img
+    src="/blog-images/diamond-guide-inspect-element.png"
+    alt="Screenshot of inspecting Diamond-Guide.com 2000's menu"
+    class="figure__img figure--img--body__img"
+  />
+  <figcaption>Sample tabular layout starting with the menu.</figcaption>
+</figure>
+
+<aside class="tangent">
+  By the way, there were no devtools back then, not even Firebug.
+</aside>
+
+<figure class="figure figure--code grid__full">
+  <!-- prettier-ignore -->
+  <code
+          class="code code--full grid__full__extended-body language-html"
+          >
+    &lt;tr&gt;
+                            &lt;!-- See nested &lt;table&gt; in the table cell below --&gt;
+            &lt;td colspan="2"&gt;&lt;table border="0" width="740" cellspacing="0" cellpadding="0"&gt;
+                            &lt;tr align="left"&gt;
+                                    &lt;td&gt;&lt;a href="./Diamond_Education/about.html"&gt;&lt;img src="/images/top_aboutus.gif" alt="" border="0"&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;td width="15"&gt;&lt;img src="/images/blank.gif ALT=" " width="15" height="1"&gt;&lt;/td&gt;
+                                    &lt;td&gt;&lt;a href="services.html"&gt;&lt;img src="/images/top_policiesandservices.gif" alt="" width="98" height="20" border="0"&gt;&lt;/a&gt;&lt;/td&gt;
+
+                                    &lt;!--  Pair table-based layout with blank.gif for achieving pixel perfect precision --&gt;
+            &lt;td width="15"&gt;&lt;img src="/images/blank.gif ALT=" " width="15" height="1"&gt;&lt;/td&gt;
+                                    &lt;td&gt;&lt;img src="/images/top_8003209670.gif" alt="" width="75" height="20"&gt;&lt;/td&gt;
+            &lt;td width="15"&gt;&lt;img src="/images/blank.gif ALT=" " width="15" height="1"&gt;&lt;/td&gt;
+                                    &lt;td&gt;&lt;a href="mailto:sales@diamond-guide.com"&gt;&lt;img src="/images/top_emailus.gif" alt="" width="54" height="20" border="0"&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;td width="15"&gt;&lt;img src="/images/blank.gif ALT=" " width="15" height="1"&gt;&lt;/td&gt;
+                                    &lt;td&gt;&lt;a href="glossary-1.html"&gt;&lt;img src="/images/top_glossary.gif" alt="" width="48" height="20" border="0"&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;td width="15"&gt;&lt;img src="/images/blank.gif ALT=" " width="15" height="1"&gt;&lt;/td&gt;
+                                    &lt;td&gt;&lt;a href="/testimonials.html"&gt;&lt;img src="/images/top_testimonials.gif" alt="" border="0"&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;td width="15"&gt;&lt;img src="/images/blank.gif ALT=" " width="15" height="1"&gt;&lt;/td&gt;
+                                    &lt;td&gt;&lt;a href="http://www.gembeat.com/cgi-bin/gembeat/ord/basket"&gt;&lt;img src="/images/top_shoppingcart.gif" alt="" width="74" height="20" border="0"&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;td width="15"&gt;&lt;img src="/images/blank.gif ALT=" " width="15" height="1"&gt;&lt;/td&gt;
+                                    &lt;td&gt;&lt;a href="Diamond_Education"&gt;&lt;img src="/images/top_learningcenter.gif" alt="" width="81" height="20" border="0"&gt;&lt;/a&gt;&lt;/td&gt;
+
+                            &lt;/tr&gt;
+                            &lt;/table&gt;
+            &lt;/td&gt;
+    &lt;/tr&gt;
+        </code>
+</figure>
+<h2 id="scrolling-news-ticker">Scrolling news ticker</h2>
+<p>
+  What I&rsquo;m unable to share is the first JavaScript challenge I was tasked
+  with, they wanted a news ticker scrolling on the top right of certain pages. I
+  hadn&rsquo;t done anything like this before, and there were no such scripts on
+  Dynamic Drive, a site where one would find dHTML or dynamic HTML scripts
+  (which is what we called fancy manipulation of the DOM back then). My approach
+  to it was positioning a container div absolutely, specifiying its
+  <code>clip: rect(...)</code> path, set its <code>overflow: hidden;</code>,
+  each piece of content was in its own tag, I would continually shift the
+  positioning of each piece until it was almost full circle, at the point I
+  would duplicate the contents, append the duplicate to the end, continue
+  scrolling until the duplicate&rsquo;s left position was at the start, remove
+  the original contents, and repeat <em>ad infinitum</em>. I&rsquo;m curious how
+  I&rsquo;d approach this today, but I&rsquo;ll save that for another post.
+</p>
+<h2 id="conclusion">In conclusion, keep things new</h2>
+<p>
+  This project was intense. So much so, I remember my boss Paul once asked,
+  &ldquo;What&rsquo;s wrong, Abed? Diamond Guide keeping you up at night?&rdquo;
+  To which I replied, &ldquo;No. Diablo II.&rdquo; But it may very well have
+  been Diamond Guide!
+</p>
+<p>
+  So why share all this? Partially just to show that this was real, it is the
+  only table-based work I was able to reference. Achieving pixel perfect,
+  cross-browser, cross-platform compatible design was a thing even back when
+  table-based layouts were the commercial or professional methodology of the
+  time. Part of the Brainlink way was to never do the same thing twice, so we
+  would try to do something differently with every project in the rare case
+  something was not already unprecedented to begin with. This principle stuck
+  with me and ever since then I have always baked learning and trying new things
+  into my work.
+</p>

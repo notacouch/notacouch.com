@@ -1,0 +1,1108 @@
+/* Design tokens
+@link https://tr.designtokens.org/format/#design-token
+
+property[->for[->for?]?]: value
+e.g.
+color-text-primary: #000;
+*/
+
+:root {
+  --background-color-code: #f9f4ef;
+  --background-color-code-rgba: rgba(249, 244, 239, 1);
+  --background-color-main-footer: #f9f4ef;
+  --border-code-inline: 0.5px #d9c2a7 solid;
+  --border-color-code: #d9c2a7;
+  --border-color-main-footer: #fefae0;
+  --border-color-tertiary: #eaddcf;
+  --border-radius-code-inline: 4px;
+  /* Credit #86 here:
+  @link https://getcssscan.com/css-box-shadow-examples */
+  --box-shadow-img: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+  --color-text-header: #312921;
+  --color-text-subtitle: #8c7851;
+  --color-text-main-nav: #716040;
+  --color-text-main-nav-hover: #594a3c;
+  --font-family-title: karmina-sans, sans-serif;
+  --font-family-utility: darkmode-on, sans-serif;
+  --font-weight-body-dpi-one: 300;
+  --font-weight-body-dpi-more: 400;
+  --font-weight-subtitle-dpi-one: var(--font-weight-body-dpi-one);
+  --font-weight-subtitle-dpi-more: var(--font-weight-body-dpi-more);
+  --full-width-test-vw: 100vw;
+  --full-width-test-p: 100%;
+  --gutter-width: 15px;
+}
+
+.full-width-test-vw {
+  width: var(--full-width-test-vw);
+}
+.full-width-test-p {
+  width: var(--full-width-test-p);
+}
+
+/* 
+TODO: more vars
+TODO: vars for grid column gap
+TODO: replace pixel sizing of fonts
+TODO: vars for font name and weights
+*/
+
+/* sans serif / humanist fonts */
+.karmina {
+  font-family: karmina-sans, sans-serif;
+}
+
+.source-serif {
+  font-family: source-serif-pro, serif;
+}
+
+.myriad-arabic {
+  font-family: myriad-arabic, sans-serif;
+}
+
+html {
+  min-height: 100%;
+
+  /* https://coolors.co/visualizer/606c38-fefae0-283618-dda15e-bc6c25 */
+  /* https://cssgradient.io/ */
+  /* background-color: #fefae0; */
+  background-color: rgb(254, 254, 250);
+  /* background: linear-gradient(
+          11deg,
+          rgba(255, 255, 255, 1) 46%,
+          rgba(254, 250, 224, 1) 100%
+        ); */
+  /* background: rgba(255, 255, 255, 1)
+          linear-gradient(
+            30deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 254, 247, 1) 27%,
+            rgba(255, 253, 240, 1) 81%,
+            rgba(254, 250, 224, 1) 100%
+          ); */
+  background-image: linear-gradient(
+    16deg,
+    rgba(254, 254, 250, 1) 68%,
+    rgba(254, 252, 237, 1) 85%,
+    rgba(254, 250, 224, 1) 100%
+  );
+
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* Credit:
+  @link https://stackoverflow.com/a/50475590/781824 
+  @link https://stackoverflow.com/a/46570911/781824
+  @link https://webkit.org/blog/7929/designing-websites-for-iphone-x/
+  */
+  /* TODO: this does not work in Chrome, landscape orientation background is not filling beyond safe area */
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+body {
+  font-family: source-serif-pro, serif;
+
+  margin: 0;
+  padding: 0;
+
+  color: #42372d;
+
+  /* https://www.happyhues.co/palettes/11 */
+
+  /* color: #716040; */
+}
+
+/* other gradient tools: 
+      https://colorgradient.dev/gradient-generator */
+
+/* colors from color.adobe.com */
+/* Color Theme Swatches in Hex */
+.vintage-1-hex {
+  color: #f2e4bb;
+}
+.vintage-2-hex {
+  color: #d9c2a7;
+}
+.vintage-3-hex {
+  color: #f2e2ce;
+}
+.vintage-4-hex {
+  color: #f2ece4;
+}
+.vintage-5-hex {
+  color: #594a3c;
+}
+
+/* Color Theme Swatches in RGBA */
+.vintage-1-rgba {
+  color: rgba(242, 228, 186, 1);
+}
+.vintage-2-rgba {
+  color: rgba(216, 194, 166, 1);
+}
+.vintage-3-rgba {
+  color: rgba(242, 225, 205, 1);
+}
+.vintage-4-rgba {
+  color: rgba(242, 235, 227, 1);
+}
+.vintage-5-rgba {
+  color: rgba(89, 73, 59, 1);
+}
+
+/* Color Theme Swatches in HSLA */
+.vintage-1-hsla {
+  color: hsla(44, 68, 84, 1);
+}
+.vintage-2-hsla {
+  color: hsla(33, 39, 75, 1);
+}
+.vintage-3-hsla {
+  color: hsla(33, 58, 87, 1);
+}
+.vintage-4-hsla {
+  color: hsla(33, 36, 92, 1);
+}
+.vintage-5-hsla {
+  color: hsla(28, 19, 29, 1);
+}
+
+/* happy hues 11 */
+/* Elements
+Background
+#f9f4ef
+Headline
+#020826
+Paragraph
+#716040
+Button
+#8c7851
+Button text
+#fffffe
+Illustration
+Stroke
+#020826
+Main
+#fffffe
+Highlight
+#8c7851
+Secondary
+#eaddcf
+Tertiary
+#f25042 */
+
+/* https://coolors.co/visualizer/606c38-fefae0-283618-dda15e-bc6c25 
+        #606C38
+        #FEFAE0
+        #283618
+        #DDA15E
+        #BC6C25
+        */
+
+h1,
+h2,
+header {
+  color: var(--color-text-header);
+  font-family: karmina-sans, sans-serif;
+}
+
+.hurrr {
+  border-width: 0;
+  /* border-top: 5px solid #eaddcf; */
+  border-bottom: 7px solid #eaddcf;
+  width: 200px;
+  margin-inline: 0;
+  margin-bottom: 1em;
+}
+
+#center-this {
+  max-width: 900px;
+  margin: auto;
+  /* left: -80px; */
+}
+
+.notacouch-reflection {
+  position: absolute;
+  -webkit-box-reflect: below -0.6em linear-gradient(to top, rgba(255, 255, 255, 0.4), transparent
+        60%);
+  clip: rect(0.9em 10em 3em 0);
+}
+
+.main-nav {
+  height: 60px;
+  border-bottom: 1px solid var(--border-color-tertiary);
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: var(--color-text-main-nav);
+}
+
+.main-nav__home {
+  max-width: fit-content;
+}
+
+.n-for-notacouch {
+  max-width: 40px;
+}
+
+.main-nav__list {
+  list-style-type: none;
+  display: flex;
+  justify-content: right;
+}
+
+.main-nav__list > li {
+  margin-left: 1em;
+  font-size: 1.25em;
+}
+
+.main-nav__list a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.main-nav__list > li > a {
+  transition-property: all;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.main-nav__list > li > a:hover {
+  color: var(--color-text-main-nav-hover);
+  text-decoration: underline;
+}
+
+.page--blog #main-nav__blog a {
+  text-decoration: underline;
+}
+
+code {
+  font-family: droid-sans-mono, monospace;
+  white-space: pre;
+  /* margin: 1em 0; */
+}
+
+code + * {
+  margin-top: 1em;
+}
+
+p > code {
+  font-size: 0.9em;
+  background-color: var(--background-color-code-rgba);
+  padding: 0 0.2em;
+  border: var(--border-code-inline);
+  border-radius: var(--border-radius-code-inline);
+}
+.figure--code {
+  background-color: var(--background-color-code);
+}
+
+nav {
+  font-family: darkmode-on, sans-serif;
+  margin-bottom: 20px;
+}
+
+.none {
+  display: none !important;
+}
+
+main {
+  /* push footer to bottom, subtract header nav + footer + borders + margins/gaps */
+  min-height: calc(100dvh - 172px);
+}
+
+/*
+      Mobile devices may neither dot underline nor expose title content in a popup.
+      And I can't follow the grammatical rule of say it first then abbreviate.
+
+      Credit to Ire:
+      @url https://bitsofco.de/making-abbr-work-for-touchscreen-keyboard-mouse/
+      */
+abbr[title] {
+  position: relative;
+
+  /* below commented out b/c normalize handles this instead */
+  /* ensure consistent styling across browsers */
+  /* text-decoration: underline dotted; */
+}
+
+abbr[title]:hover::after,
+abbr[title]:focus::after {
+  content: attr(title);
+
+  /* position tooltip like the native one */
+  /* TODO: manage positioning if it goes off screen */
+  /* TODO: doesn't go away once activated on mobile (at least on iPhone) */
+  position: absolute;
+  left: 0;
+  bottom: -1.5em;
+  width: auto;
+  white-space: nowrap;
+
+  /* style tooltip */
+  background-color: ButtonFace;
+  color: CanvasText;
+  border-radius: 3px;
+  box-shadow: 1px 1px 0px 0 rgba(0, 0, 0, 0.4);
+  font-size: 12px;
+  font-family: system-ui;
+  padding: 3px 5px;
+}
+
+.home-hero {
+  /* margin-top: 2em; */
+}
+
+.hero__title,
+.home-hero__title {
+  font-weight: normal;
+  font-family: karmina-sans, sans-serif;
+  /* at 28px on Win 11 Chrome, the "s" in "versed" is raised */
+  /* font-size: 28px; */
+  /* problem does not happen on odd pixel sizes */
+  font-size: 29px;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+.hero__sub-title,
+.home-hero__sub-title {
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 300;
+  max-width: 60ch;
+
+  color: var(--color-text-subtitle);
+}
+.hero__sub-title > p:first-child,
+.home-hero__sub-title > p:first-child {
+  margin: 0;
+}
+
+.home-hero__sub-title dl {
+  margin-top: 0.67em;
+  font-size: 0.9em;
+  display: flex;
+  flex-flow: nowrap;
+  overflow-x: scroll;
+  /* overflow-behavior-x: contain; */
+  scroll-snap-type: x mandatory;
+  column-gap: var(--gutter-width);
+}
+.home-hero__sub-title dt,
+.home-hero__sub-title dd {
+  display: inline;
+  margin: 0;
+}
+
+.home-hero__sub-title dt {
+  color: #42372d;
+}
+
+.home-hero__sub-title div:has(dt) {
+  margin-bottom: 0.5em;
+  max-width: min(calc(100dvw - 5 * var(--gutter-width)), 60ch);
+  flex-shrink: 0;
+  /* flex-basis: 60ch; */
+  flex-grow: 0;
+  scroll-snap-align: start;
+}
+
+.__meta {
+  margin-top: var(--gutter-width);
+  font-family: var(--font-family-utility);
+  font-size: 0.875em;
+  font-variant-numeric: proportional-nums;
+}
+
+.__published {
+  margin-top: var(--gutter-width);
+  font-family: var(--font-family-utility);
+  color: var(--color-text-subtitle);
+  display: flex;
+  gap: var(--gutter-width);
+  /* justify-content: space-between; */
+}
+
+.__published__published,
+.__published__modified {
+  margin-right: calc(2 * var(--gutter-width));
+}
+
+.__tags a {
+  color: currentColor;
+}
+
+.__meta .ph-light,
+.__meta .ph-fill {
+  font-size: 1.15em;
+  vertical-align: middle;
+  line-height: 1.4;
+  margin-right: 1px;
+  color: var(--color-text-header);
+}
+
+.post-preview__meta {
+  font-size: 0.8125em;
+  margin-top: -0.7em;
+}
+.post-preview__published__published,
+.post-preview__published__modified {
+  margin-right: 0;
+}
+.post-preview .ph-calendar-blank,
+.post-preview .ph-book {
+  position: relative;
+  top: -1.5px;
+}
+
+.post-preview {
+  margin-top: calc(1.5 * var(--gutter-width));
+}
+
+#blog__topics-header {
+  margin-top: 0;
+}
+
+#blog__topics-header::after {
+  content: "";
+  display: block;
+  border-bottom: 3px solid var(--border-color-tertiary);
+  width: calc(100% - 5ch);
+  left: 5ch;
+  position: relative;
+  top: -0.3em;
+}
+
+.blog__topics > ul {
+  padding-inline-start: 1.5em;
+}
+
+.blog__topics li {
+  margin-bottom: 0.5em;
+}
+
+.blog__topics li a {
+  color: var(--color-text-subtitle);
+}
+
+.blog__topics li a:hover {
+  color: var(--color-text-main-nav);
+}
+
+.crumbs {
+  margin-bottom: 0;
+}
+.crumbs ol {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.crumb {
+  display: inline-block;
+}
+
+.crumb::after {
+  display: inline-block;
+  /* color: #000; */
+  content: ">";
+  font-size: 80%;
+  /* font-weight: bold; */
+  padding: 0 3px;
+  margin-left: 0.1em;
+}
+
+.toc__ol li {
+  margin-bottom: 0.67em;
+}
+
+.post-preview__title,
+.post > h2,
+.toc__header {
+  font-size: 1.3125em;
+  font-weight: 600;
+}
+
+.post > h2 {
+  margin-top: 1.2em;
+  font-family: karmina-sans, sans-serif;
+  font-variant-numeric: lining-nums;
+}
+
+.post > p,
+.post-preview > p {
+  font-size: 1.086em;
+  font-weight: 300;
+  line-height: 1.4;
+  max-width: 71ch;
+
+  /* Credit Richard Rutter:
+     @url https://clagnut.com/blog/2395 */
+  -webkit-hyphens: auto;
+  -webkit-hyphenate-limit-before: 3;
+  -webkit-hyphenate-limit-after: 3;
+  -webkit-hyphenate-limit-chars: 6 3 3;
+  -webkit-hyphenate-limit-lines: 2;
+  -webkit-hyphenate-limit-last: always;
+  -webkit-hyphenate-limit-zone: 8%;
+
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  hyphenate-limit-lines: 2;
+  hyphenate-limit-last: always;
+  hyphenate-limit-zone: 8%;
+}
+
+.post-preview__title {
+  font-size: 1.13em;
+}
+.post-preview__title a {
+  color: var(--color-text-main-nav);
+  /* font-weight: 400; */
+  text-decoration-color: var(--border-color-code);
+}
+
+.post-preview__title a:hover {
+  color: var(--color-text-main-nav-hover);
+  text-decoration-color: var(--color-text-subtitle);
+}
+
+.post-preview > p {
+  /* color: var(--color-text-subtitle); */
+  font-size: 0.9375em;
+}
+
+.figure {
+  margin: 0;
+}
+
+.figure__img {
+  max-width: 100%;
+  box-shadow: var(--box-shadow-img);
+  margin-bottom: 5px;
+}
+
+figcaption {
+  color: var(--color-text-subtitle);
+  font-weight: var(--font-weight-body-dpi-one);
+  font-size: 0.875em;
+  line-height: 2;
+  font-style: italic;
+  margin-bottom: 1em;
+  padding-inline: 0.68em;
+}
+
+/* .figure--code {
+  overflow-x: scroll;
+} */
+
+.code--full {
+  font-size: 14px;
+  line-height: 1.3;
+  background-color: transparent;
+  backdrop-filter: brightness(102%);
+}
+
+.main-footer {
+  /* display: flex; */
+  min-height: 60px;
+  border-top: 1px solid var(--border-color-tertiary);
+  /* place-items: center; */
+  /* text-align: center; */
+  background-color: var(--background-color-main-footer);
+  color: var(--color-text-main-nav);
+  align-items: center;
+  margin-top: calc(var(--gutter-width) * 2);
+}
+
+.main-footer::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background-color: var(--border-color-main-footer);
+}
+
+.main-footer__copy {
+  /* text-align: right; */
+}
+
+.main-footer__built a {
+  color: currentColor;
+}
+
+.main-footer__built .ph-light {
+  position: relative;
+  top: 2px;
+}
+
+.main-footer__social-media {
+  margin: 0;
+}
+
+.main-footer__social-media a {
+  color: currentColor;
+  text-decoration: none;
+  font-size: 1.25em;
+  margin-right: 0.3em;
+}
+
+.main-footer__social-media a:last-child {
+  margin-right: 0;
+}
+
+.grid {
+  /* the original body is 900px, content spans roughly 68.5% of that by chance
+  but i need to split that so images can be even between left/right */
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr) minmax(
+      0,
+      calc((100dvw - 900px) / 4 - (var(--gutter-width) * 5 / 4))
+    )
+    minmax(0, calc(19.275em - var(--gutter-width) / 2))
+    minmax(0, calc(19.275em - var(--gutter-width) / 2))
+    /* 900, divide additional space by 4 (there are 5 column gaps) */
+    minmax(0, calc((100dvw - 900px) / 4 - (var(--gutter-width) * 5 / 4)))
+    minmax(
+      0,
+      calc(
+        (900px - 38.55em - var(--gutter-width)) -
+          ((100dvw - 900px) / 4 - (var(--gutter-width) * 5 / 4))
+      )
+    )
+    minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: var(--gutter-width);
+  grid-template-areas: "space-start body-left body body body-right body-right-more space-end-1 space-end-2";
+  /* Allow for shifting items left in previous rows wherever the closest "ceiling" is */
+  /* TODO: write about how this + the hr allowed for the visual thing you tried to do */
+  grid-auto-flow: column;
+}
+
+.grid > * {
+  grid-column-start: body;
+  grid-column-end: space-end-1;
+}
+
+.grid__subgrid {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column-start: 1;
+}
+.grid__subgrid--body > * {
+  grid-column-start: body;
+  grid-column-end: span 3;
+}
+.grid__subgrid--hr::after {
+  content: "";
+  grid-column-start: body;
+  grid-column-end: span 1;
+  height: calc(var(--gutter-width) / 3);
+  background-color: var(--border-color-tertiary);
+  margin-top: calc(var(--gutter-width) / 1);
+  margin-bottom: calc(var(--gutter-width) * 2);
+}
+
+.grid > p {
+  margin-top: 0;
+}
+.grid > p + h2 {
+  margin-top: 0.3em;
+}
+
+.grid__figure {
+  /* Hint in Chrome:
+The display: block property prevents grid-column-end from having an effect.
+Try setting display to something other than block.
+  */
+  display: grid;
+}
+
+.grid__row-reset {
+  grid-column-end: space-end-2;
+  border: none;
+}
+
+.grid__start {
+  grid-column-start: space-start;
+  grid-column-end: span 1;
+}
+
+.grid__body {
+  grid-column-start: body;
+  grid-column-end: span 2;
+}
+
+.grid__end-body-left {
+  grid-column-start: 1;
+  grid-column-end: span 2;
+}
+.grid__body-left {
+  grid-column-start: body-left;
+  grid-column-end: span 1;
+}
+
+.grid__body-start {
+  grid-column-start: body;
+  grid-column-end: span 1;
+}
+
+.grid__mid-body {
+  grid-column-start: 4;
+  grid-column-end: span 1;
+}
+
+.grid__end-body-right-more {
+  grid-column: body-right;
+  grid-column-end: span 2;
+}
+
+.tangent {
+  display: grid;
+  /* text-align: right; */
+  text-wrap: pretty;
+  line-height: 1.3;
+  color: var(--color-text-subtitle);
+}
+
+.figure--img {
+  grid-column-start: body;
+  grid-column-end: body;
+}
+
+.figure--img--before-after {
+  position: relative;
+  grid-column-end: span 2;
+  margin-top: 1.6em;
+}
+
+.figure--img--before-after::before {
+  position: absolute;
+  transform: translateY(calc(-100% + 1px));
+  background-color: #fff;
+  border-radius: var(--border-radius-code-inline)
+    var(--border-radius-code-inline) 0 0;
+  padding: 0.3em 0.6em;
+  font-family: var(--font-family-utility);
+  font-variant: all-petite-caps;
+}
+
+.figure--img--before {
+  grid-column-start: body-left;
+}
+
+.figure--img--before::before {
+  content: "Before";
+}
+
+.figure--img--after {
+  grid-column-start: 4;
+}
+
+.figure--img--after::before {
+  content: "After";
+}
+
+.grid__full {
+  grid-column-start: space-start;
+  grid-column-end: space-end;
+  display: grid;
+  grid-template-columns: subgrid;
+  overflow: hidden;
+  overflow: clip;
+}
+
+.grid__full__extended-body {
+  grid-column-start: body-left;
+  grid-column-end: span 5;
+  overflow-x: scroll;
+}
+
+@media (max-width: 900px) {
+  html {
+    background-image: linear-gradient(
+      16deg,
+      rgba(254, 254, 250, 1) 88%,
+      rgba(254, 252, 237, 1) 95%,
+      rgba(254, 250, 224, 1) 100%
+    );
+  }
+  .grid {
+    column-gap: 7px;
+  }
+  .grid__figure {
+    grid-column-start: body;
+    grid-column-end: space-end-1;
+  }
+  .tangent {
+    grid-column-start: body;
+    grid-column-end: span 2;
+    margin-bottom: 1em;
+  }
+  .grid__subgrid--body > * {
+    grid-column-end: space-end-2;
+  }
+
+  .grid__default--lt900 {
+    grid-column-start: body;
+    grid-column-end: space-end-1;
+  }
+
+  .grid__body--lt900 {
+    grid-column-start: body;
+    grid-column-end: span 2;
+  }
+  .grid__body-start--lt900 {
+    grid-column-start: body;
+    grid-column-end: span 1;
+  }
+  .grid__mid-body--lt900 {
+    grid-column-start: 4;
+    grid-column-end: span 1;
+  }
+  .grid__body-right--lt900 {
+    grid-column-start: body-right;
+    grid-column-end: span 1;
+  }
+  .grid__end-body-right-more--lt900 {
+    grid-column: body-right;
+    grid-column-end: span 2;
+  }
+}
+
+@media (max-width: 1250px) {
+  .grid__body-start--lt1250 {
+    grid-column-start: body;
+    grid-column-end: span 1;
+  }
+  .grid__mid-body--lt1250 {
+    grid-column-start: 4;
+    grid-column-end: span 1;
+  }
+  .grid__body-right--lt1250 {
+    grid-column-start: body-right;
+    grid-column-end: span 1;
+  }
+  .grid__end-body-right-more--lt1250 {
+    grid-column: body-right;
+    grid-column-end: span 2;
+  }
+}
+
+@media (min-width: 1921px) {
+  .grid {
+    /* original calculations don't work > 1920px via zoom because the text scales down while the free space grows larger */
+    grid-template-columns:
+      minmax(0, 1fr) minmax(0, 237px) minmax(
+        0,
+        calc(19.275em - var(--gutter-width) / 2)
+      )
+      minmax(0, calc(19.275em - var(--gutter-width) / 2))
+      minmax(0, 237px)
+      minmax(0, 32px)
+      minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 901px) {
+  .tangent {
+    grid-column-start: body-right;
+    grid-column-end: span 2;
+    /* max-width: 200px; */
+  }
+  .grid__body--gt900 {
+    grid-column-start: body;
+    grid-column-end: span 2;
+  }
+  .grid__body-left--gt900 {
+    grid-column-start: body-left;
+    grid-column-end: span 1;
+  }
+  .grid__body-start--gt900 {
+    grid-column-start: body;
+    grid-column-end: span 1;
+  }
+  .grid__mid-body--gt900 {
+    grid-column-start: 4;
+    grid-column-end: span 1;
+  }
+  .grid__body-right--gt900 {
+    grid-column-start: body-right;
+    grid-column-end: span 1;
+  }
+  .grid__mid-body-to-body-right-more--gt900 {
+    grid-column-start: 4;
+    grid-column-end: span 3;
+  }
+  .grid__end-body-right-more--gt900 {
+    grid-column: body-right;
+    grid-column-end: span 2;
+  }
+
+  .blog__topics {
+    /* TODO: blog about this, without this anything adjacent whether before or after would occupy the same height as this, i.e. same row */
+    grid-row-end: span 100;
+  }
+}
+
+@media (min-width: 1251px) {
+  .grid__space-start--gt1250 {
+    grid-column-start: space-start;
+    grid-column-end: span 2;
+  }
+  .main-footer__copy {
+    margin-left: var(--gutter-width);
+  }
+  .grid__body-left--gt1250 {
+    grid-column-start: body-left;
+    grid-column-end: span 1;
+  }
+  .grid__body-start--gt1250 {
+    grid-column-start: body;
+    grid-column-end: span 1;
+  }
+  .grid__mid-body--gt1250 {
+    grid-column-start: 4;
+    grid-column-end: span 1;
+  }
+  .grid__body-right--gt1250 {
+    grid-column-start: body-right;
+    grid-column-end: span 1;
+  }
+  .grid__mid-body-to-body-right-more--gt1250 {
+    grid-column-start: 4;
+    grid-column-end: span 3;
+  }
+}
+
+@media (max-width: 1502px) {
+  .grid__space-start--lt1500 {
+    grid-column-start: space-start;
+    grid-column-end: span 2;
+  }
+}
+
+@media (min-width: 1503px) {
+  .grid__body-left--gt1500 {
+    grid-column-start: body-left;
+    grid-column-end: span 1;
+  }
+
+  .main-footer__copy {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 1229px) {
+}
+
+@media (min-width: 1230px) {
+  .grid__row-reset {
+    grid-column-start: 1;
+  }
+
+  .tangent {
+    grid-column-start: -9;
+    grid-column-end: span 2;
+    padding: 0.68em 0 0 0.68em;
+    margin-left: auto;
+  }
+}
+@media (min-width: 1680px) {
+  .grid__row-reset {
+    grid-column-start: 2;
+  }
+  .tangent {
+    grid-column-start: -8;
+    grid-column-end: span 1;
+    position: relative;
+    padding: 0.68em 0.68em 0 0;
+  }
+  .figure--img--body__img {
+    max-width: calc(100% + var(--gutter-width));
+    margin-left: calc(-1 * var(--gutter-width) / 2);
+  }
+  .figure--img--body figcaption {
+    padding-inline: 0;
+  }
+}
+
+/* A unit of "dppx" is implied: */
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .post > p,
+  .post-preview > p {
+    font-weight: var(--font-weight-subtitle-dpi-more);
+    line-height: 1.5;
+  }
+  .hero__sub-title,
+  .home-hero__sub-title {
+    font-weight: var(--font-weight-subtitle-dpi-more);
+    line-height: 1.4;
+  }
+  figcaption {
+    font-weight: var(--font-weight-body-dpi-more);
+  }
+}
+/* It is equivalent to: */
+@media (min-resolution: 2dppx) {
+  .post > p,
+  .post-preview > p {
+    font-weight: var(--font-weight-subtitle-dpi-more);
+    line-height: 1.5;
+  }
+  .hero__sub-title,
+  .home-hero__sub-title {
+    font-weight: var(--font-weight-subtitle-dpi-more);
+    line-height: 1.4;
+  }
+  figcaption {
+    font-weight: var(--font-weight-body-dpi-more);
+  }
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* direct comparison of items to compensate for certain unnamed devtoools that don't facilitate computed values */
+.grid > .item {
+  background-color: #ccc;
+  /* height: 10px; */
+}
+.item--1 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.item--2 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.item--3 {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+.item--4 {
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+.item--5 {
+  grid-column-start: 5;
+  grid-column-end: 6;
+}
+.item--6 {
+  grid-column-start: 6;
+  grid-column-end: 7;
+}
+.item--7 {
+  grid-column-start: 7;
+  grid-column-end: 8;
+}
+.item--8 {
+  grid-column-start: 8;
+  grid-column-end: 9;
+}

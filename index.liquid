@@ -1,0 +1,145 @@
+---
+eleventyExcludeFromCollections: true
+title: Home
+body_class: page--home
+---
+
+<section class="home-hero grid grid__subgrid--hr">
+  <h1 class="home-hero__title">
+    Hi, I&rsquo;m
+    <strong><span class="sr-only">notacouch, </span>Abed</strong>, a
+    multifaceted<br />
+    <strong>frontend engineer</strong> in NYC versed in
+    <abbr title="Developer, Customer, and User Experience" tabindex="0">*X</abbr
+    >.<br />
+    I make things better for people.
+  </h1>
+  <div class="home-hero__sub-title">
+    <p>Have done so previously at:</p>
+    <dl tabindex="0">
+      <div>
+        <dt>
+          <strong>CitusHealth</strong>&hairsp;&mdash;&hairsp;a SaaS in its own
+          class:
+        </dt>
+        <dd>
+          senior frontend engineer, contributed to Angular5 product. Revamped
+          their white labeling projects. Built a world class support team from
+          the ground up and boosted them with frontend chops via bizops tools
+          like MS Flow, AppSmith, and inhouse Chrome extension.
+        </dd>
+      </div>
+      <div>
+        <dt>
+          <strong>amCharts</strong>&hairsp;&mdash;&hairsp;leading javascript
+          charts software:
+        </dt>
+        <dd>
+          got a taste of steering users to success through coaching and code in
+          their stack whether vanilla, Angular, React, or Vue. Hit the ground
+          running quickly becoming their dedicated map chart SME.
+        </dd>
+      </div>
+      <div>
+        <dt>
+          <strong>Northwell Health</strong>&hairsp;&mdash;&hairsp;NY&rsquo;s
+          largest private employer &amp; largest health system in the northeast:
+        </dt>
+        <dd>
+          <abbr title="accessibility Subject Matter Expert">a11y SME</abbr>,
+          sole frontend developer over multiple site redesigns, one rename &amp;
+          rebrand, went from monolith stylesheet with no frontend integration
+          into other systems, to a performant, accessible pattern library
+          consumed by targeted&nbsp;CMSes.
+        </dd>
+      </div>
+      <div>
+        <dt>
+          <strong>FKAD Institute & zoojaja</strong
+          >&hairsp;&mdash;&hairsp;Islamic studies institute pioneering education
+          styles, content, and video streaming:
+        </dt>
+        <dd>
+          digitized paper processes, enhanced Moodle LMS with SSO & CometChat
+          with SMS messaging. Built to scale in AWS ELBs, EC2, S3, &amp;
+          CloudFront. Launched zoojaja, our Muslim Netflix concept, iOS app
+          built in PhoneGap, platform on
+          <abbr title="ExpressionEngine">EE</abbr>, rolled our own recurring
+          billing.
+          <!-- secured HLS &amp; HDS streams through a reverse proxy with
+              proprietary code, and iOS app built in PhoneGap. -->
+        </dd>
+      </div>
+      <div>
+        <dt>
+          <strong>FusionLab</strong>&hairsp;&mdash;&hairsp;visual studio design
+          firm in NYC:
+        </dt>
+        <dd>
+          brought designs to life left and right. Templated in if not
+          implemented and extended PHP/MySQL CMSes including in-house systems,
+          ExpressionEngine, and Drupal.
+        </dd>
+      </div>
+      <div>
+        <dt>
+          <strong>Poly Webteam</strong>&hairsp;&mdash;&hairsp;best on-campus
+          career:
+        </dt>
+        <dd>
+          semantic markup <s>evangelist</s> rebel by example. Gutted homepage
+          from 2 sources of markup &amp; style to 1, saving gigs of bandwidth.
+          Saved $20,000+ in preventing plasma tvs from burning out by using
+          dHTML presentations &amp; books. Gave students AJAX-driven course
+          listings with beautified print stylesheets; no more tabular vomit.
+        </dd>
+      </div>
+      <div>
+        <dt>
+          <strong>Brainlink International</strong>&hairsp;&mdash;&hairsp;local
+          ISP with an embedded e-commerce dev shop:
+        </dt>
+        <dd>
+          4th gen x-browser, x-platform compatible, pixel perfect, spacer
+          GIF&rsquo;d, table-based layout frontend implementations with
+          templating in Java, mod_perl, but not PHP. Worked with brilliant youth
+          who could code &amp; design to save a life, just not with tag soup
+          &amp; CSS. Came naturally to me, though. The rest is&nbsp;history.
+        </dd>
+      </div>
+    </dl>
+  </div>
+</section>
+<section class="grid">
+  <h2>Latest posts</h2>
+  {% for post in collections.all reversed limit:5 %}  
+  <article class="post-preview">
+    <header class="post-preview__title">
+      <a href="/blog/{{ post.fileSlug }}/"
+        >{{ post.data.title }}</a
+      >
+    </header>
+    <p>
+      {{ post.data.subtitle }}
+    </p>
+    <div
+      class="post-preview__published post-preview__meta __published __meta"
+    >
+      <span
+        class="post-preview__published__published __published__published"
+      >
+        <span class="sr-only">Published</span
+        ><span class="ph-light ph-book" title="Published"></span>
+        <time datetime="{{ post.data.date | date: "%Y-%m-%d"}}">{{ post.data.date | date: "%-m.%-d.%Y"}}</time>
+      </span>
+      <span class="post-preview__tags __tags">
+        <span class="sr-only">Topics</span
+        ><span class="ph-light ph-folders" title="Topics"></span>
+        {% for tag in post.data.tags %}
+        <a href="/topics/{{ tag | downcase }}">{{ tag | downcase }}</a>{% if forloop.last != true %},{% endif %}
+        {% endfor %}
+      </span>
+    </div>
+  </article>
+  {% endfor %}
+</section>

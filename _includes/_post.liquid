@@ -1,0 +1,53 @@
+---
+layout: _index.liquid
+---
+
+<article class="post grid">
+  <!-- TODO: The opening of articles is not a hero, differentiate it at some point -->
+  <header class="hero grid__subgrid grid__subgrid--body grid__subgrid--hr">
+    <nav class="crumbs" aria-labelledby="breadcrumbs-label">
+      <span class="sr-only" id="breadcrumbs-label">Breadcrumbs:</span>
+      <ol>
+        <li class="crumb"><a href="/">Home</a></li>
+        <li class="crumb"><a href="/blog/">Blog</a></li>
+      </ol>
+    </nav>
+    <h1 class="hero__title">{{ title }}</h1>
+    <div class="hero__sub-title">
+      <p>
+        {{ subtitle }}
+      </p>
+    </div>
+    <div class="hero__published __published hero__meta __meta grid__body-start">
+      <div class="hero__published__published __published__published">
+        <span class="sr-only">Published: </span
+        ><span class="ph-light ph-book" title="Published"></span><br />
+        <time datetime="2024-02-16">2.16.2024</time>
+      </div>
+      <div class="hero__published__modified __published__modified">
+        <span class="sr-only">Last modified: </span
+        ><span class="ph-fill ph-note-pencil" title="Modified"></span><br />
+        <time datetime="2024-03-05">3.5.2024</time>
+      </div>
+      <div class="hero__read-time __read-time">
+        <span class="sr-only">Approximate read time: </span
+        ><span
+          class="ph-light ph-clock-countdown"
+          title="Approximate read time"
+        ></span
+        ><br />
+        <span class="hero__read-time">20 minutes</span>
+      </div>
+    </div>
+          {% comment %} TODO: Iterate over tags  {% endcomment %}
+    <div class="hero__tags hero__meta __tags __meta">
+      <span class="sr-only">Topics: </span
+      ><span class="ph-light ph-folders" title="Topics"></span><br />
+      <a href="/work/">work</a>,
+      <a href="/frontend/">frontend</a>
+    </div>
+  </header>
+
+{{ content }}
+
+</article>
