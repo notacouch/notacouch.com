@@ -374,6 +374,9 @@ abbr[title]:focus::after {
 
   color: var(--color-text-subtitle);
 }
+.subtitle-color {
+  color: var(--color-text-subtitle);
+}
 .hero__sub-title > p:first-child,
 .home-hero__sub-title > p:first-child {
   margin: 0;

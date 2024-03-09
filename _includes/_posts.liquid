@@ -1,13 +1,17 @@
 ---
 title: Blog
 layout: "_index.liquid"
-topic: all
 body_class: page--topic
+topic: all
 ---
 
+{{ content }}
 
+{% if tag %}
+{% assign topic = tag %}
+{% endif %}
 <section class="grid">
-  <h1>{{ title }}</h1>
+  <h1>{% if tag %}<span class="subtitle-color">Posts on</span> {{ tag }}{% else %}{{ title }}{% endif %}</h1>
   <p class="grid__default--lt900 grid__body--gt900 subtitle">
     Writings and ramblings about my work, experiences, and experiments.
   </p>
@@ -23,7 +27,7 @@ body_class: page--topic
 
     <ul>
     {% for tag in collections.tagList %}  
-      <li><a href="/topics/{{ tag | downcase }}">{{ tag }}</a></li>
+      <li><a {% if topic == tag %} aria-current="page" {% else %}href="/topics/{{ tag | downcase }}"{% endif %}>{{ tag }}</a></li>
     {% endfor %}
     </ul>
   </nav>
