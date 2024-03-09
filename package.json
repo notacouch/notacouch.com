@@ -11,6 +11,8 @@
   },
   "devDependencies": {
     "@thedigitalman/eleventy-plugin-toc-a11y": "^2.1.0",
-    "eleventy-auto-cache-buster": "^0.3.0"
+    "eleventy-auto-cache-buster": "^0.3.0",
+    "markdown-it": "^14.0.0",
+    "markdown-it-named-headings": "^1.1.0"
   }
 }

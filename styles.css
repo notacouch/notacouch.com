@@ -355,6 +355,7 @@ abbr[title]:focus::after {
 
 .home-hero {
   /* margin-top: 2em; */
+  margin-bottom: var(--gutter-width);
 }
 
 .hero__title,
@@ -538,8 +539,7 @@ abbr[title]:focus::after {
   font-variant-numeric: lining-nums;
 }
 
-.post > p,
-.post-preview > p {
+:is(.post, .post-preview) > :is(ol, ul, p) {
   font-size: 1.086em;
   font-weight: 300;
   line-height: 1.4;
@@ -560,6 +560,14 @@ abbr[title]:focus::after {
   hyphenate-limit-lines: 2;
   hyphenate-limit-last: always;
   hyphenate-limit-zone: 8%;
+}
+
+.post > :is(ol, ul) {
+  margin-top: 0;
+}
+.post > :is(ol, ul) li {
+  line-height: 1.3;
+  margin-bottom: 0.5em;
 }
 
 .post-preview__title {
@@ -583,6 +591,10 @@ abbr[title]:focus::after {
 
 .figure {
   margin: 0;
+  margin-bottom: var(--gutter-width);
+}
+p + .figure {
+  margin-top: var(--gutter-width);
 }
 
 .figure__img {
@@ -595,9 +607,10 @@ figcaption {
   color: var(--color-text-subtitle);
   font-weight: var(--font-weight-body-dpi-one);
   font-size: 0.875em;
-  line-height: 2;
+  line-height: 1.4;
   font-style: italic;
   margin-bottom: 1em;
+  padding-top: 0.3em;
   padding-inline: 0.68em;
 }
 
@@ -718,61 +731,6 @@ figcaption {
   margin-top: 0.3em;
 }
 
-.grid__figure {
-  /* Hint in Chrome:
-The display: block property prevents grid-column-end from having an effect.
-Try setting display to something other than block.
-  */
-  display: grid;
-}
-
-.grid__row-reset {
-  grid-column-end: space-end-2;
-  border: none;
-}
-
-.grid__start {
-  grid-column-start: space-start;
-  grid-column-end: span 1;
-}
-
-.grid__body {
-  grid-column-start: body;
-  grid-column-end: span 2;
-}
-
-.grid__end-body-left {
-  grid-column-start: 1;
-  grid-column-end: span 2;
-}
-.grid__body-left {
-  grid-column-start: body-left;
-  grid-column-end: span 1;
-}
-
-.grid__body-start {
-  grid-column-start: body;
-  grid-column-end: span 1;
-}
-
-.grid__mid-body {
-  grid-column-start: 4;
-  grid-column-end: span 1;
-}
-
-.grid__end-body-right-more {
-  grid-column: body-right;
-  grid-column-end: span 2;
-}
-
-.tangent {
-  display: grid;
-  /* text-align: right; */
-  text-wrap: pretty;
-  line-height: 1.3;
-  color: var(--color-text-subtitle);
-}
-
 .figure--img {
   grid-column-start: body;
   grid-column-end: body;
@@ -809,6 +767,67 @@ Try setting display to something other than block.
 
 .figure--img--after::before {
   content: "After";
+}
+
+.grid__figure {
+  /* Hint in Chrome:
+The display: block property prevents grid-column-end from having an effect.
+Try setting display to something other than block.
+  */
+  display: grid;
+}
+
+.grid__row-reset {
+  grid-column-end: space-end-2;
+  border: none;
+}
+
+.grid__start {
+  grid-column-start: space-start;
+  grid-column-end: span 1;
+}
+
+.grid__body-left {
+  grid-column-start: body-left;
+  grid-column-end: span 1;
+}
+
+.grid__body-left-to-right-more {
+  grid-column-start: body-left;
+  grid-column-end: body-right-more;
+}
+
+.grid__body {
+  grid-column-start: body;
+  grid-column-end: span 2;
+}
+
+.grid__end-body-left {
+  grid-column-start: 1;
+  grid-column-end: span 2;
+}
+
+.grid__body-start {
+  grid-column-start: body;
+  grid-column-end: span 1;
+}
+
+.grid__mid-body {
+  grid-column-start: 4;
+  grid-column-end: span 1;
+}
+
+.grid__end-body-right-more {
+  grid-column: body-right;
+  grid-column-end: span 2;
+}
+
+.tangent {
+  display: grid;
+  /* text-align: right; */
+  text-wrap: pretty;
+  line-height: 1.3;
+  color: var(--color-text-subtitle);
 }
 
 .grid__full {
@@ -1037,8 +1056,7 @@ Try setting display to something other than block.
 
 /* A unit of "dppx" is implied: */
 @media (-webkit-min-device-pixel-ratio: 2) {
-  .post > p,
-  .post-preview > p {
+  :is(.post, .post-preview) > :is(p, ol, ul) {
     font-weight: var(--font-weight-subtitle-dpi-more);
     line-height: 1.5;
   }
@@ -1053,8 +1071,7 @@ Try setting display to something other than block.
 }
 /* It is equivalent to: */
 @media (min-resolution: 2dppx) {
-  .post > p,
-  .post-preview > p {
+  :is(.post, .post-preview) > :is(p, ol, ul) {
     font-weight: var(--font-weight-subtitle-dpi-more);
     line-height: 1.5;
   }

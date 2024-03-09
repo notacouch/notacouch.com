@@ -1,5 +1,8 @@
 import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
 import eleventyPluginTOC from "@thedigitalman/eleventy-plugin-toc-a11y";
+import markdownIt from "markdown-it";
+import markdownItNamedHeadings from "markdown-it-named-headings";
+
 
 
 export default function(eleventyConfig) {
@@ -44,6 +47,20 @@ export default function(eleventyConfig) {
     return tags;
   });
 
+  // markdown-it-anchor did not work well for me
+  // @url https://www.npmjs.com/package/@thedigitalman/eleventy-plugin-toc-a11y#step-2-configuration
+  // tried this instead:
+  // @url https://github.com/11ty/eleventy/issues/812#issuecomment-1278714780
+  // Markdown settings, apply `id`s to headers
+  eleventyConfig.setLibrary( 'md',
+    markdownIt({ 
+      html: true,
+      breaks: true,
+      // linkify: true,
+      typographer: true
+    }).use( markdownItNamedHeadings )
+  );
+
   eleventyConfig.addPlugin(eleventyAutoCacheBuster);
   eleventyConfig.addPlugin(eleventyPluginTOC, {
     wrapperClass: "toc",
@@ -51,12 +68,5 @@ export default function(eleventyConfig) {
     headingText: "Table of Contents",
     listClass: "toc__ol"
   });
-//   <nav class="toc" aria-labelledby="toc">
-//   <h2 class="toc__header" id="toc">Table of Contents</h2>
-//   <ol class="toc__ol">
-//     <li><a href="#layout-2000">Layout in the year 2000</a></li>
-//     <li><a href="#scrolling-news-ticker">Scrolling News Ticker</a></li>
-//     <li><a href="#conclusion">In conclusion, keep things new</a></li>
-//   </ol>
-// </nav>
+
 }
