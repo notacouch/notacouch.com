@@ -728,7 +728,7 @@ figcaption {
   margin-top: 0;
 }
 .grid > p + h2 {
-  margin-top: 0.3em;
+  margin-top: 0.6em;
 }
 
 .figure--img {
@@ -823,11 +823,12 @@ Try setting display to something other than block.
 }
 
 .tangent {
-  display: grid;
+  /* display: grid; */
   /* text-align: right; */
   text-wrap: pretty;
   line-height: 1.3;
   color: var(--color-text-subtitle);
+  align-content: start;
 }
 
 .grid__full {
