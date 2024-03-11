@@ -7,7 +7,8 @@
   "author": "Abed Islam",
   "type": "module",
   "dependencies": {
-    "@11ty/eleventy": "3.0.0-alpha.5"
+    "@11ty/eleventy": "3.0.0-alpha.5",
+    "markdown-it-attrs": "^4.1.6"
   },
   "devDependencies": {
     "@thedigitalman/eleventy-plugin-toc-a11y": "^2.1.0",

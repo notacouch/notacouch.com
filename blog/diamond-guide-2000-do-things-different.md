@@ -7,7 +7,7 @@ subtitle: I did a considerable portion of the frontend development for Brainlink
 ---
 
 <figure
-  class="figure figure--img figure--img--before-after figure--img--before grid__figure"
+  class="figure figure--img figure--img--before-after figure--img--before grid__left-right grid__left-right--left grid__figure"
 >
   <img
     class="figure__img"
@@ -17,7 +17,7 @@ subtitle: I did a considerable portion of the frontend development for Brainlink
   <figcaption>Diamond-Guide.com (2000) before Brainlink</figcaption>
 </figure>
 <figure
-  class="figure figure--img figure--img--before-after figure--img--after grid__figure"
+  class="figure figure--img figure--img--before-after figure--img--after grid__left-right grid__left-right--right grid__figure"
 >
   <img
     class="figure__img"
@@ -73,39 +73,42 @@ subtitle: I did a considerable portion of the frontend development for Brainlink
   By the way, there were no devtools back then, not even Firebug.
 </aside>
 
+<!-- prettier-ignore-start -->
 <figure class="figure figure--code grid__full">
-  <!-- prettier-ignore -->
-  <code
-          class="code code--full grid__full__extended-body language-html"
-          >
-    &lt;tr&gt;
-                            &lt;!-- See nested &lt;table&gt; in the table cell below --&gt;
-            &lt;td colspan="2"&gt;&lt;table border="0" width="740" cellspacing="0" cellpadding="0"&gt;
-                            &lt;tr align="left"&gt;
-                                    &lt;td&gt;&lt;a href="./Diamond_Education/about.html"&gt;&lt;img src="/images/top_aboutus.gif" alt="" border="0"&gt;&lt;/a&gt;&lt;/td&gt;
-            &lt;td width="15"&gt;&lt;img src="/images/blank.gif ALT=" " width="15" height="1"&gt;&lt;/td&gt;
-                                    &lt;td&gt;&lt;a href="services.html"&gt;&lt;img src="/images/top_policiesandservices.gif" alt="" width="98" height="20" border="0"&gt;&lt;/a&gt;&lt;/td&gt;
 
-                                    &lt;!--  Pair table-based layout with blank.gif for achieving pixel perfect precision --&gt;
-            &lt;td width="15"&gt;&lt;img src="/images/blank.gif ALT=" " width="15" height="1"&gt;&lt;/td&gt;
-                                    &lt;td&gt;&lt;img src="/images/top_8003209670.gif" alt="" width="75" height="20"&gt;&lt;/td&gt;
-            &lt;td width="15"&gt;&lt;img src="/images/blank.gif ALT=" " width="15" height="1"&gt;&lt;/td&gt;
-                                    &lt;td&gt;&lt;a href="mailto:sales@diamond-guide.com"&gt;&lt;img src="/images/top_emailus.gif" alt="" width="54" height="20" border="0"&gt;&lt;/a&gt;&lt;/td&gt;
-            &lt;td width="15"&gt;&lt;img src="/images/blank.gif ALT=" " width="15" height="1"&gt;&lt;/td&gt;
-                                    &lt;td&gt;&lt;a href="glossary-1.html"&gt;&lt;img src="/images/top_glossary.gif" alt="" width="48" height="20" border="0"&gt;&lt;/a&gt;&lt;/td&gt;
-            &lt;td width="15"&gt;&lt;img src="/images/blank.gif ALT=" " width="15" height="1"&gt;&lt;/td&gt;
-                                    &lt;td&gt;&lt;a href="/testimonials.html"&gt;&lt;img src="/images/top_testimonials.gif" alt="" border="0"&gt;&lt;/a&gt;&lt;/td&gt;
-            &lt;td width="15"&gt;&lt;img src="/images/blank.gif ALT=" " width="15" height="1"&gt;&lt;/td&gt;
-                                    &lt;td&gt;&lt;a href="http://www.gembeat.com/cgi-bin/gembeat/ord/basket"&gt;&lt;img src="/images/top_shoppingcart.gif" alt="" width="74" height="20" border="0"&gt;&lt;/a&gt;&lt;/td&gt;
-            &lt;td width="15"&gt;&lt;img src="/images/blank.gif ALT=" " width="15" height="1"&gt;&lt;/td&gt;
-                                    &lt;td&gt;&lt;a href="Diamond_Education"&gt;&lt;img src="/images/top_learningcenter.gif" alt="" width="81" height="20" border="0"&gt;&lt;/a&gt;&lt;/td&gt;
+```html {.code .code--full .grid__full__extended-body}
+      <tr>
+                              <!-- See nested <table> in the table cell below -->
+              <td colspan="2"><table border="0" width="740" cellspacing="0" cellpadding="0">
+                              <tr align="left">
+                                      <td><a href="./Diamond_Education/about.html"><img src="/images/top_aboutus.gif" alt="" border="0"></a></td>
+              <td width="15"><img src="/images/blank.gif ALT=" " width="15" height="1"></td>
+                                      <td><a href="services.html"><img src="/images/top_policiesandservices.gif" alt="" width="98" height="20" border="0"></a></td>
 
-                            &lt;/tr&gt;
-                            &lt;/table&gt;
-            &lt;/td&gt;
-    &lt;/tr&gt;
-        </code>
+                                      <!--  Pair table-based layout with blank.gif for achieving pixel perfect precision -->
+              <td width="15"><img src="/images/blank.gif ALT=" " width="15" height="1"></td>
+                                      <td><img src="/images/top_8003209670.gif" alt="" width="75" height="20"></td>
+              <td width="15"><img src="/images/blank.gif ALT=" " width="15" height="1"></td>
+                                      <td><a href="mailto:sales@diamond-guide.com"><img src="/images/top_emailus.gif" alt="" width="54" height="20" border="0"></a></td>
+              <td width="15"><img src="/images/blank.gif ALT=" " width="15" height="1"></td>
+                                      <td><a href="glossary-1.html"><img src="/images/top_glossary.gif" alt="" width="48" height="20" border="0"></a></td>
+              <td width="15"><img src="/images/blank.gif ALT=" " width="15" height="1"></td>
+                                      <td><a href="/testimonials.html"><img src="/images/top_testimonials.gif" alt="" border="0"></a></td>
+              <td width="15"><img src="/images/blank.gif ALT=" " width="15" height="1"></td>
+                                      <td><a href="http://www.gembeat.com/cgi-bin/gembeat/ord/basket"><img src="/images/top_shoppingcart.gif" alt="" width="74" height="20" border="0"></a></td>
+              <td width="15"><img src="/images/blank.gif ALT=" " width="15" height="1"></td>
+                                      <td><a href="Diamond_Education"><img src="/images/top_learningcenter.gif" alt="" width="81" height="20" border="0"></a></td>
+
+                              </tr>
+                              </table>
+              </td>
+      </tr>
+
+```
+
 </figure>
+<!-- prettier-ignore-end -->
+
 <h2 id="scrolling-news-ticker">Scrolling news ticker</h2>
 <p>
   What I&rsquo;m unable to share is the first JavaScript challenge I was tasked

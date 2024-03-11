@@ -736,7 +736,7 @@ figcaption {
   grid-column-end: body;
 }
 
-.figure--img--before-after {
+.grid__left-right {
   position: relative;
   grid-column-end: span 2;
   margin-top: 1.6em;
@@ -753,7 +753,7 @@ figcaption {
   font-variant: all-petite-caps;
 }
 
-.figure--img--before {
+.grid__left-right--left {
   grid-column-start: body-left;
 }
 
@@ -761,7 +761,7 @@ figcaption {
   content: "Before";
 }
 
-.figure--img--after {
+.grid__left-right--right {
   grid-column-start: 4;
 }
 
@@ -831,7 +831,8 @@ Try setting display to something other than block.
   align-content: start;
 }
 
-.grid__full {
+.grid__full,
+.grid__full > pre:has(.code--full) {
   grid-column-start: space-start;
   grid-column-end: space-end;
   display: grid;

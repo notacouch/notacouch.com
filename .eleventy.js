@@ -2,7 +2,7 @@ import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
 import eleventyPluginTOC from "@thedigitalman/eleventy-plugin-toc-a11y";
 import markdownIt from "markdown-it";
 import markdownItNamedHeadings from "markdown-it-named-headings";
-
+import markdownItAttrs from "markdown-it-attrs";
 
 
 export default function(eleventyConfig) {
@@ -59,6 +59,7 @@ export default function(eleventyConfig) {
       // linkify: true,
       typographer: true
     }).use( markdownItNamedHeadings )
+    .use( markdownItAttrs )
   );
 
   eleventyConfig.addPlugin(eleventyAutoCacheBuster);
