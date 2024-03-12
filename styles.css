@@ -208,8 +208,13 @@ header {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-weight: 600;
+}
+
+h3 {
+  color: #716040;
 }
 
 .hurrr {
@@ -526,8 +531,18 @@ abbr[title]:focus::after {
   margin-bottom: 0.67em;
 }
 
+.toc__ol .toc__ol {
+  margin-top: 0.5em;
+  padding-left: 2em;
+  list-style: lower-roman;
+}
+
+.toc__ol .toc__ol .toc__ol {
+  list-style: lower-alpha;
+}
+
 .post-preview__title,
-.post > h2,
+.post > :is(h2, h3),
 .toc__header {
   font-size: 1.3125em;
   font-weight: 600;
@@ -537,13 +552,14 @@ abbr[title]:focus::after {
   color: var(--color-text-subtitle);
 }
 
-.post > h2 {
+.post > :is(h2, h3) {
   margin-top: 1.2em;
   font-family: karmina-sans, sans-serif;
   font-variant-numeric: lining-nums;
 }
 
-:is(.post, .post-preview) > :is(ol, ul, p) {
+:is(.post, .post-preview) > :is(ol, ul, p),
+:is(.post, .post-preview) > .p > :is(ol, ul, p) {
   font-size: 1.086em;
   font-weight: 300;
   line-height: 1.4;
@@ -598,9 +614,11 @@ abbr[title]:focus::after {
 
 .figure {
   margin: 0;
+}
+:is(.post) > .figure {
   margin-bottom: var(--gutter-width);
 }
-p + .figure {
+:is(.post, .post-preview) > p + .figure {
   margin-top: var(--gutter-width);
 }
 
@@ -731,10 +749,10 @@ figcaption {
   margin-bottom: calc(var(--gutter-width) * 2);
 }
 
-.grid > p {
+.grid > :is(p, .p) {
   margin-top: 0;
 }
-.grid > :is(p, ul) + h2 {
+.grid > :is(p, .p, ul, .figure--img--body) + :is(h2, h3) {
   margin-top: 0.6em;
 }
 
@@ -774,6 +792,27 @@ figcaption {
 
 .figure--img--after::before {
   content: "After";
+}
+
+.p {
+  /* overflow: hidden; */
+}
+
+.figure--img--text-wrap {
+  float: right;
+  max-width: 300px;
+  margin-left: var(--gutter-width);
+  clear: right;
+}
+
+@media (max-width: 600px) {
+  .figure--img--text-wrap {
+    max-width: calc(50% - var(--gutter-width));
+  }
+}
+
+.p > .figure--img--text-wrap:first-child {
+  margin-top: 1em;
 }
 
 .grid__figure {
@@ -817,6 +856,16 @@ Try setting display to something other than block.
 .grid__body-start {
   grid-column-start: body;
   grid-column-end: span 1;
+}
+
+.grid__body-to-right {
+  grid-column-start: body;
+  grid-column-end: body-right;
+}
+
+.grid__body-to-right-more {
+  grid-column-start: body;
+  grid-column-end: body-right-more;
 }
 
 .grid__mid-body {
@@ -958,6 +1007,12 @@ Try setting display to something other than block.
     grid-column-start: body;
     grid-column-end: span 1;
   }
+
+  .grid__body-to-right--gt900 {
+    grid-column-start: body;
+    grid-column-end: body-right;
+  }
+
   .grid__mid-body--gt900 {
     grid-column-start: 4;
     grid-column-end: span 1;
@@ -1065,7 +1120,8 @@ Try setting display to something other than block.
 
 /* A unit of "dppx" is implied: */
 @media (-webkit-min-device-pixel-ratio: 2) {
-  :is(.post, .post-preview) > :is(p, ol, ul) {
+  :is(.post, .post-preview) > :is(p, ol, ul),
+  :is(.post, .post-preview) > .p > :is(p, ol, ul) {
     font-weight: var(--font-weight-subtitle-dpi-more);
     line-height: 1.5;
   }
@@ -1080,7 +1136,8 @@ Try setting display to something other than block.
 }
 /* It is equivalent to: */
 @media (min-resolution: 2dppx) {
-  :is(.post, .post-preview) > :is(p, ol, ul) {
+  :is(.post, .post-preview) > :is(p, ol, ul),
+  :is(.post, .post-preview) > .p > :is(p, ol, ul) {
     font-weight: var(--font-weight-subtitle-dpi-more);
     line-height: 1.5;
   }

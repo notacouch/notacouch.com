@@ -1,8 +1,8 @@
 ---
-title: Diamond-Guide.com (2000), do things different
+title: Diamond-Guide.com (2000) - do things different
 tags: ["Frontend", "Work", "Brainlink"]
 date: 2024-02-16 12:00:00Z
-modified: 2024-03-05 12:00:00Z
+modified: 2024-03-12 17:29:00Z
 subtitle: Table-based layout, frontend development for Brainlink&rsquo;s full service design and development for e-commerce site.
 ---
 
@@ -38,13 +38,31 @@ This was our team's largest project to date. Diamond-Guide.com was a massive web
 
 ## Layout in the year 2000
 
+<div class="p grid__body-to-right--gt900">
+
+<figure class="figure figure--img figure--img--text-wrap">
+  <a href="/blog-images/diamond-guide-slice-tool-sample.png"><img
+    src="/blog-images/diamond-guide-slice-tool-sample.png"
+    alt="Screenshot of using Adobe Photoshop's slice tool for Diamond Guide"
+    class="figure__img"
+  /></a>
+  <figcaption>A look at Adobe Photoshop&rsquo;s slice tool.</figcaption>
+</figure>
+
 Back then, how did one code the frontend for a site that had enough images to block out the light of the sun? That's right. In the dark (i.e. table-based layouts). With knives (i.e. Adobe Photoshop slice tool).
 
-<!-- TODO: pic of photoshop slice tool -->
-<!-- TODO: wrapper .p to get some of p's styles and allow for float -->
-<!-- TODO: float right figcaption with potential grid size, allow text to wrap around -->
+<!-- <figure class="figure figure--img figure--img--text-wrap">
+  <img
+    src="/blog-images/diamond-guide-inspect-element.png"
+    alt="Screenshot of inspecting Diamond-Guide.com 2000's menu"
+    class="figure__img"
+  />
+  <figcaption>Sample table-based layout starting with the menu.</figcaption>
+</figure> -->
 
 Our designers got to work with materials provided to them. They'd pass me full comps and I'd slice them up in Photoshop based on how I&rsquo;d lay them out. For the unfamiliar, layout via CSS was not really a thing. To achieve positioning, you created tables with rows all for the purpose of sizing columns to your needs and nested tables as much as needed. To achieve additional precision, you used spacer GIFs, 1&times;1 pixel transparent GIFs, which you could size exactly how you wanted via `width` and `height` attributes to push things around or otherwise occupy empty space:
+
+</div>
 
 <hr class="grid__row-reset" />
 
@@ -95,6 +113,34 @@ Our designers got to work with materials provided to them. They'd pass me full c
 
 </figure>
 
+### Image maps
+
+Another technique you probably don't see much anymore are [image maps](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map). For comps such as some navigational menus that didn't require layout work, instead of slicing them up into individual images, links, and laying them out in tables, you could use one whole image and define rectangular areas to serve as links with actual `href`s:
+
+<figure class="figure figure--img figure--img--body grid__figure">
+  <a href="/blog-images/diamond-guide-image-map.png"><img
+    src="/blog-images/diamond-guide-image-map.png"
+    alt="Screenshot of inspecting Diamond-Guide.com 2000's image map navigation"
+    class="figure__img figure--img--body__img"
+  /></a>
+  <figcaption><a href="https://web.archive.org/web/20010425223234/http://www.diamond-guide.com/Diamond_Education/">Sample menu using image maps</a>.</figcaption>
+</figure>
+
+<!-- <div class="p grid__body-to-right--gt900">
+
+<figure class="figure figure--img figure--img--text-wrap">
+  <a href="/blog-images/diamond-guide-image-map.png"><img
+    src="/blog-images/diamond-guide-image-map.png"
+    alt="Screenshot of inspecting Diamond-Guide.com 2000's image map navigation"
+    class="figure__img figure--img--body__img"
+  /></a>
+  <figcaption>Sample menu using image maps.</figcaption>
+</figure>
+
+Another technique you probably don't see much anymore are [image maps](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map). For comps such as some navigational menus that didn't require layout work, instead of slicing them up into individual images, links, and laying them out in tables, you could use one whole image and define rectangular areas to serve as links with actual `href`s:
+
+</div> -->
+
 ## Scrolling news ticker
 
 <!-- TODO: Figma up a wireframe -->
@@ -107,8 +153,9 @@ This project was intense. So much so, I remember my boss Paul once asked, "What'
 
 So why share all this?
 
+- Table-based stuff was real!
 - This is the only table-based work I was able to reference.
-- It was real, this stuff really used to happen.
+- There's something poetic about using content from 2000 to lay out a site in 2024.
 - Achieving pixel perfect, cross-browser, cross-platform compatible design was a thing even back when table-based layout was the methodology of the time.
 - Something that stuck with us for life:
 

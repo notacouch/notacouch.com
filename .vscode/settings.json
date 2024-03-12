@@ -4,5 +4,6 @@
   },
   "markdownlint.config": {
     "MD033": false
-  }
+  },
+  "todo-tree.tree.scanMode": "workspace"
 }
