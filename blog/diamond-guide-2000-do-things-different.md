@@ -3,7 +3,7 @@ title: Diamond-Guide.com (2000), do things different
 tags: ["Frontend", "Work", "Brainlink"]
 date: 2024-02-16 12:00:00Z
 modified: 2024-03-05 12:00:00Z
-subtitle: I did a considerable portion of the frontend development for Brainlink&rsquo;s full service design and development of this large e-commerce site.
+subtitle: Table-based layout, frontend development for Brainlink&rsquo;s full service design and development for e-commerce site.
 ---
 
 <figure
@@ -24,39 +24,25 @@ subtitle: I did a considerable portion of the frontend development for Brainlink
     src="/blog-images/diamond-guide-after-brainlink-crop.png"
     alt="Screenshot of Diamond-Guide.com in the year 2000 with Brainlink's design"
   />
-  <figcaption>Diamond-Guide.com (2000) after Brainlink</figcaption>
+  <figcaption><a href="https://web.archive.org/web/20001109143500/http://www.diamond-guide.com/">Diamond-Guide.com (2000) after Brainlink</a></figcaption>
 </figure>
-<!-- TODO: link to diamond-guide.com wayback machine -->
-<p>
-  This was our team&rsquo;s largest project to date. Diamond-Guide.com was a
-  massive website that provided tons of information on jewelry and really tried
-  to hold their users&rsquo; hands. They had a lot of imagery and they wanted
-  pretty much their entire website to be images. And I mean entire website.
-</p>
-<p>
-  Diamonds? Images.<br />
-  Jewelry? Images.<br />
-  Menu?? Images!<br />
-  Body text?1! IMAGES!
-</p>
+
+This was our team's largest project to date. Diamond-Guide.com was a massive website, the client really tried to hold their users' hands in their shopping experience by providing ample information on jewelry. They had literal books of imagery for us and wanted pretty much their entire website to be images.
+
+- Diamonds? Images.
+- Jewelry? Images.
+- Menu?? Images!
+- Body text?1! IMAGES!
+
 <!-- TODO: animated image of slapping images on either the site or the sun -->
-<h2 id="layout-2000">Layout in the year 2000</h2>
-<p>
-  In the year 2000, how did one code the frontend for a site that had enough
-  images to block out the light of the sun? That&rsquo;s right. In the dark
-  (i.e. table-based layouts). With knives (i.e. Adobe Photoshop slice tool).
-</p>
-<p>
-  Our designers got to work with materials provided to them. They&rsquo;d pass
-  me full comps and slice them up in Photoshop based on how I&rsquo;d lay them
-  out. For the unfamiliar, layout via CSS was not really a thing. To achieve
-  positioning, you created tables with rows all for the purpose of sizing
-  columns to your needs and nested tables as much as needed. To achieve
-  additional precision, you used spacer GIFs, 1&times;1 pixel transparent GIFs,
-  which you could size exactly how you wanted via <code>width</code> and
-  <code>height</code> attributes to push things around or otherwise occupy empty
-  space:
-</p>
+
+## Layout in the year 2000
+
+Back then, how did one code the frontend for a site that had enough images to block out the light of the sun? That's right. In the dark (i.e. table-based layouts). With knives (i.e. Adobe Photoshop slice tool).
+
+<!-- TODO: pic of photoshop slice tool -->
+
+Our designers got to work with materials provided to them. They'd pass me full comps and I'd slice them up in Photoshop based on how I&rsquo;d lay them out. For the unfamiliar, layout via CSS was not really a thing. To achieve positioning, you created tables with rows all for the purpose of sizing columns to your needs and nested tables as much as needed. To achieve additional precision, you used spacer GIFs, 1&times;1 pixel transparent GIFs, which you could size exactly how you wanted via `width` and `height` attributes to push things around or otherwise occupy empty space:
 
 <hr class="grid__row-reset" />
 
@@ -66,14 +52,13 @@ subtitle: I did a considerable portion of the frontend development for Brainlink
     alt="Screenshot of inspecting Diamond-Guide.com 2000's menu"
     class="figure__img figure--img--body__img"
   />
-  <figcaption>Sample tabular layout starting with the menu.</figcaption>
+  <figcaption>Sample table-based layout starting with the menu.</figcaption>
 </figure>
 
 <aside class="tangent">
   By the way, there were no devtools back then, not even Firebug.
 </aside>
 
-<!-- prettier-ignore-start -->
 <figure class="figure figure--code grid__full">
 
 ```html {.code .code--full .grid__full__extended-body}
@@ -107,39 +92,22 @@ subtitle: I did a considerable portion of the frontend development for Brainlink
 ```
 
 </figure>
-<!-- prettier-ignore-end -->
 
-<h2 id="scrolling-news-ticker">Scrolling news ticker</h2>
-<p>
-  What I&rsquo;m unable to share is the first JavaScript challenge I was tasked
-  with, they wanted a news ticker scrolling on the top right of certain pages. I
-  hadn&rsquo;t done anything like this before, and there were no such scripts on
-  Dynamic Drive, a site where one would find dHTML or dynamic HTML scripts
-  (which is what we called fancy manipulation of the DOM back then). My approach
-  to it was positioning a container div absolutely, specifiying its
-  <code>clip: rect(...)</code> path, set its <code>overflow: hidden;</code>,
-  each piece of content was in its own tag, I would continually shift the
-  positioning of each piece until it was almost full circle, at the point I
-  would duplicate the contents, append the duplicate to the end, continue
-  scrolling until the duplicate&rsquo;s left position was at the start, remove
-  the original contents, and repeat <em>ad infinitum</em>. I&rsquo;m curious how
-  I&rsquo;d approach this today, but I&rsquo;ll save that for another post.
-</p>
-<h2 id="conclusion">In conclusion, keep things new</h2>
-<p>
-  This project was intense. So much so, I remember my boss Paul once asked,
-  &ldquo;What&rsquo;s wrong, Abed? Diamond Guide keeping you up at night?&rdquo;
-  To which I replied, &ldquo;No. Diablo II.&rdquo; But it may very well have
-  been Diamond Guide!
-</p>
-<p>
-  So why share all this? Partially just to show that this was real, it is the
-  only table-based work I was able to reference. Achieving pixel perfect,
-  cross-browser, cross-platform compatible design was a thing even back when
-  table-based layouts were the commercial or professional methodology of the
-  time. Part of the Brainlink way was to never do the same thing twice, so we
-  would try to do something differently with every project in the rare case
-  something was not already unprecedented to begin with. This principle stuck
-  with me and ever since then I have always baked learning and trying new things
-  into my work.
-</p>
+## Scrolling news ticker
+
+<!-- TODO: Figma up a wireframe -->
+
+What I'm unable to share is the first JavaScript challenge I was tasked with, they wanted a news ticker scrolling on the top right of certain pages. I hadn't done anything like this before, and there were no such scripts on Dynamic Drive, a site where one would find dHTML or dynamic HTML scripts (which is what we called fancy manipulation of the DOM back then). My approach to it was positioning a container div absolutely, specifiying its `clip: rect(...)` path, set its `overflow: hidden;`, each piece of content was in its own tag, I would continually shift the positioning of each piece until it was almost full circle, at the point I would duplicate the contents, append the duplicate to the end, continue scrolling until the duplicate's left position was at the start, remove the original contents, and repeat _ad infinitum_. I'm curious how I'd approach this today, but I'll save that for another post.
+
+## In conclusion, keep things new by doing things different
+
+This project was intense. So much so, I remember my boss Paul once asked, "What's wrong, Abed? Diamond Guide keeping you up at night?" To which I replied, "No. Diablo II." But it may very well have been Diamond Guide!
+
+So why share all this?
+
+- This is the only table-based work I was able to reference.
+- It was real, this stuff really used to happen.
+- Achieving pixel perfect, cross-browser, cross-platform compatible design was a thing even back when table-based layout was the methodology of the time.
+- What we were taught made anything novel less challenging.
+
+Our employer, <a href="https://www.linkedin.com/in/rajgoel/">Raj Goel</a>, made it part of the Brainlink way to never do the same thing twice. After getting ramped up yes you should have libraries, clips of code, etc. handy, but we would try to do things differently with every project. This principle has stuck with me ever since. To this day I continue to bake learning and trying new things into my work.
