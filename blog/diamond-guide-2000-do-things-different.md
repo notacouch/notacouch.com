@@ -41,6 +41,8 @@ This was our team's largest project to date. Diamond-Guide.com was a massive web
 Back then, how did one code the frontend for a site that had enough images to block out the light of the sun? That's right. In the dark (i.e. table-based layouts). With knives (i.e. Adobe Photoshop slice tool).
 
 <!-- TODO: pic of photoshop slice tool -->
+<!-- TODO: wrapper .p to get some of p's styles and allow for float -->
+<!-- TODO: float right figcaption with potential grid size, allow text to wrap around -->
 
 Our designers got to work with materials provided to them. They'd pass me full comps and I'd slice them up in Photoshop based on how I&rsquo;d lay them out. For the unfamiliar, layout via CSS was not really a thing. To achieve positioning, you created tables with rows all for the purpose of sizing columns to your needs and nested tables as much as needed. To achieve additional precision, you used spacer GIFs, 1&times;1 pixel transparent GIFs, which you could size exactly how you wanted via `width` and `height` attributes to push things around or otherwise occupy empty space:
 
@@ -108,6 +110,6 @@ So why share all this?
 - This is the only table-based work I was able to reference.
 - It was real, this stuff really used to happen.
 - Achieving pixel perfect, cross-browser, cross-platform compatible design was a thing even back when table-based layout was the methodology of the time.
-- What we were taught made anything novel less challenging.
+- Something that stuck with us for life:
 
-Our employer, <a href="https://www.linkedin.com/in/rajgoel/">Raj Goel</a>, made it part of the Brainlink way to never do the same thing twice. After getting ramped up yes you should have libraries, clips of code, etc. handy, but we would try to do things differently with every project. This principle has stuck with me ever since. To this day I continue to bake learning and trying new things into my work.
+Our boss, <a href="https://www.linkedin.com/in/rajgoel/">Raj Goel</a>, made it part of the Brainlink way to never do the same thing twice. After getting ramped up yes you should have libraries, clips of code, etc. handy, but we would try to do things differently in every project. This principle stuck with me -- to this day I continue to bake learning and trying new things into my work.

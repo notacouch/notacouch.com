@@ -533,6 +533,10 @@ abbr[title]:focus::after {
   font-weight: 600;
 }
 
+.toc a {
+  color: var(--color-text-subtitle);
+}
+
 .post > h2 {
   margin-top: 1.2em;
   font-family: karmina-sans, sans-serif;
