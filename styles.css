@@ -593,6 +593,11 @@ abbr[title]:focus::after {
   margin-bottom: 0.5em;
 }
 
+.post > :is(ol, ul) :is(ol, ul) {
+  margin-top: 0.5em;
+  padding-left: 2em;
+}
+
 .post-preview__title {
   font-size: 1.13em;
 }
@@ -990,6 +995,9 @@ Try setting display to something other than block.
 }
 
 @media (min-width: 901px) {
+  .grid__row-reset--tangent {
+    grid-column-start: body-right;
+  }
   .tangent {
     grid-column-start: body-right;
     grid-column-end: span 2;

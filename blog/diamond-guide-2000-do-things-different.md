@@ -3,7 +3,7 @@ title: Diamond-Guide.com (2000) - do things different
 tags: ["Frontend", "Work", "Brainlink"]
 date: 2024-02-16 12:00:00Z
 modified: 2024-03-12 17:29:00Z
-subtitle: Table-based layout, frontend development for Brainlink&rsquo;s full service design and development for e-commerce site.
+subtitle: Frontend development for image-heavy, large e-commerce site.
 ---
 
 <figure
@@ -27,7 +27,7 @@ subtitle: Table-based layout, frontend development for Brainlink&rsquo;s full se
   <figcaption><a href="https://web.archive.org/web/20001109143500/http://www.diamond-guide.com/">Diamond-Guide.com (2000) after Brainlink</a></figcaption>
 </figure>
 
-This was our team's largest project to date. Diamond-Guide.com was a massive website, the client really tried to hold their users' hands in their shopping experience by providing ample information on jewelry. They had literal books of imagery for us and wanted pretty much their entire website to be images.
+In my time at Brainlink, this was our team's largest project to date. Diamond-Guide.com was a massive website, the client really tried to hold their users' hands in their shopping experience by providing ample information on jewelry. They had literal books of imagery for us and wanted pretty much their entire website to be images.
 
 - Diamonds? Images.
 - Jewelry? Images.
@@ -64,7 +64,7 @@ Our designers got to work with materials provided to them. They'd pass me full c
 
 </div>
 
-<hr class="grid__row-reset" />
+<hr class="grid__row-reset">
 
 <figure class="figure figure--img figure--img--body grid__figure">
   <img
@@ -143,9 +143,30 @@ Another technique you probably don't see much anymore are [image maps](https://d
 
 ## Scrolling news ticker
 
-<!-- TODO: Figma up a wireframe -->
+<!-- TODO: consider background color for images, e.g. this one is transparent -->
+<figure class="figure figure--img figure--img--body grid__figure grid__body-left-to-right-more">
+  <a href="/blog-images/news-ticker-sketch-psd.png"><img
+    src="/blog-images/news-ticker-sketch-psd.png"
+    alt="Sketch of the logic behind the news ticker"
+    class="figure__img figure--img--body__img"
+  /></a>
+  <figcaption>Thought process behind the ticker.</figcaption>
+</figure>
 
-What I'm unable to share is the first JavaScript challenge I was tasked with, they wanted a news ticker scrolling on the top right of certain pages. I hadn't done anything like this before, and there were no such scripts on Dynamic Drive, a site where one would find dHTML or dynamic HTML scripts (which is what we called fancy manipulation of the DOM back then). My approach to it was positioning a container div absolutely, specifiying its `clip: rect(...)` path, set its `overflow: hidden;`, each piece of content was in its own tag, I would continually shift the positioning of each piece until it was almost full circle, at the point I would duplicate the contents, append the duplicate to the end, continue scrolling until the duplicate's left position was at the start, remove the original contents, and repeat _ad infinitum_. I'm curious how I'd approach this today, but I'll save that for another post.
+<hr class="grid__row-reset grid__row-reset--tangent">
+
+What I'm unable to share is the first JavaScript challenge I was tasked with. The client wanted a news ticker scrolling on the top right of certain pages. I hadn't done anything like this before, and there were no such scripts on Dynamic Drive, a site where one would find dynamic HTML or dHTML scripts (which is what we called manipulation of the DOM back then). My approach to it was absolutely positioning a mask container div. If I recall correctly, to hide contents beyond its visible area just `overflow: hidden;` and a fixed `width` would not suffice. The visible area was defined by its `clip: rect(...)` path. I put scrolling content into its own container and cloned this container so the scrolling could repeat smoothly. These containers were continually shifted left until the clone was at the start of the mask, then the original content container was moved to the end, and repeat _ad infinitum_. I'm curious how I'd approach this today, but I'll save that for another post. {.grid__body}
+
+<aside class="tangent">Wow, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clip">clip</a> has been deprecated for some time, yet is still completely supported.</aside>
+
+<!-- <figure class="figure figure--img figure--img--body grid__figure">
+  <a href="/blog-images/news-ticker-sketch-psd.png"><img
+    src="/blog-images/news-ticker-sketch-psd.png"
+    alt="Sketch of the logic behind the news ticker"
+    class="figure__img figure--img--body__img"
+  /></a>
+  <figcaption>Thought process behind the ticker.</figcaption>
+</figure> -->
 
 ## In conclusion, keep things new by doing things different
 
@@ -153,10 +174,10 @@ This project was intense. So much so, I remember my boss Paul once asked, "What'
 
 So why share all this?
 
-- Table-based stuff was real!
-- This is the only table-based work I was able to reference.
-- There's something poetic about using content from 2000 to lay out a site in 2024.
-- Achieving pixel perfect, cross-browser, cross-platform compatible design was a thing even back when table-based layout was the methodology of the time.
-- Something that stuck with us for life:
+- Achieving pixel perfect, cross-browser, cross-platform design was a thing even back when table-based layout was the methodology of the time. This was the only such work I was able to reference.
+- There's something poetic about using content from 2000 to get acquainted with layout in 2024.
+- 2 things that stuck with us for life.
+  1) We didn't realize at the time, but doing unprecedented things is exactly how we'd spend our careers.
+  2) If there _was_ a precedent, here's what we were taught:
 
-Our boss, <a href="https://www.linkedin.com/in/rajgoel/">Raj Goel</a>, made it part of the Brainlink way to never do the same thing twice. After getting ramped up yes you should have libraries, clips of code, etc. handy, but we would try to do things differently in every project. This principle stuck with me -- to this day I continue to bake learning and trying new things into my work.
+Our boss, <a href="https://www.linkedin.com/in/rajgoel/">Raj Goel</a>, made it part of the Brainlink way to never do the same thing twice. After getting ramped up yes you should have libraries, clips of code, etc. handy, but we would try to do things differently in every project. To this day I continue to bake learning and trying new things into my work.
