@@ -10,6 +10,7 @@ color-text-primary: #000;
   --background-color-code: #f9f4ef;
   --background-color-code-rgba: rgba(249, 244, 239, 1);
   --background-color-main-footer: #f9f4ef;
+  --background-color-body-images: rgba(255, 255, 240, 0.6);
   --border-code-inline: 0.5px #d9c2a7 solid;
   --border-color-code: #d9c2a7;
   --border-color-main-footer: #fefae0;
@@ -19,6 +20,7 @@ color-text-primary: #000;
   @link https://getcssscan.com/css-box-shadow-examples */
   --box-shadow-img: rgba(0, 0, 0, 0.09) 0px 3px 12px;
   --color-text-header: #312921;
+  --color-text-header-tertiary: #716040;
   --color-text-subtitle: #8c7851;
   --color-text-main-nav: #716040;
   --color-text-main-nav-hover: #594a3c;
@@ -214,7 +216,7 @@ h3 {
 }
 
 h3 {
-  color: #716040;
+  /* color: var(--color-text-header-tertiary); */
 }
 
 .hurrr {
@@ -548,6 +550,10 @@ abbr[title]:focus::after {
   font-weight: 600;
 }
 
+.post > h2 {
+  font-size: 1.44em;
+}
+
 .toc a {
   color: var(--color-text-subtitle);
 }
@@ -630,6 +636,7 @@ abbr[title]:focus::after {
 .figure__img {
   max-width: 100%;
   box-shadow: var(--box-shadow-img);
+  background-color: var(--background-color-body-images);
   margin-bottom: 5px;
 }
 
@@ -757,7 +764,8 @@ figcaption {
 .grid > :is(p, .p) {
   margin-top: 0;
 }
-.grid > :is(p, .p, ul, .figure--img--body) + :is(h2, h3) {
+/* TODO: you know better. -_-;; be smarter about this kind of thing... eventually */
+.grid > :is(p, .p, ul, .figure--img--body, .tangent) + :is(h2, h3) {
   margin-top: 0.6em;
 }
 

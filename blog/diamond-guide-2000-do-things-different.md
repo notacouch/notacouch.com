@@ -2,7 +2,7 @@
 title: Diamond-Guide.com (2000) - do things different
 tags: ["Frontend", "Work", "Brainlink"]
 date: 2024-02-16 12:00:00Z
-modified: 2024-03-12 17:29:00Z
+modified: 2024-03-13 12:00:00Z
 subtitle: Frontend development for image-heavy, large e-commerce site.
 ---
 
@@ -123,7 +123,7 @@ Another technique you probably don't see much anymore are [image maps](https://d
     alt="Screenshot of inspecting Diamond-Guide.com 2000's image map navigation"
     class="figure__img figure--img--body__img"
   /></a>
-  <figcaption><a href="https://web.archive.org/web/20010425223234/http://www.diamond-guide.com/Diamond_Education/">Sample menu using image maps</a>.</figcaption>
+  <figcaption><a href="https://web.archive.org/web/20010425223234/http://www.diamond-guide.com/Diamond_Education/">Sample page in Diamond-Guide.com whose menu uses image maps</a>.</figcaption>
 </figure>
 
 <!-- <div class="p grid__body-to-right--gt900">
@@ -155,9 +155,9 @@ Another technique you probably don't see much anymore are [image maps](https://d
 
 <hr class="grid__row-reset grid__row-reset--tangent">
 
-What I'm unable to share is the first JavaScript challenge I was tasked with. The client wanted a news ticker scrolling on the top right of certain pages. I hadn't done anything like this before, and there were no such scripts on Dynamic Drive, a site where one would find dynamic HTML or dHTML scripts (which is what we called manipulation of the DOM back then). My approach to it was absolutely positioning a mask container div. If I recall correctly, to hide contents beyond its visible area just `overflow: hidden;` and a fixed `width` would not suffice. The visible area was defined by its `clip: rect(...)` path. I put scrolling content into its own container and cloned this container so the scrolling could repeat smoothly. These containers were continually shifted left until the clone was at the start of the mask, then the original content container was moved to the end, and repeat _ad infinitum_. I'm curious how I'd approach this today, but I'll save that for another post. {.grid__body}
+What I'm unable to share is the first JavaScript challenge I was tasked with. The client wanted a news ticker scrolling on the top right of certain pages. I hadn't done anything like this before, and there were no such scripts on Dynamic Drive, a site where one would find dynamic HTML or dHTML scripts (which is what we called manipulation of the DOM back then). My approach to it was absolutely positioning a mask container div. If I recall correctly, to hide contents beyond its visible area just `overflow: hidden;` and a fixed `width` would not suffice. The visible area was defined by its `clip: rect(...)` path. I put scrolling content into its own container and cloned this container so the scrolling could repeat smoothly. These containers were continually shifted left until the clone was at the start of the mask, then the original content container was moved to the end, and repeat _ad infinitum_. I'm curious how I'd approach this today, but I'll save that for another post. {.grid__body--gt900}
 
-<aside class="tangent">Wow, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clip">clip</a> has been deprecated for some time, yet is still completely supported.</aside>
+<aside class="tangent">Wow, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clip">clip</a> has been deprecated for some time. It&rsquo;s still completely supported, though.</aside>
 
 <!-- <figure class="figure figure--img figure--img--body grid__figure">
   <a href="/blog-images/news-ticker-sketch-psd.png"><img
