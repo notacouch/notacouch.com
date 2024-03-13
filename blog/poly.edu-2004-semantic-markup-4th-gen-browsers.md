@@ -1,16 +1,16 @@
 ---
 title: Poly.edu (2004) - the power of semantic markup
-tags: ["Frontend", "Work", "Poly"]
+tags: ["Accessibility", "Frontend", "Work", "Poly"]
 date: 2024-03-09 12:00:00Z
-modified: 2024-03-10 09:25:00Z
-subtitle: Semantic markup and CSS for 4th gen browsers was a technical feat the university was not ready for.
+modified: 2024-03-13 19:25:00Z
+subtitle: Semantic markup and CSS for 4th gen browsers, catalyst for change.
 ---
 
 ## Context
 
 This was an era when semantic markup required actual evangelism. Below may give a partial glimpse as to why. `<table>`s were doing the job, afterall, so why swim upstream?
 
-In my early days on the Poly Webteam, I had to really prove my stripes before I could take on any challenging work. They wanted to maintain, not improve; having gotten the message I plowed through a lot of maintenance on existing sites and newsletters whose code could have possibly dated back to the 90&rsquo;s. After months of keeping `<table>` and `<font>` tags alive, I was finally given the choice of what I wanted to work on.
+In my early days on the Poly Webteam, I had to really prove my stripes before I could take on work of my choosing. Afterall, there was enough work to go around just to maintain sites and newsletters. I bided my time keeping `<table>` and `<font>` tags alive in codebases probably dated back to the 90&rsquo;s without scratching the itch of making things better. Eventually, I was finally given reign over 1 personal project.
 
 ## Why the homepage?
 
@@ -21,9 +21,9 @@ I picked the homepage for a number of reasons.
 - It was the default page on all machines on campus.
 - Had the most traffic by far.
 - The strangest design and most challenging to lift and shift from old code to semantic markup.
-- The university was divided, not even the Computer Science nor Computer Engineering departments which each had their own sites saw any merit in semantic markup.
+- The university was divided, e.g. the Computer Science and Computer Engineering departments had their own sites, neither with semantic markup.
 
-Revamping the homepage was _the_ way for me to make _the most impact_ on the university.
+Revamping the homepage was _the_ way for me to make _the most impact_ on the university: immediately, long term, and laterally.
 
 ## The work
 
@@ -33,10 +33,8 @@ Revamping the homepage was _the_ way for me to make _the most impact_ on the uni
     alt="Screenshot of inspecting poly.edu May 2004's menu"
     class="figure__img figure--img--body__img"
   /></a>
-  <figcaption>Inspecting <a href="https://web.archive.org/web/20040519161813/http://www.poly.edu/">poly.edu (2004)</a>, the comments reveal frontend challenges. Also note accessible links like "Skip Navigation".</figcaption>
+  <figcaption>Inspecting <a href="https://web.archive.org/web/20040519161813/http://www.poly.edu/">poly.edu (2004)</a>, the comments reveal frontend challenges. Note accessible links like &ldquo;Skip Navigation&rdquo; and &ldquo;related links&rdquo; cover when neither JavaScript nor stylesheets are available.</figcaption>
 </figure>
-
-<!-- TODO: comment on accessible links, testing with js/css off -->
 
 Though I was allowed to work on the homepage, I was _not_ allowed to make any changes to its design. The look had to remain exactly the same, pixel perfect. As intimated by the screenshot above, it was not as easy as simply throwing links in unordered list items. Netscape 4 applied list item styles to its bullets, using CSS to position an anchor would kill its functionality. As for Windows IE4, you _couldn&rsquo;t_ position anchor tags. So each anchor had to be wrapped in a `<div>`. The fun didn&rsquo;t stop there. There were more browsers to cater to.
 
