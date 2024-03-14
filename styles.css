@@ -851,6 +851,11 @@ Try setting display to something other than block.
   grid-column-end: span 1;
 }
 
+/* .grid__body-left-body {
+  grid-column-start: body-left;
+  grid-column-end: span 3;
+} */
+
 .grid__body-left-to-right-more {
   grid-column-start: body-left;
   grid-column-end: body-right-more;
