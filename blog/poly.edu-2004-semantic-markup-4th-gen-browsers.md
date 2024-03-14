@@ -3,25 +3,29 @@ title: Poly.edu (2004) - the power of semantic markup
 tags: ["Accessibility", "Frontend", "Work", "Poly"]
 date: 2024-03-09 12:00:00Z
 modified: 2024-03-13 19:25:00Z
-subtitle: Semantic markup and CSS for 4th gen browsers, catalyst for change.
+subtitle: Using semantic markup and CSS for the wild, wild... 4th gen browsers as catalysts for change.
 ---
 
 ## Context
 
-This was an era when semantic markup required actual evangelism. Below may give a partial glimpse as to why. `<table>`s were doing the job, afterall, so why swim upstream?
+This was an era when semantic markup required actual evangelism. Below may give a partial glimpse as to why. Even if semantic markup and CSS were the "right" way of doing things, if `<table>`s were doing the job, why swim upstream?
 
-In my early days on the Poly Webteam, I had to really prove my stripes before I could take on work of my choosing. Afterall, there was enough work to go around just to maintain sites and newsletters. I bided my time keeping `<table>` and `<font>` tags alive in codebases probably dated back to the 90&rsquo;s without scratching the itch of making things better. Eventually, I was finally given reign over 1 personal project.
+<hr class="grid__row-reset" />
+
+In my early days on the Poly Webteam, I had to really prove my stripes before I could take on work of my choosing. Afterall, there was enough work to go around just to maintain sites and newsletters. I bided my time keeping `<table>` and `<font>` tags alive in codebases probably dated back to the 90&rsquo;s without scratching the itch of making things better. Eventually, I was finally given reign over 1 personal project.{.grid__body-gt900}
+
+<aside class="tangent">Poly, short for Polytechnic University, is now known as <a href="https://engineering.nyu.edu/">NYU Tandon</a>, NYU&rsquo;s school of engineering.</aside>
 
 ## Why the homepage?
 
 I picked the homepage for a number of reasons.
 
-- The codebase was split between IE and Netscape, user agent sniffing was done on the backend to determine which browser-specific template partials to serve. Neither the backend methodology nor the browser-specific-served files were perfect.
-- There were memory leaks between ColdFusion and Oracle which was a source of frequent insstability.
+- There were actually 2 separate pages with entirely different code, 1 for IE and 1 for Netscape. User agent sniffing was done on the backend (ColdFusion) to determine which page to serve. There were issues in all 3.
+- There were memory leaks between ColdFusion and Oracle which was a source of frequent instability.
 - It was the default page on all machines on campus.
 - Had the most traffic by far.
-- The strangest design and most challenging to lift and shift from old code to semantic markup.
-- The university was divided, e.g. the Computer Science and Computer Engineering departments had their own sites, neither with semantic markup.
+- It had the strangest design and posed the most challenge to lift and shift from old code to semantic markup.
+- The university was divided, e.g. the Computer Science and Computer Engineering departments had their own sites, neither with semantic markup. This _could_ be the catalyst for change both socially and technically.
 
 Revamping the homepage was _the_ way for me to make _the most impact_ on the university: immediately, long term, and laterally.
 
@@ -36,7 +40,7 @@ Revamping the homepage was _the_ way for me to make _the most impact_ on the uni
   <figcaption>Inspecting <a href="https://web.archive.org/web/20040519161813/http://www.poly.edu/">poly.edu (2004)</a>, the comments reveal frontend challenges. Note accessible links like &ldquo;Skip Navigation&rdquo; and &ldquo;related links&rdquo; cover when neither JavaScript nor stylesheets are available.</figcaption>
 </figure>
 
-Though I was allowed to work on the homepage, I was _not_ allowed to make any changes to its design. The look had to remain exactly the same, pixel perfect. As intimated by the screenshot above, it was not as easy as simply throwing links in unordered list items. Netscape 4 applied list item styles to its bullets, using CSS to position an anchor would kill its functionality. As for Windows IE4, you _couldn&rsquo;t_ position anchor tags. So each anchor had to be wrapped in a `<div>`. The fun didn&rsquo;t stop there. There were more browsers to cater to.
+Though I was allowed to work on the homepage, I was _not_ allowed to make any changes to its design. The look and behavior had to remain exactly the same, pixel perfect. As intimated by the screenshot above, it was not as easy as simply throwing links in unordered list items. Netscape 4 applied list item styles to its bullets, using CSS to position an anchor would kill its functionality. As for Windows IE4, you _couldn&rsquo;t_ position anchor tags. So each anchor had to be wrapped in a `<div>`. The fun didn&rsquo;t stop there.
 
 <hr class="grid__row-reset" />
 
@@ -51,12 +55,28 @@ Though I was allowed to work on the homepage, I was _not_ allowed to make any ch
 
 <aside class="tangent">Mozilla Firefox was Firebird! <em>I</em> don&rsquo;t even remember that.</aside>
 
-To accommodate other browsers in other platforms including Mac IE5 required the use of CSS hacks. There's a myriad of odd behaviors when it came to parsing comments and characters between them. Getting the right combination of targeted browser hacks and ordering of CSS declarations was also key to getting all the browsers to play well together.
+To accommodate other browsers in other platforms including Mac IE5 required the use of CSS hacks. There's a myriad of odd behaviors when it came to parsing comments and characters between them. Getting the right combination of targeted browser hacks and ordering of CSS declarations was key in juggling varying styles to keep up the same look across the board. My revamp of the homepage also:
 
-## The impact? This is the way... of the future
+- deprecated the browser splitting & redirects,
+- reduced download size via less markup, only 1 stylesheet, optimized images for the web,
+- and eliminated the memory leaks.
 
-<!-- TODO: revise -->
+## Immediate impact
 
-I'm not sure if you can find the previous version of this homepage using the Wayback Machine. The user agent sniffing solution somehow caused redirecting to ww*2*.poly.edu for such bots. This revamped homepage deprecated the source splitting, redirects, and reduced the load of transfer via less markup, smaller stylesheet, optimized images for web, and worked around the memory leaks for both ColdFusion and Oracle. The first person these results made very, very happy was our sys admin. We saved tons of bandwidth both in our intranet and what was being served publicly. Last but not least the page loaded consistently faster and had less jank on menu hovers. Being a pivotal snapshot in the Wayback Machine is proof in the pudding of the impact the code change had.
+<hr class="grid__row-reset" />
 
-As great as all that was, the real impact was about the future. While another tech university was literally writing web standards, we remained far behind. This primordial proof of concept of semantic markup and CSS set a very strong precedent for the university. This immediately gave my opinions weight enough to be utilized for research and a behind-the-scenes voice in board meetings about the direction of their web presence in coming years. Evangelism went against the grain, an employer once circled around me when I was alone in the office, "You better be right about this [CSS], Abed. You better be right." I stayed my course, which I like to think helped the divided departments ultimately unite under a single, modern <a>poly.edu</a>.
+Being a pivotal snapshot in the Wayback Machine (WM) is proof in the pudding of the impact this update had. My work resulted in the homepage:{.grid__body--gt900}
+
+- accidentally improving SEO by playing better with search engine bots and just the superiority of semantic markup,
+- saving tons of bandwidth both publicly and in our intranet,
+- loading consistently faster with less jank on menu hovers,
+- and making our sys admin Cynthia very, very happy.
+{.grid__body--gt900}
+
+<aside class="tangent grid__row-span-2">This design can&rsquo;t be found in the WM before my update, its bot was historically redirected away from www to ww<em>2</em>.poly.edu.</aside>
+
+### The real impact
+
+While the immediate effects were great, the _real_ impact was about the future of Poly. We were set to continue remaining eons behind while another tech university was literally writing web standards. This proof of concept set a very strong precedent. It gave my opinions weight, going forward I was utilized for research and as a behind-the-scenes voice in board meetings about the direction for their web presence.
+
+Evangelism for doing things right continued to go against the grain. I still vividly recall once whilst alone in the Webteam office, a higher echelon visited to circle around me and repeat, "You better be right about this [CSS], Abed. You better be right." I stayed my course, which I like to think helped the divided departments ultimately unite under a single, modern <a>poly.edu</a>. The more we did things right, the better we were for it.
