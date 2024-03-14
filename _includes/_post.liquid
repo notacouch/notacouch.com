@@ -11,7 +11,7 @@ layout: _index.liquid
 {% endif %}
 
 <article class="post grid">
-  <!-- TODO: The opening of articles is not a hero, differentiate it at some point -->
+  <!-- TODO: The opening of articles is no longer a hero, differentiate it at some point -->
   <header class="hero grid__subgrid grid__subgrid--body grid__subgrid--hr">
     <nav class="crumbs" aria-labelledby="breadcrumbs-label">
       <span class="sr-only" id="breadcrumbs-label">Breadcrumbs:</span>
@@ -46,7 +46,7 @@ layout: _index.liquid
           title="Approximate read time"
         ></span
         ><br />
-        <span class="hero__read-time">20 minutes</span>
+        <span class="hero__read-time">{{ content | timeToRead }}</span>
       </div>
     </div>
     <div class="hero__tags hero__meta __tags __meta">
