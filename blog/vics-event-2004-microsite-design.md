@@ -1,5 +1,5 @@
 ---
-title: VICS (2004) - microsite design
+title: VICS event (2004) - microsite design
 tags: ["Frontend", "Work", "Poly"]
 date: 2024-03-14 12:00:00Z
 # modified: 2024-03-13 19:25:00Z
@@ -50,6 +50,6 @@ I reused the colors, type, and logos available in the Word doc to create this st
 
 I actually found a backup of the static pages, you can check the Main, About, and Agenda pages here: <a href="/tangibles/poly/vics/">VICS event microsite</a>. The Agenda page uses _one_ `<table>` for the time versus activity columns, while the activity columns use definition lists, _not_ nested tables for layout. Despite the site's simplicity, I still leveraged hacks, you'll find these `\` in several declaration keys in the <a href="/tangibles/poly/vics/styles.css">styles.css</a>.
 
-## Significance
+## Diving into design
 
-This project ignited in me the need to know what makes for _good_ design and kept me curious if I could ever transition from web development into web design instead. Possessed with intrigue, I went on to consume books on graphic design, color, typography, and grid systems. I would later be consulted on design-related matters such as for Poly's 150th year celebration DVD for both media within and improving the print on the DVD itself, 3-dimensional layout of the Poly presidential gallery, and was commissioned for work on a poster for the proposed trancontinental maglev.
+This project ignited in me the need to _know_ what makes for _good_ design and kept me curious if I could ever transition from web development into web design. Possessed with intrigue, I went on to consume books on graphic design, color, typography, and grid systems. I would later be consulted on design-related matters such as for Poly's 150th year celebration DVD for both media within and improving the print on the DVD itself, 3-dimensional layout of the Poly presidential gallery, and was commissioned for work on a poster for the proposed trancontinental maglev.
