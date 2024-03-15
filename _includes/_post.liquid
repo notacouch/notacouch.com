@@ -2,9 +2,17 @@
 layout: _index.liquid
 ---
 
+{% assign workTags = "Brainlink, Poly, fusionlab, FKAD, zoojaja, Northwell Health, amCharts, CitusHealth" | split: ", " %}
 {% if tags contains "Work" %}
 {% assign blogLink = "work" %}
 {% assign blogLinkText = "Work" %}
+  {% for workTag in workTags %}
+    {% if tags contains workTag %}
+      {% assign workLink = workTag | downcase %}
+      {% assign workLinkText = workTag %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
 {% else %}
 {% assign blogLink = "blog" %}
 {% assign blogLinkText = "Blog" %}
@@ -18,6 +26,9 @@ layout: _index.liquid
       <ol>
         <li class="crumb"><a href="/">Home</a></li>
         <li class="crumb"><a href="/{{ blogLink }}/">{{ blogLinkText }}</a></li>
+        {% if tags contains "Work" %}
+        <li class="crumb"><a href="/topics/{{ workLink }}/">{{ workLinkText }}</a></li>
+        {% endif %}
       </ol>
     </nav>
     <h1 class="hero__title">{{ title }}</h1>
