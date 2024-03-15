@@ -1,0 +1,125 @@
+body{
+	margin: 0;
+	padding: 0;
+	background: #fff url('./images/background.gif') repeat-y;
+	color: #000;
+}
+
+img{ border: 0; }
+
+#logos img{ vertical-align: top; }
+#logos a{ margin-right: 35px; }
+
+h1{
+	display: block;
+	width: 559px;
+	height: 40px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 123px;
+	top: 90px;
+	background: url('./images/header.gif') no-repeat; 
+	z-index: 10;
+}
+h1 span{ display: none; }
+
+#nav{
+	list-style: none;
+	width: 121px;
+	margin: 0;
+	padding: 60px 0 20px 0;
+	background: #004274;
+	position: absolute;
+	left: 123px;
+	top: 75px;
+	z-index: 5;
+}
+#nav a,#nav li{
+	display: block;
+	margin: 0;
+	padding: 0;
+	background: #012e5a;
+}
+#nav li{ margin-left: -15px; width: 106px; }
+#nav li{ ma\rgin-left: 0px; \width: 121px; }
+#nav li{ border-bottom: 1px solid #517eaa; }
+#nav li.current{ border-bottom: 1px solid #00508c; }
+
+#nav img{ display: inline; vertical-align: bottom; }
+#nav a{
+	hei\ght: 24px;
+	padding: 5px 0 0 0;
+	border-bottom: 1px solid #75a0c1;
+}
+#nav a:hover{ border-bottom: 1px solid #b6ccdf; }
+
+#content{
+	width: 400px;
+	position: absolute;
+	left: 265px;
+	top: 145px;
+	font-family: arial, sans-serif;
+	font-size: 12px;
+}
+
+#content p{ text-indent: 30px; }
+
+h2{ color: #d9342b; background: none; font-size: 15px; }
+
+h3{ font-size: 14px; font-weight: bold; }
+
+#about dl{ margin-top: -10px; padding: 0; }
+#about dd{ display: list-item; list-style-type: disc; }
+
+#slogan{ 
+	display: block;
+	font-family: tahoma, verdana, sans-serif;;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+table{
+	margin: 0;
+	padding: 0;
+	border-collapse: collapse;
+	border-top: 1px solid black;
+	margin-bottom: 30px;
+}
+
+tr{ vertical-align: top;}
+td{
+	height: 22px; 
+	font-size: 12px;
+	vertical-align: top;
+	font-weight: bold;
+	border-bottom: 1px solid black;
+	color: #444;
+}
+#agenda dl{ margin: 0 0 5px 0; padding: 0; }
+#agenda dt{
+	color: #000;
+	background: #fff;
+	margin: 0 0 0 15px;
+	padding: 0 0 2px 4px;
+	border-left: 1px solid #666;
+	border-bottom: 1px solid #666; 
+	
+}
+#agenda span{
+	font-weight: normal; 
+	color: #000;
+	background: #fff;
+	margin: 0 0 0 15px;
+	padding: 0 0 2px 4px;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc; 
+	
+}
+#agenda dd{ 
+	font-weight: normal; 
+	color: #000;
+	background: #fff;
+	margin: 4px 0 0 20px;
+	padding: 0px;
+}

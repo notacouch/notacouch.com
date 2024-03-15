@@ -9,21 +9,21 @@ subtitle: Frontend development for image-heavy, large e-commerce site.
 <figure
   class="figure figure--img figure--img--before-after figure--img--before grid__left-right grid__left-right--left grid__figure"
 >
-  <img
+  <a href="/blog-images/diamond-guide-before-brainlink-crop.png"><img
     class="figure__img"
     src="/blog-images/diamond-guide-before-brainlink-crop.png"
     alt="Screenshots of Diamond-Guide.com in the year 2000 before Brainlink's work"
-  />
+  /></a>
   <figcaption>Diamond-Guide.com (2000) before Brainlink</figcaption>
 </figure>
 <figure
   class="figure figure--img figure--img--before-after figure--img--after grid__left-right grid__left-right--right grid__figure"
 >
-  <img
+  <a href="/blog-images/diamond-guide-after-brainlink-crop.png"><img
     class="figure__img"
     src="/blog-images/diamond-guide-after-brainlink-crop.png"
     alt="Screenshot of Diamond-Guide.com in the year 2000 with Brainlink's design"
-  />
+  /></a>
   <figcaption><a href="https://web.archive.org/web/20001109143500/http://www.diamond-guide.com/">Diamond-Guide.com (2000) after Brainlink</a></figcaption>
 </figure>
 
