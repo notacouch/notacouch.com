@@ -11,7 +11,7 @@
     <title>{{ title }} - notacouch.com</title>
     <link rel="icon" href="/notacouch-icon.png" />
     <link rel="apple-touch-icon" href="/notacouch-icon.png" />
-    
+
     <link rel="preconnect" href="https://unpkg.com">
     <link rel="preconnect" href="https://use.typekit.net">
 
@@ -113,11 +113,24 @@
       hljs.registerLanguage("html", hljsHtml);
       {% endcapture %}
     {% endif %}
+    {% if content contains "language-js" %}
+      {% capture hljs %}
+      import hljs from "https://unpkg.com/@highlightjs/cdn-assets@11.9.0/es/highlight.min.js"
+      {% endcapture %}
+      {% capture hljsImportJs %}
+      import hljsJs from "https://unpkg.com/@highlightjs/cdn-assets@11.9.0/es/languages/javascript.min.js";
+      {% endcapture %}
+      {% capture hljsRegisterJs %}
+      hljs.registerLanguage("javascript", hljsJs);
+      {% endcapture %}
+    {% endif %}
     {% if hljs %}
     <script type="module" defer>
       {{ hljs }}
       {{ hljsImportHtml }}
+      {{ hljsImportJs }}
       {{ hljsRegisterHtml }}
+      {{ hljsRegisterJs }}
       document.addEventListener("DOMContentLoaded", (event) => {
         document.querySelectorAll("figure code").forEach((el) => {
           hljs.highlightElement(el);
