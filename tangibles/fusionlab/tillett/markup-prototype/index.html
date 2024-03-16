@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Home - Tillett Lighting Design Inc.</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen, all" />
+<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+
+<!--[if gte ie 5.0000]>
+<link rel="stylesheet" href="css/ie_only.css" type="text/css" media="screen, all" />
+<![endif]-->
+
+<script type="text/javascript" src="scripts/mootools-beta-1.2b2.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+function fireWhenReady(){
+    /*
+     * For development purposes
+     */
+
+    b = $(document.body);
+    $('bgimages').getElements('a').each(function(el){
+        el.addEvent('click', function(){
+            b.setStyle('background', '#282828 url('+this.href+') -1px -1px no-repeat');
+            return false;
+        });
+    });
+    c = $('contained');
+    $('fadeui').getElements('a').each(function(el){
+        el.addEvent('click', function(){
+            c.fade(this.get('rel'));
+            return false;
+        });
+    });
+
+    /*
+     * For the site itself
+     */
+
+    function fadeImgToLiBg(el){
+        var a = el.getElement('a');
+        var i = a.getElement('img');
+        i.store('enter_duration', this.enter_duration);
+        i.store('leave_duration', this.leave_duration);
+        el.setStyle('background', 'url('+i.get('src')+') '+this.x+' '+this.y+' no-repeat');
+        el.addEvent('mouseenter', function(){
+            this.set('tween', this.retrieve('enter_duration'));
+            this.fade('out');
+        }.bind(i));
+        el.addEvent('mouseleave', function(){
+            this.set('tween', this.retrieve('leave_duration'));
+            this.fade('in');
+        }.bind(i));
+    }
+    primary_nav_settings = new Hash({
+        'x': 0,
+        'y': '-69px',
+        'enter_duration': {'duration': 'short'},
+        'leave_duration': {'duration': 'normal'}
+    });
+    home_projects_settings = new Hash(primary_nav_settings).set('y','0');
+
+    $$('#navigation > ul > li').each(fadeImgToLiBg.bind(primary_nav_settings));
+    $$('body.home #copy ul.projects li').each(fadeImgToLiBg.bind(home_projects_settings));
+}
+
+script_styles = new Asset.css('css/script.css');
+window.addEvent('domready', fireWhenReady);
+// ]]>
+</script>
+
+<!--[if gte ie 5.0000]>
+<script type="text/javascript"> </script>
+<![endif]-->
+</head>
+<body class="home">
+
+<div id="contained">
+<div id="header">
+    <a href="#"><img src="images/logo.gif" alt="TILLETT LIGHTING DESIGN INC." /></a>
+</div>
+
+<div id="navigation">
+<!--
+    <ul>
+        <li class="home"><a href="#"><img src="images/navigation/home.gif" /></a></li>
+        <li class="profile"><a href="#"><img src="images/navigation/profile.gif" /></a></li>
+        <li class="projects"><a href="#"><img src="images/navigation/projects.gif" /></a></li>
+        <li class="awards"><a href="#"><img src="images/navigation/awards.gif" /></a></li>
+        <li class="contact"><a href="#"><img src="images/navigation/contact.gif" /></a></li>
+    </ul>
+-->
+   <ul>
+        <li class="profile"><a href="#"><img src="images/navigation/profile-home.gif" /></a></li>
+        <li class="projects"><a href="#"><img src="images/navigation/projects-home.gif" /></a></li>
+        <li class="awards"><a href="#"><img src="images/navigation/awards-home.gif" /></a></li>
+        <li class="contact"><a href="#"><img src="images/navigation/contact.gif" /></a></li>
+    </ul>
+</div>
+
+<div id="body">
+    <div id="misc">
+        <h1>In the News</h1>
+        <ul>
+            <li>March 3: Cooper Union&#8217;s Feltman Lecture Series<br />
+            &#8220;City Night: Altered States&#8221; by Linnaea Tillett</li>
+
+            <li>The New York Times<br />
+            &#8220;Making Dark Rooms Glow&#8221;</li>
+
+            <li><a href="http://www.archlighting.com/industry-news.asp?sectionID=0&articleID=623827">Architectural Lighting<br />
+            &#8220;125th Anniversary Gala&#8221;</a></li>
+        </ul>
+    </div>
+    <div id="copy">
+        <img src="images/home-cafecarlyle.jpg" alt="Cafe Carlyle, New York" /><br />
+        <ul class="projects">
+        <li><a href="#"><img src="images/home-landscape.jpg" alt="Landscape" /></a></li>
+        <li><a href="#"><img src="images/home-interiors.jpg" alt="Interiors" /></a></li>
+        <li><a href="#"><img src="images/home-art.jpg" alt="Art" /></a></li>
+        <li><a href="#"><img src="images/home-residential.jpg" alt="Residential" /></a></li>
+        <li><a href="#"><img src="images/home-competition.jpg" alt="Competition" /></a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="footer">
+TILLETT LIGHTING DESIGN &copy; 2008
+</div>
+
+</div>
+
+
+<div id="designui">
+    <div id="bgimages">
+    <a href="images/grid-homepage_03.png">homepage</a><br />
+    <a href="images/grid-profile_03.png">profile</a><br />
+    <a href="images/grid-projects_03.png">projects</a><br />
+    <a href="images/grid-project_03.png">project</a><br />
+    <a href="#">no background graphic</a>
+    </div>
+    <div id="fadeui">
+    <a rel=".5">fade half</a><br />
+    <a rel="0">fade full</a><br />
+    <a rel="1">no fade</a><br />
+    </div>
+</div>
+
+</body>
+</html>

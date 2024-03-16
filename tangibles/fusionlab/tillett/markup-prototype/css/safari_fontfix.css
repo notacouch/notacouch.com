@@ -1,0 +1,9 @@
+/* 
+safari hack, you only get one try, breaks everything after but only in this file 
+see:
+http://www.ibloomstudios.com/articles/safari_css_hack/
+*/
+body{
+ font-size: 16px;
+}
+body{ font-size: 100%;# }

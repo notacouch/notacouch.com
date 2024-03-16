@@ -1,0 +1,15 @@
+body.profile #navigation li.profile a,
+body.projects #navigation li.projects a,
+body.awards #navigation li.awards a,
+body.contact #navigation li.contact a{
+ margin-top: -138px;
+ height: 207px;
+}
+
+body.profile #navigation li.profile a:hover,
+body.projects #navigation li.projects a:hover,
+body.awards #navigation li.awards a:hover,
+body.contact #navigation li.contact a:hover{
+ margin-top: -69px;
+ height: 138px;
+}

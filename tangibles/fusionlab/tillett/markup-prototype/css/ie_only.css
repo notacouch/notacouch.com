@@ -1,0 +1,11 @@
+#header, #navigation, #navigation li, #navigation a, #misc, #copy, #footer{ display: inline; }
+
+
+#copy{ height: 1%; }
+
+
+#body{
+ overflow: visible;
+ _overflow: hidden;
+ height: auto;
+}

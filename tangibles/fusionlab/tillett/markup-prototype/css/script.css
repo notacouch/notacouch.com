@@ -1,0 +1,17 @@
+#designui{
+ position: absolute;
+ left: 900px;
+ top: 20px;
+}
+
+/* cancel css' hover effect */
+#navigation a:hover{
+   height: 69px;
+   margin-top: 0px;
+}
+
+body.home #copy ul.projects a:hover{ 
+ margin-top: -24px;
+ height: 48px; 
+ padding-top: 0;
+}

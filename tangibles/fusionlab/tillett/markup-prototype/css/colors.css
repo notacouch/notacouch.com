@@ -1,0 +1,25 @@
+a{ color: #BCE3F7; text-decoration: none; }
+a:hover{ text-decoration: underline; }
+
+body{ 
+ background: #282828; 
+ font-family: verdana, arial, sans-serif;
+ color: #fff;
+}
+
+#contained{  }
+
+#misc h1{
+ font-size: 1.1em;
+ line-height: 1.4em;
+ font-weight: bold;
+}
+
+#misc li{
+ line-height: 1.4em;
+ font-weight: bold;
+}
+
+#footer{
+   color: #999;
+}
