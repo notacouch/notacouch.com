@@ -11,6 +11,10 @@
     <title>{{ title }} - notacouch.com</title>
     <link rel="icon" href="/notacouch-icon.png" />
     <link rel="apple-touch-icon" href="/notacouch-icon.png" />
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://use.typekit.net">
+
+    {% comment %} TODO: Do build stuff w/ normalize css {% endcomment %}
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -20,7 +24,7 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github.min.css"
     />
     <link rel="stylesheet" href="https://use.typekit.net/bhk0fhv.css">
     <link
@@ -34,30 +38,6 @@
       href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/fill/style.css"
     />
     <link rel="stylesheet" href="/styles.css" />
-    
-    {% if content contains "language-html" %}
-      {% capture hljs %}
-      import hljs from "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/es/highlight.min.js"
-      {% endcapture %}
-      {% capture hljsImportHtml %}
-      import hljsHtml from "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/es/languages/xml.min.js";
-      {% endcapture %}
-      {% capture hljsRegisterHtml %}
-      hljs.registerLanguage("html", hljsHtml);
-      {% endcapture %}
-    {% endif %}
-    {% if hljs %}
-    <script type="module">
-      {{ hljs }}
-      {{ hljsImportHtml }}
-      {{ hljsRegisterHtml }}
-      document.addEventListener("DOMContentLoaded", (event) => {
-        document.querySelectorAll("figure code").forEach((el) => {
-          hljs.highlightElement(el);
-        });
-      });
-    </script>
-    {% endif %}
   </head>
   <body class="{{ body_class }}">
     <nav class="grid main-nav" aria-labelledby="main-nav-label">
@@ -120,5 +100,29 @@
         ></a>
       </nav>
     </footer>
+    
+    {% if content contains "language-html" %}
+      {% capture hljs %}
+      import hljs from "https://unpkg.com/@highlightjs/cdn-assets@11.9.0/es/highlight.min.js"
+      {% endcapture %}
+      {% capture hljsImportHtml %}
+      import hljsHtml from "https://unpkg.com/@highlightjs/cdn-assets@11.9.0/es/languages/xml.min.js";
+      {% endcapture %}
+      {% capture hljsRegisterHtml %}
+      hljs.registerLanguage("html", hljsHtml);
+      {% endcapture %}
+    {% endif %}
+    {% if hljs %}
+    <script type="module" defer>
+      {{ hljs }}
+      {{ hljsImportHtml }}
+      {{ hljsRegisterHtml }}
+      document.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll("figure code").forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+    {% endif %}
   </body>
 </html>
