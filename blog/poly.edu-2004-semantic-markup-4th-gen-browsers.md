@@ -1,6 +1,6 @@
 ---
 title: Poly.edu (2004) - the power of semantic markup
-tags: ["Accessibility", "Frontend", "Work", "Poly"]
+tags: ["Accessibility", "Frontend", "CSS", "Work", "Poly"]
 date: 2024-03-09 12:00:00Z
 # modified: 2024-03-13 19:25:00Z
 subtitle: Using semantic markup and CSS for the wild, wild... 4th gen browsers as catalysts for change.
