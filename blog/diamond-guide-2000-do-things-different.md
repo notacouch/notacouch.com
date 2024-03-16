@@ -2,16 +2,16 @@
 title: Diamond-Guide.com (2000) - do things different
 tags: ["Frontend", "Work", "Brainlink"]
 date: 2024-02-16 12:00:00Z
-modified: 2024-03-13 12:00:00Z
+# modified: 2024-03-13 12:00:00Z
 subtitle: Frontend development for image-heavy, large e-commerce site.
 ---
 
 <figure
   class="figure figure--img figure--img--before-after figure--img--before grid__left-right grid__left-right--left grid__figure"
 >
-  <a href="/blog-images/diamond-guide-before-brainlink-crop.png"><img
+  <a href="/blog-images/brainlink/diamond-guide/diamond-guide-before-brainlink-crop.png"><img
     class="figure__img"
-    src="/blog-images/diamond-guide-before-brainlink-crop.png"
+    src="/blog-images/brainlink/diamond-guide/diamond-guide-before-brainlink-crop.png"
     alt="Screenshots of Diamond-Guide.com in the year 2000 before Brainlink's work"
   /></a>
   <figcaption>Diamond-Guide.com (2000) before Brainlink</figcaption>
@@ -19,9 +19,9 @@ subtitle: Frontend development for image-heavy, large e-commerce site.
 <figure
   class="figure figure--img figure--img--before-after figure--img--after grid__left-right grid__left-right--right grid__figure"
 >
-  <a href="/blog-images/diamond-guide-after-brainlink-crop.png"><img
+  <a href="/blog-images/brainlink/diamond-guide/diamond-guide-after-brainlink-crop.png"><img
     class="figure__img"
-    src="/blog-images/diamond-guide-after-brainlink-crop.png"
+    src="/blog-images/brainlink/diamond-guide/diamond-guide-after-brainlink-crop.png"
     alt="Screenshot of Diamond-Guide.com in the year 2000 with Brainlink's design"
   /></a>
   <figcaption><a href="https://web.archive.org/web/20001109143500/http://www.diamond-guide.com/">Diamond-Guide.com (2000) after Brainlink</a></figcaption>
@@ -41,8 +41,8 @@ In my time at Brainlink, this was our team's largest project to date. Diamond-Gu
 <div class="p grid__body-to-right--gt900">
 
 <figure class="figure figure--img figure--img--text-wrap">
-  <a href="/blog-images/diamond-guide-slice-tool-sample.png"><img
-    src="/blog-images/diamond-guide-slice-tool-sample.png"
+  <a href="/blog-images/brainlink/diamond-guide/diamond-guide-slice-tool-sample.png"><img
+    src="/blog-images/brainlink/diamond-guide/diamond-guide-slice-tool-sample.png"
     alt="Screenshot of using Adobe Photoshop's slice tool for Diamond Guide"
     class="figure__img"
   /></a>
@@ -53,7 +53,7 @@ Back then, how did one code the frontend for a site that had enough images to bl
 
 <!-- <figure class="figure figure--img figure--img--text-wrap">
   <img
-    src="/blog-images/diamond-guide-inspect-element.png"
+    src="/blog-images/brainlink/diamond-guide/diamond-guide-inspect-element.png"
     alt="Screenshot of inspecting Diamond-Guide.com 2000's menu"
     class="figure__img"
   />
@@ -68,7 +68,7 @@ Our designers got to work with materials provided to them. They'd pass me full c
 
 <figure class="figure figure--img figure--img--body grid__figure">
   <img
-    src="/blog-images/diamond-guide-inspect-element.png"
+    src="/blog-images/brainlink/diamond-guide/diamond-guide-inspect-element.png"
     alt="Screenshot of inspecting Diamond-Guide.com 2000's menu"
     class="figure__img figure--img--body__img"
   />
@@ -118,8 +118,8 @@ Our designers got to work with materials provided to them. They'd pass me full c
 Another technique you probably don't see much anymore are [image maps](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map). For comps such as some navigational menus that didn't require layout work, instead of slicing them up into individual images, links, and laying them out in tables, you could use one whole image and define rectangular areas to serve as links with actual `href`s:
 
 <figure class="figure figure--img figure--img--body grid__figure">
-  <a href="/blog-images/diamond-guide-image-map.png"><img
-    src="/blog-images/diamond-guide-image-map.png"
+  <a href="/blog-images/brainlink/diamond-guide/diamond-guide-image-map.png"><img
+    src="/blog-images/brainlink/diamond-guide/diamond-guide-image-map.png"
     alt="Screenshot of inspecting Diamond-Guide.com 2000's image map navigation"
     class="figure__img figure--img--body__img"
   /></a>
@@ -129,8 +129,8 @@ Another technique you probably don't see much anymore are [image maps](https://d
 <!-- <div class="p grid__body-to-right--gt900">
 
 <figure class="figure figure--img figure--img--text-wrap">
-  <a href="/blog-images/diamond-guide-image-map.png"><img
-    src="/blog-images/diamond-guide-image-map.png"
+  <a href="/blog-images/brainlink/diamond-guide/diamond-guide-image-map.png"><img
+    src="/blog-images/brainlink/diamond-guide/diamond-guide-image-map.png"
     alt="Screenshot of inspecting Diamond-Guide.com 2000's image map navigation"
     class="figure__img figure--img--body__img"
   /></a>
@@ -145,8 +145,8 @@ Another technique you probably don't see much anymore are [image maps](https://d
 
 <!-- TODO: consider background color for images, e.g. this one is transparent -->
 <figure class="figure figure--img figure--img--body grid__figure grid__body-left-to-right-more">
-  <a href="/blog-images/news-ticker-sketch-psd.png"><img
-    src="/blog-images/news-ticker-sketch-psd.png"
+  <a href="/blog-images/brainlink/diamond-guide/news-ticker-sketch-psd.png"><img
+    src="/blog-images/brainlink/diamond-guide/news-ticker-sketch-psd.png"
     alt="Sketch of the logic behind the news ticker"
     class="figure__img figure--img--body__img"
   /></a>
@@ -160,8 +160,8 @@ What I'm unable to share is the first JavaScript challenge I was tasked with. Th
 <aside class="tangent">Wow, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clip">clip</a> has been deprecated for some time. It&rsquo;s still completely supported, though.</aside>
 
 <!-- <figure class="figure figure--img figure--img--body grid__figure">
-  <a href="/blog-images/news-ticker-sketch-psd.png"><img
-    src="/blog-images/news-ticker-sketch-psd.png"
+  <a href="/blog-images/brainlink/diamond-guide/news-ticker-sketch-psd.png"><img
+    src="/blog-images/brainlink/diamond-guide/news-ticker-sketch-psd.png"
     alt="Sketch of the logic behind the news ticker"
     class="figure__img figure--img--body__img"
   /></a>

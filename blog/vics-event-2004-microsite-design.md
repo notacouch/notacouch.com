@@ -11,8 +11,8 @@ subtitle: Designed and built site from a single Word doc as reference.
 ## First time designing
 
 <figure class="figure figure--img figure--img--text-wrap">
-  <a href="/blog-images/challenge-accepted-cropped-resized-optimized.jpg"><img
-    src="/blog-images/challenge-accepted-cropped-resized-optimized.jpg"
+  <a href="/blog-images/poly/vics/challenge-accepted-cropped-resized-optimized.jpg"><img
+    src="/blog-images/poly/vics/challenge-accepted-cropped-resized-optimized.jpg"
     alt="Challenge Accepted meme, picture of stick figure squinting with arms folded over each other"
     class="figure__img"
   /></a>
@@ -26,9 +26,9 @@ Poly Webteam members had the highest pay on campus (by like $2/hr) because our b
 <figure
   class="figure figure--img figure--img--before-after figure--img--before grid__left-right grid__left-right--left grid__figure"
 >
-  <a href="/blog-images/vics-word-doc-optimized.png"><img
+  <a href="/blog-images/poly/vics/vics-word-doc-optimized.png"><img
     class="figure__img"
-    src="/blog-images/vics-word-doc-optimized.png"
+    src="/blog-images/poly/vics/vics-word-doc-optimized.png"
     alt="Screenshot of the event Word doc provided by client"
   /></a>
   <figcaption>Client: &ldquo;Here&rsquo;s a Word doc. Make site.&rdquo;</figcaption>
@@ -36,9 +36,9 @@ Poly Webteam members had the highest pay on campus (by like $2/hr) because our b
 <figure
   class="figure figure--img figure--img--before-after figure--img--after grid__left-right grid__left-right--right grid__figure"
 >
-  <a href="/blog-images/vics-agenda-page-optimized.png"><img
+  <a href="/blog-images/poly/vics/vics-agenda-page-optimized.png"><img
     class="figure__img"
-    src="/blog-images/vics-agenda-page-optimized.png"
+    src="/blog-images/poly/vics/vics-agenda-page-optimized.png"
     alt="Screenshot of VICS event microsite Agenda page"
   /></a>
   <figcaption>Me: &ldquo;I got you.&rdquo; :: keyboard drop ::</figcaption>
@@ -48,8 +48,9 @@ I reused the colors, type, and logos available in the Word doc to create this st
 
 ## Actual static pages from 2004
 
-I actually found a backup of the static pages, you can check the Main, About, and Agenda pages here: <a href="/tangibles/poly/vics/">VICS event microsite</a>. The Agenda page uses _one_ `<table>` for the time versus activity columns, while the activity columns use definition lists, _not_ nested tables for layout. Despite the site's simplicity, I still leveraged hacks, you'll find these `\` in several declaration keys in the <a href="/tangibles/poly/vics/styles.css">styles.css</a>.
+I actually found a backup of the static pages, you can view the Main, About, and Agenda pages here: <a href="/tangibles/poly/vics/">VICS event microsite</a>. The Agenda page uses _one_ `<table>` for the time versus activity columns, while the activity columns use definition lists, _not_ nested tables for layout. Despite the site's simplicity, I still leveraged hacks, you'll find these `\` in several declaration keys in the <a href="/tangibles/poly/vics/styles.css">styles.css</a> (or <a href="https://github.com/notacouch/notacouch.com/blob/e18a715fc81bee382e849ae0eed1c41539651e21/tangibles/poly/vics/styles.css">view source in GitHub</a>).
+
 
 ## Diving into design
 
-This project ignited in me the need to _know_ what makes for _good_ design and kept me curious if I could ever transition from web development into web design. Possessed with intrigue, I went on to consume books on graphic design, color, typography, and grid systems. I would later be consulted on design-related matters such as for Poly's 150th year celebration DVD for both media within and improving the print on the DVD itself, 3-dimensional layout of the Poly presidential gallery, and was commissioned for work on a poster for the proposed trancontinental maglev.
+This project ignited in me the need to _know_ what makes for _good_ design and kept me curious if I could ever transition from web development into web design. Possessed with intrigue, I went on to consume books on graphic design, color, typography, and grid systems. I would later be consulted on design-related matters such as for Poly's 150th year celebration DVD for both media within and improving the print on the DVD itself, 3-dimensional layout of the Poly presidential gallery, and was commissioned for work on a poster for the proposed trancontinental maglev road.

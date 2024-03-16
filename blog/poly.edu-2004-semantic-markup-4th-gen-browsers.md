@@ -2,7 +2,7 @@
 title: Poly.edu (2004) - the power of semantic markup
 tags: ["Accessibility", "Frontend", "Work", "Poly"]
 date: 2024-03-09 12:00:00Z
-modified: 2024-03-13 19:25:00Z
+# modified: 2024-03-13 19:25:00Z
 subtitle: Using semantic markup and CSS for the wild, wild... 4th gen browsers as catalysts for change.
 ---
 
@@ -32,8 +32,8 @@ Revamping the homepage was _the_ way for me to make _the most impact_ on the uni
 ## The work
 
 <figure class="figure figure--img figure--img--body grid__figure grid__body-left-to-right-more">
-  <a href="/blog-images/poly.edu-semantic-markup-cropped-optimized.png"><img
-    src="/blog-images/poly.edu-semantic-markup-cropped-optimized.png"
+  <a href="/blog-images/poly/homepage/poly.edu-semantic-markup-cropped-optimized.png"><img
+    src="/blog-images/poly/homepage/poly.edu-semantic-markup-cropped-optimized.png"
     alt="Screenshot of inspecting poly.edu May 2004's menu"
     class="figure__img figure--img--body__img"
   /></a>
@@ -45,8 +45,8 @@ Though I was allowed to work on the homepage, I was _not_ allowed to make any ch
 <hr class="grid__row-reset" />
 
 <figure class="figure figure--img figure--img--body grid__figure">
-  <a href="/blog-images/poly.edu-all.css-cropped-optimized.png"><img
-    src="/blog-images/poly.edu-all.css-cropped-optimized.png"
+  <a href="/blog-images/poly/homepage/poly.edu-all.css-cropped-optimized.png"><img
+    src="/blog-images/poly/homepage/poly.edu-all.css-cropped-optimized.png"
     alt="Screenshot of poly.edu's new all.css, shows helpful comments for future maintainers"
     class="figure__img figure--img--body__img"
   /></a>
