@@ -12,8 +12,8 @@ topic: all
 {% endif %}
 <section class="grid">
   <h1>{% if tag %}<span class="subtitle-color">Posts on</span> {{ tag }}{% else %}{{ title }}{% endif %}</h1>
-  <p class="grid__default--lt900 grid__body--gt900 subtitle">
-    Writings and ramblings about my work, experiences, and experiments.
+  <p class="grid__default--lt900 grid__body--gt900 subtitle-color">
+    Writings about things I&rsquo;ve worked on and things I&rsquo;ve learned.
   </p>
   <!-- TODO: Add skip to content link -->
   <nav
@@ -26,7 +26,7 @@ topic: all
     </h2>
 
     <ul>
-    {% for tag in collections.tagList %}  
+    {% for tag in collections.tagList %}
       <li><a {% if topic == tag %} aria-current="page" {% else %}href="/topics/{{ tag | downcase }}"{% endif %}>{{ tag }}</a></li>
     {% endfor %}
     </ul>
@@ -34,35 +34,17 @@ topic: all
 
   {% comment %} <h2>topic: {{ topic }}</h2> {% endcomment %}
 
-  {% for post in collections[topic] reversed limit:5 %}  
-  <article class="post-preview grid__default--lt900 grid__body--gt900">
-    <header class="post-preview__title">
-      <a href="/blog/{{ post.fileSlug }}/"
-        >{{ post.data.title }}</a
-      >
-    </header>
-    <p>
-      {{ post.data.subtitle }}
-    </p>
-    <div
-      class="post-preview__published post-preview__meta __published __meta"
-    >
-      <span
-        class="post-preview__published__published __published__published"
-      >
-        <span class="sr-only">Published</span
-        ><span class="ph-light ph-book" title="Published"></span>
-        <time datetime="{{ post.data.date | date: "%Y-%m-%d"}}">{{ post.data.date | date: "%-m.%-d.%Y"}}</time>
-      </span>
-      <span class="post-preview__tags __tags">
-        <span class="sr-only">Topics</span
-        ><span class="ph-light ph-folders" title="Topics"></span>
-        {% for tag in post.data.tags %}
-        <a href="/topics/{{ tag | downcase }}">{{ tag | downcase }}</a>{% if forloop.last != true %},{% endif %}
-        {% endfor %}
-      </span>
-    </div>
-  </article>
+  {% for post in collections[topic] reversed limit:5 %}
+
+    {% capture postLink %}/blog/{{ post.fileSlug }}/{% endcapture %}
+    {% capture publishedDatetime %}{{ post.data.date | date: "%Y-%m-%d" }}{% endcapture %}
+    {% capture publishedDate %}{{ post.data.date | date: "%-m.%-d.%Y" }}{% endcapture %}
+      {% capture topicLinks %}
+          {% for tag in post.data.tags %}
+          <a href="/topics/{{ tag | downcase }}">{{ tag | downcase }}</a>{% if forloop.last != true %},{% endif %}
+          {% endfor %}
+    {% endcapture %}
+    {% PostPreview postLink, post.data.title, post.data.subtitle, publishedDatetime, publishedDate, topicLinks %}
   {% endfor %}
 
 </section>

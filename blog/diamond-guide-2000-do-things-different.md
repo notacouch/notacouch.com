@@ -2,30 +2,11 @@
 title: Diamond-Guide.com (2000) - do things different
 tags: ["Frontend", "Work", "Brainlink"]
 date: 2024-02-16 12:00:00Z
-# modified: 2024-03-13 12:00:00Z
+# modified: 2024-03-21 12:00:00Z
 subtitle: Frontend development for image-heavy, large e-commerce site.
 ---
 
-<figure
-  class="figure figure--img figure--img--before-after figure--img--before grid__left-right grid__left-right--left grid__figure"
->
-  <a href="/blog-images/brainlink/diamond-guide/diamond-guide-before-brainlink-crop.png"><img
-    class="figure__img"
-    src="/blog-images/brainlink/diamond-guide/diamond-guide-before-brainlink-crop.png"
-    alt="Screenshots of Diamond-Guide.com in the year 2000 before Brainlink's work"
-  /></a>
-  <figcaption>Diamond-Guide.com (2000) before Brainlink</figcaption>
-</figure>
-<figure
-  class="figure figure--img figure--img--before-after figure--img--after grid__left-right grid__left-right--right grid__figure"
->
-  <a href="/blog-images/brainlink/diamond-guide/diamond-guide-after-brainlink-crop.png"><img
-    class="figure__img"
-    src="/blog-images/brainlink/diamond-guide/diamond-guide-after-brainlink-crop.png"
-    alt="Screenshot of Diamond-Guide.com in the year 2000 with Brainlink's design"
-  /></a>
-  <figcaption><a href="https://web.archive.org/web/20001109143500/http://www.diamond-guide.com/">Diamond-Guide.com (2000) after Brainlink</a></figcaption>
-</figure>
+{% Figure "img--grid--before", "/blog-images/brainlink/diamond-guide/diamond-guide-before-brainlink-crop.png", "Screenshot of Diamond-Guide.com in the year 2000 before Brainlink's work", "Diamond-Guide.com (2000) before Brainlink" %}{% endFigure %}{% Figure "img--grid--after", "/blog-images/brainlink/diamond-guide/diamond-guide-after-brainlink-crop.png", "Screenshot of Diamond-Guide.com in the year 2000 before Brainlink's work", '<a href="https://web.archive.org/web/20001109143500/http://www.diamond-guide.com/">Diamond-Guide.com (2000) after Brainlink</a>' %}{% endFigure %}
 
 In my time at Brainlink, this was our team's largest project to date. Diamond-Guide.com was a massive website, the client really tried to hold their users' hands in their shopping experience by providing ample information on jewelry. They had literal books of imagery for us and wanted pretty much their entire website to be images.
 
@@ -38,48 +19,34 @@ In my time at Brainlink, this was our team's largest project to date. Diamond-Gu
 
 ## Layout in the year 2000
 
-<div class="p grid__body-to-right--gt900">
+{% FloatWrapper %}
 
-<figure class="figure figure--img figure--img--text-wrap">
+{% Figure "img--wrap--right", "/blog-images/brainlink/diamond-guide/diamond-guide-slice-tool-sample.png", "Screenshot of using Adobe Photoshop's slice tool for Diamond Guide", "A look at Adobe Photoshop&rsquo;s slice tool." %}{% endFigure %}
+
+<!-- <figure class="figure figure--img figure--img--text-wrap">
   <a href="/blog-images/brainlink/diamond-guide/diamond-guide-slice-tool-sample.png"><img
     src="/blog-images/brainlink/diamond-guide/diamond-guide-slice-tool-sample.png"
     alt="Screenshot of using Adobe Photoshop's slice tool for Diamond Guide"
     class="figure__img"
   /></a>
   <figcaption>A look at Adobe Photoshop&rsquo;s slice tool.</figcaption>
-</figure>
+</figure> -->
 
 Back then, how did one code the frontend for a site that had enough images to block out the light of the sun? That's right. In the dark (i.e. table-based layouts). With knives (i.e. Adobe Photoshop slice tool).
 
-<!-- <figure class="figure figure--img figure--img--text-wrap">
-  <img
-    src="/blog-images/brainlink/diamond-guide/diamond-guide-inspect-element.png"
-    alt="Screenshot of inspecting Diamond-Guide.com 2000's menu"
-    class="figure__img"
-  />
-  <figcaption>Sample table-based layout starting with the menu.</figcaption>
-</figure> -->
-
 Our designers got to work with materials provided to them. They'd pass me full comps and I'd slice them up in Photoshop based on how I&rsquo;d lay them out. For the unfamiliar, layout via CSS was not really a thing. To achieve positioning, you created tables with rows all for the purpose of sizing columns to your needs and nested tables as much as needed. To achieve additional precision, you used spacer GIFs, 1&times;1 pixel transparent GIFs, which you could size exactly how you wanted via `width` and `height` attributes to push things around or otherwise occupy empty space:
 
-</div>
+{% endFloatWrapper %}
 
-<hr class="grid__row-reset">
+{% TangentCeiling %}
 
-<figure class="figure figure--img figure--img--body grid__figure">
-  <img
-    src="/blog-images/brainlink/diamond-guide/diamond-guide-inspect-element.png"
-    alt="Screenshot of inspecting Diamond-Guide.com 2000's menu"
-    class="figure__img figure--img--body__img"
-  />
-  <figcaption>Sample table-based layout starting with the menu.</figcaption>
-</figure>
+{% Figure "img--grid--body", "/blog-images/brainlink/diamond-guide/diamond-guide-inspect-element.png", "Screenshot of inspecting Diamond-Guide.com 2000's menu", "Sample table-based layout starting with the menu." %}{% endFigure %}
 
 <aside class="tangent">
   By the way, there were no devtools back then, not even Firebug.
 </aside>
 
-<figure class="figure figure--code grid__full">
+{% Figure "code--grid--full" %}
 
 ```html {.code .code--full .grid__full__extended-body}
       <tr>
@@ -111,64 +78,25 @@ Our designers got to work with materials provided to them. They'd pass me full c
 
 ```
 
-</figure>
+{% endFigure %}
 
 ### Image maps
 
 Another technique you probably don't see much anymore are [image maps](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map). For comps such as some navigational menus that didn't require layout work, instead of slicing them up into individual images, links, and laying them out in tables, you could use one whole image and define rectangular areas to serve as links with actual `href`s:
 
-<figure class="figure figure--img figure--img--body grid__figure">
-  <a href="/blog-images/brainlink/diamond-guide/diamond-guide-image-map.png"><img
-    src="/blog-images/brainlink/diamond-guide/diamond-guide-image-map.png"
-    alt="Screenshot of inspecting Diamond-Guide.com 2000's image map navigation"
-    class="figure__img figure--img--body__img"
-  /></a>
-  <figcaption><a href="https://web.archive.org/web/20010425223234/http://www.diamond-guide.com/Diamond_Education/">Sample page in Diamond-Guide.com whose menu uses image maps</a>.</figcaption>
-</figure>
-
-<!-- <div class="p grid__body-to-right--gt900">
-
-<figure class="figure figure--img figure--img--text-wrap">
-  <a href="/blog-images/brainlink/diamond-guide/diamond-guide-image-map.png"><img
-    src="/blog-images/brainlink/diamond-guide/diamond-guide-image-map.png"
-    alt="Screenshot of inspecting Diamond-Guide.com 2000's image map navigation"
-    class="figure__img figure--img--body__img"
-  /></a>
-  <figcaption>Sample menu using image maps.</figcaption>
-</figure>
-
-Another technique you probably don't see much anymore are [image maps](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map). For comps such as some navigational menus that didn't require layout work, instead of slicing them up into individual images, links, and laying them out in tables, you could use one whole image and define rectangular areas to serve as links with actual `href`s:
-
-</div> -->
+{% Figure "img--grid--body", "/blog-images/brainlink/diamond-guide/diamond-guide-image-map.png", "Screenshot of inspecting Diamond-Guide.com 2000's image map navigation", '<a href="https://web.archive.org/web/20010425223234/http://www.diamond-guide.com/Diamond_Education/">Sample page in Diamond-Guide.com whose menu used image maps</a>.' %}{% endFigure %}
 
 ## Scrolling news ticker
 
-<!-- TODO: consider background color for images, e.g. this one is transparent -->
-<figure class="figure figure--img figure--img--body grid__figure grid__body-left-to-right-more">
-  <a href="/blog-images/brainlink/diamond-guide/news-ticker-sketch-psd.png"><img
-    src="/blog-images/brainlink/diamond-guide/news-ticker-sketch-psd.png"
-    alt="Sketch of the logic behind the news ticker"
-    class="figure__img figure--img--body__img"
-  /></a>
-  <figcaption>Thought process behind the ticker.</figcaption>
-</figure>
+{% Figure "img--grid--full", "/blog-images/brainlink/diamond-guide/news-ticker-sketch-psd.png", "Sketch of the logic behind the news ticker", "Thought process behind the ticker." %}{% endFigure %}
 
-<hr class="grid__row-reset grid__row-reset--tangent">
+{% TangentCeiling "tangent" %}
 
-What I'm unable to share is the first JavaScript challenge I was tasked with. The client wanted a news ticker scrolling on the top right of certain pages. I hadn't done anything like this before, and there were no such scripts on Dynamic Drive, a site where one would find dynamic HTML or dHTML scripts (which is what we called manipulation of the DOM back then). My approach to it was absolutely positioning a mask container div. If I recall correctly, to hide contents beyond its visible area just `overflow: hidden;` and a fixed `width` would not suffice. The visible area was defined by its `clip: rect(...)` path. I put scrolling content into its own container and cloned this container so the scrolling could repeat smoothly. These containers were continually shifted left until the clone was at the start of the mask, then the original content container was moved to the end, and repeat _ad infinitum_. I'm curious how I'd approach this today, but I'll save that for another post. {.grid__body--gt900}
+What I'm unable to share is the first JavaScript (JS) challenge I was tasked with. The client wanted a news ticker scrolling on the top right of certain pages. I hadn't done anything like this before, [marquee](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/marquee) did not have universal support, and there were no such scripts on Dynamic Drive, a site where one would find dynamic HTML or dHTML scripts (which is what we called manipulation of the DOM back then). My approach to it was absolutely positioning a mask container div. If I recall correctly, to hide contents beyond its visible area just `overflow: hidden;` and a fixed `width` would not suffice. The visible area was defined by providing rectangular pixel coordinates of how far from the top, to the right, toward the bottom, and from the left in `clip: rect(...)`. (Yep. Yeah.) I put scrolling content into its own container and via JS cloned this container so the scrolling could repeat smoothly. These containers were continually shifted left until the clone was at the start of the mask, then the original content container was moved to the end, and repeat _ad infinitum_. I'm curious how I'd approach this today, but I'll save that for another post. {.grid__body--gt900}
 
 <aside class="tangent">Wow, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clip">clip</a> has been deprecated for some time. It&rsquo;s still completely supported, though.</aside>
 
-<!-- <figure class="figure figure--img figure--img--body grid__figure">
-  <a href="/blog-images/brainlink/diamond-guide/news-ticker-sketch-psd.png"><img
-    src="/blog-images/brainlink/diamond-guide/news-ticker-sketch-psd.png"
-    alt="Sketch of the logic behind the news ticker"
-    class="figure__img figure--img--body__img"
-  /></a>
-  <figcaption>Thought process behind the ticker.</figcaption>
-</figure> -->
-
-## In conclusion, keep things new by doing things different
+## Stay up to speed by doing things different
 
 This project was intense. So much so, I remember my boss Paul once asked, "What's wrong, Abed? Diamond Guide keeping you up at night?" To which I replied, "No. Diablo II." But it may very well have been Diamond Guide!
 

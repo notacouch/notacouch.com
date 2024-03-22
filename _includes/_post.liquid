@@ -37,36 +37,24 @@ layout: _index.liquid
         {{ subtitle }}
       </p>
     </div>
-    <div class="hero__published __published hero__meta __meta grid__body-start">
-      <div class="hero__published__published __published__published">
-        <span class="sr-only">Published: </span
-        ><span class="ph-light ph-book" title="Published"></span><br />
-        <time datetime="{{ date | date: "%Y-%m-%d"}}">{{ date | date: "%-m.%-d.%Y"}}</time>
-      </div>
-      {% if modified %}
-      <div class="hero__published__modified __published__modified">
-        <span class="sr-only">Last modified: </span
-        ><span class="ph-fill ph-note-pencil" title="Modified"></span><br />
-        <time datetime="{{ modified | date: "%Y-%m-%d"}}">{{ modified | date: "%-m.%-d.%Y"}}</time>
-      </div>
-      {% endif %}
-      <div class="hero__read-time __read-time">
-        <span class="sr-only">Approximate read time: </span
-        ><span
-          class="ph-light ph-clock-countdown"
-          title="Approximate read time"
-        ></span
-        ><br />
-        <span class="hero__read-time">{{ content | timeToRead }}</span>
-      </div>
-    </div>
-    <div class="hero__tags hero__meta __tags __meta">
-      <span class="sr-only">Topics: </span
-      ><span class="ph-light ph-folders" title="Topics"></span><br />
+    {% comment %} metaPrefix, , , , readTime = '', modifiedDatetime = '', modifiedDate = '' {% endcomment %}
+    {% capture publishedDatetime %}{{ date | date: "%Y-%m-%d"}}{% endcapture %}
+    {% capture publishedDate %}{{ date | date: "%-m.%-d.%Y"}}{% endcapture %}
+    {% capture topicLinks %}
       {% for tag in tags %}
       <a href="/topics/{{ tag | downcase }}">{{ tag | downcase }}</a>{% if forloop.last != true %},{% endif %}
       {% endfor %}
-    </div>
+    {% endcapture %}
+    {% assign readTime = content | timeToRead %}
+    {% assign modifiedDatetime = '' %}
+    {% assign modifiedDate = '' %}
+    {% if modified %}
+      {% assign modifiedDatetime = modified | date: "%Y-%m-%d" %}
+      {% assign modifiedDate = modified | date: "%-m.%-d.%Y" %}
+    {% endif %}
+
+    {% PostMeta "hero", publishedDatetime, publishedDate, topicLinks, readTime, modifiedDatetime, modifiedDate %}
+
   </header>
 
 {{ content | toc }}

@@ -1,9 +1,18 @@
 {
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[markdown]": {
     "editor.formatOnSave": false
   },
+  "[mdx]": {
+    "editor.defaultFormatter": null,
+    "editor.formatOnSave": false
+  },
+  "editor.formatOnSave": true,
   "markdownlint.config": {
     "MD033": false
   },
+  "prettier.configPath": ".prettierrc.js",
   "todo-tree.tree.scanMode": "workspace"
 }

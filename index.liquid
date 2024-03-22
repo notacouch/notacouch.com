@@ -4,16 +4,26 @@ title: Home
 body_class: page--home
 ---
 
-<section class="home-hero grid grid__subgrid--hr">
-  <h1 class="home-hero__title">
+{% capture homeTitle %}
+    Hi, I&rsquo;m
+    <strong><span class="sr-only">notacouch, </span>Abed</strong>, a
+    multifaceted <strong>frontend engineer</strong> in NYC.<br>
+    I enjoy making things better for&nbsp;people.
+{% endcapture %}
+
+{% comment %} 
     Hi, I&rsquo;m
     <strong><span class="sr-only">notacouch, </span>Abed</strong>, a
     multifaceted<br>
     <strong>frontend engineer</strong> in NYC versed in
     <abbr title="Developer, Customer, and User Experience" tabindex="0">*X</abbr
     > who enjoys<br> making a <em>difference</em> and making things better for people.
-  </h1>
-  <div class="home-hero__sub-title">
+{% endcomment %}
+
+{% comment %} TODO: consider making the strongs in the dts less bold here {% endcomment %}
+{% comment %} TODO: consider making the work company names links that stay current color but whose text-decoration underline has system link color (LinkText) {% endcomment %}
+{% comment %} TODO: add javascript to be able to tab through scroll snap items or something and vice-versa {% endcomment %}
+{% capture homeSubtitle %}
     <p>Have done so previously at:</p>
     <dl tabindex="0">
       <div>
@@ -25,7 +35,7 @@ body_class: page--home
           senior frontend engineer, contributed to Angular5 product. Revamped
           their white labeling projects. Built a world class support team from
           the ground up and boosted them with frontend chops via bizops tools
-          like MS Flow, AppSmith, and inhouse Chrome extension.
+          like MS Flow, AppSmith, and inhouse Chrome&nbsp;extension.
         </dd>
       </div>
       <div>
@@ -36,7 +46,7 @@ body_class: page--home
         <dd>
           got a taste of steering users to success through coaching and code in
           their stack whether vanilla, Angular, React, or Vue. Hit the ground
-          running quickly becoming their dedicated map chart SME.
+          running quickly becoming their dedicated map chart&nbsp;SME.
         </dd>
       </div>
       <div>
@@ -63,8 +73,7 @@ body_class: page--home
           with SMS messaging. Launched zoojaja, our Muslim Netflix concept, iOS app
           built in PhoneGap, platform on
           <abbr title="ExpressionEngine">EE</abbr>, rolled our own recurring
-          billing. Built to scale with AWS ELB, EC2, S3, &amp;
-          CloudFront. 
+          billing. Built to scale with AWS ELB, EC2, S3, &amp;&nbsp;CloudFront. 
           <!-- secured HLS &amp; HDS streams through a reverse proxy with
               proprietary code, and iOS app built in PhoneGap. -->
         </dd>
@@ -77,7 +86,7 @@ body_class: page--home
         <dd>
           brought designs to life left and right. Templated in if not
           implemented and extended PHP/MySQL CMSes including in-house systems,
-          ExpressionEngine, and Drupal.
+          ExpressionEngine, and&nbsp;Drupal.
         </dd>
       </div>
       <div>
@@ -90,7 +99,7 @@ body_class: page--home
           from 2 sources of markup &amp; style to 1, saving gigs of bandwidth.
           Saved $20,000+ in preventing plasma tvs from burning out by using
           dHTML presentations &amp; books. Gave students AJAX-driven course
-          listings with beautified print stylesheets; no more tabular vomit.
+          listings with beautified print stylesheets; no more tabular&nbsp;vomit.
         </dd>
       </div>
       <div>
@@ -107,38 +116,22 @@ body_class: page--home
         </dd>
       </div>
     </dl>
-  </div>
-</section>
+{% endcapture %}
+
+{% HomeHero homeTitle, homeSubtitle %}
+
 <section class="grid">
   <h2>Latest posts</h2>
+  <p class="subtitle-color">I use this site to write about things I&rsquo;ve worked on and share things I&rsquo;ve learned.</p>
   {% for post in collections.all reversed limit:5 %}  
-  <article class="post-preview">
-    <header class="post-preview__title">
-      <a href="/blog/{{ post.fileSlug }}/"
-        >{{ post.data.title }}</a
-      >
-    </header>
-    <p>
-      {{ post.data.subtitle }}
-    </p>
-    <div
-      class="post-preview__published post-preview__meta __published __meta"
-    >
-      <span
-        class="post-preview__published__published __published__published"
-      >
-        <span class="sr-only">Published</span
-        ><span class="ph-light ph-book" title="Published"></span>
-        <time datetime="{{ post.data.date | date: "%Y-%m-%d"}}">{{ post.data.date | date: "%-m.%-d.%Y"}}</time>
-      </span>
-      <span class="post-preview__tags __tags">
-        <span class="sr-only">Topics</span
-        ><span class="ph-light ph-folders" title="Topics"></span>
-        {% for tag in post.data.tags %}
-        <a href="/topics/{{ tag | downcase }}">{{ tag | downcase }}</a>{% if forloop.last != true %},{% endif %}
-        {% endfor %}
-      </span>
-    </div>
-  </article>
+    {% capture postLink %}/blog/{{ post.fileSlug }}/{% endcapture %}
+    {% capture publishedDatetime %}{{ post.data.date | date: "%Y-%m-%d" }}{% endcapture %}
+    {% capture publishedDate %}{{ post.data.date | date: "%-m.%-d.%Y" }}{% endcapture %}
+      {% capture topicLinks %}
+          {% for tag in post.data.tags %}
+          <a href="/topics/{{ tag | downcase }}">{{ tag | downcase }}</a>{% if forloop.last != true %},{% endif %}
+          {% endfor %}
+    {% endcapture %}
+    {% PostPreview postLink, post.data.title, post.data.subtitle, publishedDatetime, publishedDate, topicLinks %}
   {% endfor %}
 </section>

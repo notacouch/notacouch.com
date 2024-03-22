@@ -10,7 +10,7 @@ subtitle: Using semantic markup and CSS for the wild, wild... 4th gen browsers a
 
 This was an era when semantic markup required actual evangelism. Below may give a partial glimpse as to why. Even if semantic markup and CSS were the "right" way of doing things, if `<table>`s were doing the job, why swim upstream?
 
-<hr class="grid__row-reset" />
+{% TangentCeiling %}
 
 In my early days on the Poly Webteam, I had to really prove my stripes before I could take on work of my choosing. Afterall, there was enough work to go around just to maintain sites and newsletters. I bided my time keeping `<table>` and `<font>` tags alive in codebases probably dated back to the 90&rsquo;s without scratching the itch of making things better. Eventually, I was finally given reign over 1 personal project.{.grid__body-gt900}
 
@@ -31,27 +31,13 @@ Revamping the homepage was _the_ way for me to make _the most impact_ on the uni
 
 ## The work
 
-<figure class="figure figure--img figure--img--body grid__figure grid__body-left-to-right-more">
-  <a href="/blog-images/poly/homepage/poly.edu-semantic-markup-cropped-optimized.png"><img
-    src="/blog-images/poly/homepage/poly.edu-semantic-markup-cropped-optimized.png"
-    alt="Screenshot of inspecting poly.edu May 2004's menu"
-    class="figure__img figure--img--body__img"
-  /></a>
-  <figcaption>Inspecting <a href="https://web.archive.org/web/20040519161813/http://www.poly.edu/">poly.edu (2004)</a>, the comments reveal frontend challenges. Note accessible links like &ldquo;Skip Navigation&rdquo; and &ldquo;related links&rdquo; cover when neither JavaScript nor stylesheets are available.</figcaption>
-</figure>
+{% Figure "img--grid--full", "/blog-images/poly/homepage/poly.edu-semantic-markup-cropped-optimized.png", "Screenshot of inspecting poly.edu May 2004's menu", 'Inspecting <a href="https://web.archive.org/web/20040519161813/http://www.poly.edu/">poly.edu (2004)</a>, the comments reveal frontend challenges. Note accessible links like &ldquo;Skip Navigation&rdquo; and &ldquo;related links&rdquo; cover when neither JavaScript nor stylesheets are available.' %}{% endFigure %}
 
 Though I was allowed to work on the homepage, I was _not_ allowed to make any changes to its design. The look and behavior had to remain exactly the same, pixel perfect. As intimated by the screenshot above, it was not as easy as simply throwing links in unordered list items. Netscape 4 applied list item styles to its bullets, using CSS to position an anchor would kill its functionality. As for Windows IE4, you _couldn&rsquo;t_ position anchor tags. So each anchor had to be wrapped in a `<div>`. The fun didn&rsquo;t stop there.
 
-<hr class="grid__row-reset" />
+{% TangentCeiling %}
 
-<figure class="figure figure--img figure--img--body grid__figure">
-  <a href="/blog-images/poly/homepage/poly.edu-all.css-cropped-optimized.png"><img
-    src="/blog-images/poly/homepage/poly.edu-all.css-cropped-optimized.png"
-    alt="Screenshot of poly.edu's new all.css, shows helpful comments for future maintainers"
-    class="figure__img figure--img--body__img"
-  /></a>
-  <figcaption>&ldquo;Pixel Perfect&rdquo;, reads the opening comment of the new <a href="https://web.archive.org/web/20040806043029/http://www.poly.edu/all.css">all.css</a>. Its comments were documentation for future maintainers.</figcaption>
-</figure>
+{% Figure "img--grid--body", "/blog-images/poly/homepage/poly.edu-all.css-cropped-optimized.png", "Screenshot of poly.edu's new all.css, shows helpful comments for future maintainers", '&ldquo;Pixel Perfect&rdquo;, reads the opening comment of the new <a href="https://web.archive.org/web/20040806043029/http://www.poly.edu/all.css">all.css</a>. Its comments were documentation for future maintainers.' %}{% endFigure %}
 
 <aside class="tangent">Mozilla Firefox was Firebird! <em>I</em> don&rsquo;t even remember that.</aside>
 
@@ -63,7 +49,7 @@ To accommodate other browsers in other platforms including Mac IE5 required the 
 
 ## Immediate impact
 
-<hr class="grid__row-reset" />
+{% TangentCeiling %}
 
 Being a pivotal snapshot in the Wayback Machine (WM) is proof in the pudding of the impact this update had. My work resulted in the homepage:{.grid__body--gt900}
 

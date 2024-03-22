@@ -17,38 +17,33 @@ I happened to find Tillett Lighting's work inspiring. It awakened in me paying a
 
 I found a backup of the markup's prototype, you can [see the code on GitHub](https://github.com/notacouch/notacouch.com/tree/88cd58c569d4167b13b57598c4519b99547731c4/tangibles/fusionlab/tillett/markup-prototype) and [view the prototype here](/tangibles/fusionlab/tillett/markup-prototype/). The links on the right underlay the other pages and how they would align with the new grid, click the "fade full" link to hide the overlaying homepage, "no fade" to return it, and "no background graphic" to hide other pages (if any were clicked).
 
-<figure class="figure figure--img figure--img--body grid__figure grid__body-left-to-right-more">
+
+{% Figure "img--grid--full", "", "", 'Image color transition with sprites (<span class="media-timestamp" data-media-id="tillett-lighting-prototype-demo" data-timestamp="4">4-8s</span>), clean up of layout (<span class="media-timestamp" data-media-id="tillett-lighting-prototype-demo" data-timestamp="20">20-31s</span>), float-based layout &mdash; review effect of overflow on float wrapper (<span class="media-timestamp" data-media-id="tillett-lighting-prototype-demo" data-timestamp="35">35-55s</span>).' %}
   <video id="tillett-lighting-prototype-demo" controls class="figure__img figure--img--body__img" width="1280" style="aspect-ratio: 4 / 3" poster="/blog-images/fusionlab/tillett/tillett-lighting-poster-optimized.png">
     <source src="/blog-images/fusionlab/tillett/tillett-lighting.mp4" type="video/mp4">
     <track kind="captions" srclang="en" label="English" src="/blog-images/fusionlab/tillett/tillett-lighting-en.vtt" default>
   </video>
-  <figcaption>Image color transition with sprites (<span class="media-timestamp" data-media-id="tillett-lighting-prototype-demo" data-timestamp="4">4-8s</span>), clean up of layout (<span class="media-timestamp" data-media-id="tillett-lighting-prototype-demo" data-timestamp="20">20-31s</span>), float-based layout &mdash; review effect of overflow on float wrapper (<span class="media-timestamp" data-media-id="tillett-lighting-prototype-demo" data-timestamp="35">35-55s</span>)</figcaption>
-</figure>
+{% endFigure %}
 
 ### Float-based layouts
 
-On X (formerly Twitter), recently someone asked about CSS that people may not know about or use these days. As a matter of convenience, I figured I'd use this past project as an opportunity to mention float-based layouts for the first time on this site (as opposed to trying to dig up a project before 2008). Around <span class="media-timestamp" data-media-id="tillett-lighting-prototype-demo" data-timestamp="44">44 seconds</span> into the clip above, you can see the `#misc` and `#copy` sibling `<div>`s use `float: left;` which allows them to stack horizontally so to speak. One of the things people may not remember is when we were first using floats for layout, we struggled with how to get the parent container to wrap around its children floats. One day, someone stumbled upon `overflow: hidden;` in the spec and that became viral. You can see from <span class="media-timestamp" data-media-id="tillett-lighting-prototype-demo" data-timestamp="53">53-55 seconds</span> in, when I toggle `#body`'s `overflow: hidden;` off, its `height` becomes `0`! With the advent of CSS grid and flexbox, we may no longer have to struggle with achieving layout through floats and instead use floats for what they were intended, like I do with the image sprite GIF below.
+On X (formerly Twitter), recently someone asked about CSS that people may not know about or use these days. As a matter of convenience, I figured I'd use this past project as an opportunity to mention float-based layouts for the first time on this site (as opposed to trying to dig up a project before 2008). Around <span class="media-timestamp" data-media-id="tillett-lighting-prototype-demo" data-timestamp="44">44 seconds</span> into the clip above, you can see the `#misc` and `#copy` sibling `<div>`s use `float: left;` which allows them to break out of normal flow to stack horizontally so to speak.
 
-<div class="p grid__body-to-right--gt900">
+I mention all that because one of the things people may not remember is when we were first using floats for layout, we struggled with how to get the parent container to wrap around its children floats. One day, someone stumbled upon `overflow: hidden;` in the spec, it turned out browsers were implementing that correctly, and that discovery became viral. You can see from <span class="media-timestamp" data-media-id="tillett-lighting-prototype-demo" data-timestamp="53">53-55 seconds</span> in, when I toggle `#body`'s `overflow: hidden;` off, its `height` becomes `0`! With the advent of CSS grid and flexbox, we may no longer have to struggle with achieving layout through floats and instead use floats for what they were intended, like I do with the image sprite GIF below.
+
+{% FloatWrapper %}
 
 ### Image color transition with JavaScript and image sprites
 
-<figure class="figure figure--img figure--img--text-wrap">
-  <a href="/tangibles/fusionlab/tillett/markup-prototype/images/navigation/profile-home.gif"><img
-    src="/tangibles/fusionlab/tillett/markup-prototype/images/navigation/profile-home.gif"
-    alt="Actual GIF used on the site, repeats the same navigation term 'Profile' 3 times with different colors"
-    class="figure__img"
-  /></a>
-  <figcaption>Image sprite of the "Profile" link.</figcaption>
-</figure>
+{% Figure "img--wrap--right", "/tangibles/fusionlab/tillett/markup-prototype/images/navigation/profile-home.gif", "Actual GIF used on the site, repeats the same navigation term 'Profile' 3 times with different colors", 'Image sprite of the "Profile" link.' %}{% endFigure %}
 
 The subtle effect I wanted to give them is lighting up the menu on hover (around <span class="media-timestamp" data-media-id="tillett-lighting-prototype-demo" data-timestamp="4">4-8s</span> in the clip above). Neither web fonts nor CSS transitions were a thing yet, so how do we consistently change the color of an image? For me this was a novel use of CSS image sprites. An image sprite as seen on the right is where a single image file contains the various imagery you need and you use CSS to determine the visible area of the image. The link itself referred to the first Profile instance, its list item is dynamically given a background with another instance by shifting the background image upwards. Then JavaScript is used to change the `opacity` over time. Though we're "fading out" the link's image, the effect is as if we're transitioning the _color_ of the link.
 
-</div>
+{% endFloatWrapper %}
 
 In terms of JavaScript I was a big fan of MooTools over jQuery, it just felt so much more empowering. I used MooTools to grab the image, set it as the link's list item's background, and fade it in/out without having to manage the `opacity`'s value:
 
-<figure class="figure figure--code grid__body-to-right-more">
+{% Figure "code--grid--body-more" %}
 
 ```js {.code .code--full}
     function fadeImgToLiBg(el){
@@ -77,4 +72,14 @@ In terms of JavaScript I was a big fan of MooTools over jQuery, it just felt so 
     $$('#navigation > ul > li').each(fadeImgToLiBg.bind(primary_nav_settings));
 ```
 
-</figure>
+{% endFigure %}
+
+## Tangent on MooTools
+
+Back then we did not have native `Function.bind`] [(docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind) nor a way to iterate objects such as `Object.entries` [(docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries) and `Array`'s `forEach` [(docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach). But MooTools provided a way to do all of these between their [Hash class](https://mootools.net/more/docs/1.6.0/Types/Hash), `Function.bind`, and `Array.each` methods. I could iterate over selected elements, bind that function's `this` context to the settings Hash so they were all pulling from the same place, and set their mouse _events_ for their list items while keeping the event's _effects_ bound to their anchors. It wasn't the kind of code you'd see with those opting for jQuery at the time (not trying to rank on jQuery, it remains an incredible project).
+
+MooTools was awesome. It's sad to have seen it die out over time. It seems it lost out in popularity. More importantly, ongoing contribution cannot be subsidized by passion alone. At least it's good to know that [some of its contributors would take much of what they learned to help with React](https://www.freecodecamp.org/news/between-the-wires-an-interview-with-mootools-contributors-33d764957575/). There's a lot to be learned not just from its concepts, methods, and code, but for what it takes to maintain Open Source Software socially, technically, and financially over time.
+
+## Creative agencies
+
+To end on a brighter note. One of the things that's great about frontend-focused work is being given creative liberties if there's enough time in a project. You get to try out things you've been itching to try out, whether from a performance, animation, style, or script perspective. It's one of the things I really enjoyed about agency kind of work is being inspired by the designers and clients you worked with, and letting that manifest back in code. This was a small part of a larger project, but what is more memorable to me than the rest.

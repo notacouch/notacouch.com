@@ -33,6 +33,15 @@ color-text-primary: #000;
   --full-width-test-vw: 100vw;
   --full-width-test-p: 100%;
   --gutter-width: 15px;
+
+  --scroll-behavior-value: smooth;
+}
+
+@media (prefers-reduced-motion) {
+  /* styles to apply if a user's device settings are set to reduced motion */
+  :root {
+    --scroll-behavior-value: auto;
+  }
 }
 
 .full-width-test-vw {
@@ -42,7 +51,7 @@ color-text-primary: #000;
   width: var(--full-width-test-p);
 }
 
-/* 
+/*
 TODO: more vars
 TODO: vars for grid column gap
 TODO: replace pixel sizing of fonts
@@ -63,6 +72,8 @@ TODO: vars for font name and weights
 }
 
 html {
+  scroll-behavior: var(--scroll-behavior-value);
+
   min-height: 100%;
 
   /* https://coolors.co/visualizer/606c38-fefae0-283618-dda15e-bc6c25 */
@@ -93,7 +104,7 @@ html {
   background-repeat: no-repeat;
 
   /* Credit:
-  @link https://stackoverflow.com/a/50475590/781824 
+  @link https://stackoverflow.com/a/50475590/781824
   @link https://stackoverflow.com/a/46570911/781824
   @link https://webkit.org/blog/7929/designing-websites-for-iphone-x/
   */
@@ -115,7 +126,7 @@ body {
   /* color: #716040; */
 }
 
-/* other gradient tools: 
+/* other gradient tools:
       https://colorgradient.dev/gradient-generator */
 
 /* colors from color.adobe.com */
@@ -194,7 +205,7 @@ Secondary
 Tertiary
 #f25042 */
 
-/* https://coolors.co/visualizer/606c38-fefae0-283618-dda15e-bc6c25 
+/* https://coolors.co/visualizer/606c38-fefae0-283618-dda15e-bc6c25
         #606C38
         #FEFAE0
         #283618
@@ -219,6 +230,15 @@ h3 {
   /* color: var(--color-text-header-tertiary); */
 }
 
+/*
+Credit:
+@url https://piccalil.li/blog/add-scroll-margin-to-all-elements-which-can-be-targeted
+*/
+h1, h2, h3, h4, h5, h6 {
+  scroll-margin-top: 2ex;
+}
+
+/* TODO: Remove these 2 clowns */
 .hurrr {
   border-width: 0;
   /* border-top: 5px solid #eaddcf; */
@@ -283,7 +303,7 @@ h3 {
   text-decoration: underline;
 }
 
-.page--blog #main-nav__blog a {
+.main-nav__list a[aria-current="page"] {
   text-decoration: underline;
 }
 
@@ -403,6 +423,7 @@ abbr[title]:focus::after {
   overflow-x: scroll;
   /* overflow-behavior-x: contain; */
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
   column-gap: var(--gutter-width);
 }
 .home-hero__sub-title dt,
@@ -473,7 +494,11 @@ abbr[title]:focus::after {
 }
 
 .post-preview {
-  margin-top: calc(1.5 * var(--gutter-width));
+  margin-top: calc(1.6 * var(--gutter-width));
+}
+
+p {
+  line-height: 1.4;
 }
 
 #blog__topics-header {
@@ -548,6 +573,10 @@ abbr[title]:focus::after {
 .toc__header {
   font-size: 1.3125em;
   font-weight: 600;
+}
+
+.post-preview__title + p {
+  margin-top: .3lh;
 }
 
 .post > h2 {
@@ -934,6 +963,10 @@ Try setting display to something other than block.
       rgba(254, 252, 237, 1) 95%,
       rgba(254, 250, 224, 1) 100%
     );
+  }
+  .blog__topics {
+    order: 2;
+    margin-top: calc(2 * var(--gutter-width));
   }
   .grid {
     column-gap: 7px;

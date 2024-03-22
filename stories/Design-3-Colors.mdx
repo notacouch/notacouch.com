@@ -1,0 +1,175 @@
+import { Meta, ColorItem, ColorPalette, Title, Canvas } from "@storybook/blocks";
+import * as FigureStories from "./Figure.stories";
+
+<Meta title="Design/Colors" />
+
+<Title>Colors</Title>
+
+I wanted to work with &ldquo;warm&rdquo; colors, but... not a designer, selecting and running with colors is a weak point of mine. I used to use Adobe Kuler, it is now Adobe Color and is just not the same. I wound up with palettes from Adobe Color, [Happy Hues]("https://www.happyhues.co/palettes/11"), and [Coolors]("https://coolors.co/visualizer/606c38-fefae0-283618-dda15e-bc6c25").
+
+I needed more contrast and variation than these offered, but I still use colors from these to start with and adjusted as needed.
+
+## Tokens
+
+My [color] token naming scheme tries to follow [https://tr.designtokens.org/format/#design-token](https://tr.designtokens.org/format/#design-token).
+
+It&rsquo;s something like:<br />
+property[->for[->for?]?]: value<br />
+e.g.<br />
+`color-text-primary: #000;`
+
+<ColorPalette>
+  <ColorItem
+    title="Background colors"
+    colors={{
+      '--background-color-code': '#f9f4ef',
+      '--background-color-code-rgba': 'rgba(249, 244, 239, 1)',
+      '--background-color-main-footer': '#f9f4ef',
+      '--background-color-body-images': 'rgba(255, 255, 240, 0.6)',
+    }}
+  />
+</ColorPalette>
+
+<ColorPalette>
+  <ColorItem
+    title="Border colors"
+    colors={{
+      '--border-code-inline': '0.5px #d9c2a7 solid',
+      '--border-color-code': '#d9c2a7',
+      '--border-color-main-footer': '#fefae0',
+      '--border-color-tertiary': '#eaddcf',
+    }}
+  />
+</ColorPalette>
+
+<ColorPalette>
+  <ColorItem
+    title="Text colors"
+    colors={{
+      '--color-text-header': '#312921',
+      '--color-text-header-tertiary': '#716040',
+      '--color-text-subtitle': '#8c7851',
+      '--color-text-main-nav': '#716040',
+      '--color-text-main-nav-hover': '#594a3c',
+    }}
+  />
+</ColorPalette>
+
+<ColorPalette>
+  <ColorItem
+    title="Other colors"
+    colors={{
+      '--box-shadow-img': ' rgba(0, 0, 0, 0.09) 0px 3px 12px',
+      'Body text': '#42372d',
+      '<abbr> tooltip background': 'ButtonFace',
+      '<abbr> tooltip text': 'CanvasText',
+    }}
+  />
+</ColorPalette>
+
+## Palettes
+
+I borrow from the below palettes directly and adjust at will.
+
+### Adobe Color: Vintage
+
+<ColorPalette>
+  <ColorItem
+    title="Adobe Color: Vintage: Hex"
+    colors={{
+      'vintage 1': '#f2e4bb',
+      'vintage 2': '#d9c2a7',
+      'vintage 3': '#f2e2ce',
+      'vintage 4': '#f2ece4',
+      'vintage 5': '#594a3c',
+    }}
+  />
+</ColorPalette>
+
+<ColorPalette>
+  <ColorItem
+    title="Adobe Color: Vintage: RGBa"
+    colors={{
+      'vintage 1': 'rgba(242, 228, 186, 1)',
+      'vintage 2': 'rgba(216, 194, 166, 1)',
+      'vintage 3': 'rgba(242, 225, 205, 1)',
+      'vintage 4': 'rgba(242, 235, 227, 1)',
+      'vintage 5': 'rgba(89, 73, 59, 1)',
+    }}
+  />
+</ColorPalette>
+
+<ColorPalette>
+  <ColorItem
+    title="Adobe Color: Vintage: HSLa"
+    colors={{
+      'vintage 1': 'hsla(44, 68, 84, 1)',
+      'vintage 2': 'hsla(33, 39, 75, 1)',
+      'vintage 3': 'hsla(33, 58, 87, 1)',
+      'vintage 4': 'hsla(33, 36, 92, 1)',
+      'vintage 5': 'hsla(28, 19, 29, 1)',
+    }}
+  />
+</ColorPalette>
+
+---
+
+### [Happy Hues (11)]("https://www.happyhues.co/palettes/11")
+
+I liked that this site gives you actual UI samples to witness the colors at work.
+
+<ColorPalette>
+  <ColorItem
+    title="Happy Hues 11: Elements"
+    colors={{
+      Background: '#f9f4ef',
+      Headline: '#020826',
+      Paragraph: '#716040',
+      Button: '#8c7851',
+      ButtonText: '#fffffe',
+    }}
+  />
+</ColorPalette>
+
+<ColorPalette>
+  <ColorItem
+    title="Happy Hues 11: Illustration"
+    colors={{
+      Main: '#fffffe',
+      Highlight: '#8c7851',
+      Secondary: '#eaddcf',
+      Tertiary: '#f25042',
+    }}
+  />
+</ColorPalette>
+
+---
+
+### [Coolors]("https://coolors.co/visualizer/606c38-fefae0-283618-dda15e-bc6c25")
+
+Storybook&rsquo;s `ColorItem.colors` requires keys, can&rsquo;t just put color values >_>.
+
+<ColorPalette>
+  <ColorItem
+    title="Coolors"
+    colors={{
+      medium: '#606C38',
+      bright: '#FEFAE0',
+      dark: '#283618',
+      "orange-ish": '#DDA15E',
+      tween: '#BC6C25',
+    }}
+  />
+</ColorPalette>
+
+## Background gradient
+
+Can we not talk about this? At the onset of this project there was a whole design concept I was trying to go for, think like Material UI but with... liquid. It proved too difficult and time-consuming for me to get into, and this gradient I was playing with stuck. Given its assignment on the `<body>`, its aesthetic changes based on the height of the document. It gives shorter pages a different feel from more content-heavy pages. Does it go with the angle of light, shadow, depth, etc.? Does it _need_ to? I can sleep at night.
+
+## highlight.js syntax highlighting theme
+
+Over the years I have tried different editors: Notepad, Notepad++, TextPad (I still use this), BB Edit, Coda 2, Atom, Brackets, and now VS Code. My favorite theme that stuck with me was Coda 2&rsquo;s, so every environment I endeavor to replicate it where possible. I picked the bright [Github theme]("https://github.com/highlightjs/highlight.js/blob/main/src/styles/github.css") because it&rsquo;s the closest theme I could find. Maybe one day I&rsquo;ll roll my Coda 2 syntax highlighting theme. Not sure why, but I can&rsquo;t get used to dark editor themes.
+
+Sample below:
+<Canvas of={FigureStories.codeInGrid} />
+

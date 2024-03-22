@@ -1,0 +1,70 @@
+import { Meta, Source, Title } from "@storybook/blocks";
+
+<Meta title="Design/Grid" />
+
+<Title>Grid</Title>
+
+Before starting this site, I had always wanted to make something following international/Swiss typographic style. I popped open my copy of Josef Müller-Brockmann&rsquo;s <u>Grid Systems in Graphic Design</u> and was very pleasantly surprised to read in the beginning:
+
+TODO: INSERT QUOTE FROM BOOK
+
+> block quote
+
+So. Content, [typography](../?path=/docs/design-typography--docs), comes before grid. Given I am verbose by default, this site was bound to be text heavy.
+
+The base of the grid stems from this: I settled on the size and measure of the text body and wanted it off center, to the left.
+
+I also wanted:
+- to be able to juxtapose media left and right of each other for a before/after effect
+- have an aside for brief tangents
+- have smaller media of lesser significant that text can wrap around
+- have media match the body more or less
+- have media wider than the body
+- have code snippets wider than the body
+- have code snippets go as full width as possible
+
+There are other chunks of content that have not yet made it to the site, but that about covers it.
+
+TODO: HEY, YOU, SELF, AUTHOR: Link to Web Typography:
+https://book.webtypography.net/
+
+## Base grid items
+
+The naming scheme for grid items follows [BEM]("https://en.bem.info/") and [Bootstrap]("https://getbootstrap.com/") (it&rsquo;s stuck in my system &mdash; almost all of Northwell Health&rsquo;s and CitusHealth&rsquo;s projects used one version of Bootstrap or another).
+
+## Breakpoints
+
+Though I was considering moving away from responsive design, maybe towards intrinsic design or something partially fluid, once I had content and some structure going it was basically about trying to fit things based upon the viewport&rsquo;s screen real estate. I tried whatever screens I have available, resizing in Chrome, and tried the 2 iOS phones I have as well. If something didn&rsquo;t fit, expand, contract, and/or move as needed.
+
+
+### < 900px
+
+### > 900px
+
+### < 1250px
+
+### > 1250px
+
+### > 1500px
+
+Or more accurately 1502px vs 1503px.
+
+### > 1920px
+
+The grid actually can fail beyond this point, so it is reset here and remains the same for anything wider.
+
+<Source code={`
+@media (min-width: 1921px) {
+  .grid {
+    /* original calculations don't work > 1920px via zoom because the text scales down while the free space grows larger */
+    grid-template-columns:
+      minmax(0, 1fr) minmax(0, 237px) minmax(
+        0,
+        calc(19.275em - var(--gutter-width) / 2)
+      )
+      minmax(0, calc(19.275em - var(--gutter-width) / 2))
+      minmax(0, 237px)
+      minmax(0, 32px)
+      minmax(0, 1fr) minmax(0, 1fr);
+  }
+}`} language="css" />

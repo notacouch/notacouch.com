@@ -12,10 +12,12 @@
     <link rel="icon" href="/notacouch-icon.png" />
     <link rel="apple-touch-icon" href="/notacouch-icon.png" />
 
+    {% comment %} TODO: CSPs for these {% endcomment %}
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://unpkg.com">
     <link rel="preconnect" href="https://use.typekit.net">
 
-    {% comment %} TODO: Do build stuff w/ normalize css {% endcomment %}
+    {% comment %} TODO: Do build stuff w/ normalize css? or just use unpkg, too, (but it's not minimized there) or have other assets use cloudflare {% endcomment %}
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -23,11 +25,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    {% comment %} TODO: Do build stuff w/ highlightjs css? {% endcomment %}
     <link
       rel="stylesheet"
       href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github.min.css"
     />
     <link rel="stylesheet" href="https://use.typekit.net/bhk0fhv.css">
+
+    {% comment %} TODO: Do build stuff w/ icons css? {% endcomment %}
     <link
       rel="stylesheet"
       type="text/css"
@@ -38,70 +44,19 @@
       type="text/css"
       href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/fill/style.css"
     />
+    {% comment %} TODO: Definitely do build stuff here, at least 11ty purgecss plugin {% endcomment %}
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body class="{{ body_class }}">
-    <nav class="grid main-nav" aria-labelledby="main-nav-label">
-      <span class="sr-only grid__start" id="main-nav-label"
-        >Main navigation:</span
-      >
-      <a href="/" class="main-nav__home grid__body-left"
-        ><img
-          src="/notacouch-icon-256.png"
-          alt="logo: letter n with an embedded letter a for 'notacouch, abed'"
-          class="n-for-notacouch"
-      /></a>
-      <ul class="main-nav__list grid__end-body-right-more" role="list">
-        <li><a href="/work/">Work</a></li>
-        <li id="main-nav__blog"><a {% if page.url == "blog" %} aria-current="page"{% else %}href="/blog/"{% endif %}>Blog</a></li>
-      </ul>
-    </nav>
+    {% HeaderNav page.url %}
 
     <main>
 {{ content }}
     </main>
-    <footer class="main-footer grid">
-      <span
-        class="main-footer__copy grid__body-start--lt1250 grid__space-start--gt1250 grid__body-left--gt1500"
-        >&copy; 2024 Abed&nbsp;Islam</span
-      >
-      <span
-        class="main-footer__built grid__body-start--gt1250 grid__mid-body--lt1250"
-        >Built on <a href="https://11ty.dev/">11ty</a> with
-        <!--<s>♥️</s>-->
-        <span class="sr-only">mechanical keyboard</span
-        ><span class="ph-light ph-gear" title="mechanical"></span
-        ><span class="ph-light ph-keyboard" title="keyboard"></span> in&nbsp;NYC
-      </span>
-      <nav
-        class="main-footer__social-media grid__mid-body-to-body-right-more--gt1250 grid__end-body-right-more--lt1250"
-        aria-labelledby="social-media-header"
-      >
-        <span class="sr-only" id="social-media-header"
-          >Social media links: </span
-        ><a href="https://www.linkedin.com/in/notacouch"
-          ><span class="sr-only">LinkedIn</span
-          ><span class="ph-fill ph-linkedin-logo"></span
-        ></a>
-        <a href="https://twitter.com/notacouch"
-          ><span class="sr-only">X (formerly Twitter)</span
-          ><span class="ph-fill ph-twitter-logo"></span
-        ></a>
-        <a href="https://github.com/notacouch"
-          ><span class="sr-only">GitHub</span
-          ><span class="ph-fill ph-github-logo"></span
-        ></a>
-        <a href="https://bitly.com/notacouch-stackoverflow"
-          ><span class="sr-only">Stack Overflow</span
-          ><span class="ph-light ph-stack-overflow-logo"></span
-        ></a>
-        <a href="https://codepen.io/notacouch/pens/public"
-          ><span class="sr-only">CodePen</span
-          ><span class="ph-light ph-codepen-logo"></span
-        ></a>
-      </nav>
-    </footer>
 
+    {% Footer %}
+
+    {% comment %} TODO: Consider doing build stuff w/ highlightjs js {% endcomment %}
     {% if content contains "language-html" %}
       {% capture hljs %}
       import hljs from "https://unpkg.com/@highlightjs/cdn-assets@11.9.0/es/highlight.min.js"
