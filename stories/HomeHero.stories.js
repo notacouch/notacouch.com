@@ -12,10 +12,12 @@ export default {
   title: 'Slices/Home Hero',
   tags: ['autodocs'],
   component: HomeHero,
+  decorators: [
+    (Story) =>
+      `<div style="background-color: var(--background-color-gradient-top);">${Story()}</div>`,
+  ],
   render: ({ title, subtitle = '', ...args }) => {
-    const titleContent = new HomeHeroTitle().render(title);
-    const subtitleContent = subtitle ? new HomeHeroSubtitle().render(subtitle) : '';
-    return new HomeHero().render(titleContent, subtitleContent);
+    return new HomeHero().render(title, subtitle);
   },
   argTypes: {
     title: {
@@ -47,7 +49,7 @@ export const DefinitionListWithScrollSnap = {
   args: {
     title: 'Hi. My name is Friendly Developer.<br>I would ask your name but there is no input.',
     subtitle: `<p>Definitive list with scroll-snap:</p>
-    <dl>
+    <dl tabindex="0">
       <div>
         <dt><strong>Emphatic</strong> thing #1:</dt><dd> General Knowledge says this is well-defined.</dd>
       </div>

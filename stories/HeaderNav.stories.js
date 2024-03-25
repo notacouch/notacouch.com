@@ -11,6 +11,10 @@ export default {
   title: 'Global/HeaderNav',
   tags: ['autodocs'],
   component: HeaderNav,
+  decorators: [
+    (Story) =>
+      `<div style="background-color: var(--background-color-gradient-top); padding-bottom: var(--gutter-width);">${Story()}</div>`,
+  ],
   render: (args) => {
     // You can either use a function to create DOM elements or use a plain html string!
     // return `<div>${label}</div>`;

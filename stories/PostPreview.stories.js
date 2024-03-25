@@ -11,7 +11,7 @@ export default {
   component: PostPreview,
   decorators: [
     (Story) => `
-<section class="grid">
+<section class="grid" style="background-color: var(--background-color-gradient-mid); padding-bottom: var(--gutter-width);">
   ${Story()}
 </section>
 `,

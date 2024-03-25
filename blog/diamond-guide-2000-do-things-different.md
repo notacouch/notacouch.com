@@ -48,7 +48,7 @@ Our designers got to work with materials provided to them. They'd pass me full c
 
 {% Figure "code--grid--full" %}
 
-```html {.code .code--full .grid__full__extended-body}
+```html {.code .code--full .grid__full__extended-body tabindex="0"}
       <tr>
                               <!-- See nested <table> in the table cell below -->
               <td colspan="2"><table border="0" width="740" cellspacing="0" cellpadding="0">

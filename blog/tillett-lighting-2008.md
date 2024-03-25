@@ -44,7 +44,7 @@ In terms of JavaScript I was a big fan of MooTools over jQuery, it just felt so 
 
 {% Figure "code--grid--body-more" %}
 
-```js {.code .code--full}
+```js {.code .code--full tabindex="0"}
     function fadeImgToLiBg(el){
         var a = el.getElement('a');
         var i = a.getElement('img');

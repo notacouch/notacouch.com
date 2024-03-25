@@ -14,7 +14,7 @@ export default {
   component: Figure,
   decorators: [
     (Story) => `
-<article class="post grid">
+<article class="post grid" style="background-color: var(--background-color-gradient-bottom);">
   ${Story()}
 </article>
 `,
@@ -164,7 +164,7 @@ export const codeInGrid = {
   ],
   args: {
     type: 'code--grid--body-more',
-    content: `<pre><code class="code code--full language-html">
+    content: `<pre><code class="code code--full language-html" tabindex="0">
       &lt;tr&gt;
                               &lt;!-- See nested &lt;table&gt; in the table cell below --&gt;
               &lt;td colspan="2"&gt;&lt;table border="0" width="740" cellspacing="0" cellpadding="0"&gt;
@@ -212,7 +212,7 @@ export const wideCodeInGrid = {
   ],
   args: {
     type: 'code--grid--full',
-    content: `<pre><code class="code code--full grid__full__extended-body language-html">
+    content: `<pre><code class="code code--full grid__full__extended-body language-html" tabindex="0">
       &lt;tr&gt;
                               &lt;!-- See nested &lt;table&gt; in the table cell below --&gt;
               &lt;td colspan="2"&gt;&lt;table border="0" width="740" cellspacing="0" cellpadding="0"&gt;

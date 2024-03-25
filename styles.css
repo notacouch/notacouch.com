@@ -7,10 +7,15 @@ color-text-primary: #000;
 */
 
 :root {
+  /* For a11y contrast testing, can use this:
+  @url https://dequeuniversity.com/rules/axe/4.8/color-contrast?application=axeAPI */
   --background-color-code: #f9f4ef;
   --background-color-code-rgba: rgba(249, 244, 239, 1);
   --background-color-main-footer: #f9f4ef;
   --background-color-body-images: rgba(255, 255, 240, 0.6);
+  --background-color-gradient-top: rgba(254, 250, 224, 1);
+  --background-color-gradient-mid: rgba(254, 252, 237, 1);
+  --background-color-gradient-bottom: rgba(254, 254, 250, 1);
   --border-code-inline: 0.5px #d9c2a7 solid;
   --border-color-code: #d9c2a7;
   --border-color-main-footer: #fefae0;
@@ -21,9 +26,16 @@ color-text-primary: #000;
   --box-shadow-img: rgba(0, 0, 0, 0.09) 0px 3px 12px;
   --color-text-header: #312921;
   --color-text-header-tertiary: #716040;
-  --color-text-subtitle: #8c7851;
+  /* a11y: original subtitle color wasn't cutting it for contrast across the board of the bg gradient */
+  /* --color-text-subtitle: #8c7851; */
+  --color-text-subtitle: #816E4B;
   --color-text-main-nav: #716040;
   --color-text-main-nav-hover: #594a3c;
+  --color-text-body: #42372d;
+  /* a11y: Originally used subtitle color but that didn't do the job for contrast. Figcaptions are smaller text so should use its own color. */
+  --color-text-figcaption: #826F4A;
+  /* a11y: figure with code has a different background, so figcaption needs a different color, too. */
+  --color-text-figcaption--code: #7F6C48;
   --font-family-title: karmina-sans, sans-serif;
   --font-family-utility: darkmode-on, sans-serif;
   --font-weight-body-dpi-one: 300;
@@ -119,7 +131,7 @@ body {
   margin: 0;
   padding: 0;
 
-  color: #42372d;
+  color: var(--color-text-body);
 
   /* https://www.happyhues.co/palettes/11 */
 
@@ -424,7 +436,7 @@ abbr[title]:focus::after {
   overflow-x: scroll;
   /* overflow-behavior-x: contain; */
   scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
+  scroll-behavior: var(--scroll-behavior-value);
   column-gap: var(--gutter-width);
 }
 .home-hero__sub-title dt,
@@ -673,7 +685,7 @@ p {
 }
 
 figcaption {
-  color: var(--color-text-subtitle);
+  color: var(--color-text-figcaption);
   font-weight: var(--font-weight-body-dpi-one);
   font-size: 0.875em;
   line-height: 1.4;
@@ -681,6 +693,10 @@ figcaption {
   margin-bottom: 1em;
   padding-top: 0.3em;
   padding-inline: 0.68em;
+}
+
+.figure--code figcaption {
+  color: var(--color-text-figcaption--code);
 }
 
 /* .figure--code {

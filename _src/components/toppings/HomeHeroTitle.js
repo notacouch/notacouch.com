@@ -18,9 +18,7 @@ export default class HomeHeroTitle {
    */
   render(title) {
     return `
-    <h1 class="home-hero__title">
-      ${title}
-    </h1>
+    <h1 class="home-hero__title">${title}</h1>
     `;
   }
 }

@@ -48,9 +48,12 @@ e.g.<br />
     colors={{
       '--color-text-header': '#312921',
       '--color-text-header-tertiary': '#716040',
-      '--color-text-subtitle': '#8c7851',
+      '--color-text-subtitle': '#816E4B',
       '--color-text-main-nav': '#716040',
       '--color-text-main-nav-hover': '#594a3c',
+      '--color-text-body': '#42372d',
+      '--color-text-figcaption': '#826F4A',
+      '--color-text-figcaption--code': '#7F6C48',
     }}
   />
 </ColorPalette>
@@ -60,7 +63,6 @@ e.g.<br />
     title="Other colors"
     colors={{
       '--box-shadow-img': ' rgba(0, 0, 0, 0.09) 0px 3px 12px',
-      'Body text': '#42372d',
       '<abbr> tooltip background': 'ButtonFace',
       '<abbr> tooltip text': 'CanvasText',
     }}
@@ -165,6 +167,19 @@ Storybook&rsquo;s `ColorItem.colors` requires keys, can&rsquo;t just put color v
 ## Background gradient
 
 Can we not talk about this? At the onset of this project there was a whole design concept I was trying to go for, think like Material UI but with... liquid. It proved too difficult and time-consuming for me to get into, and this gradient I was playing with stuck. Given its assignment on the `<body>`, its aesthetic changes based on the height of the document. It gives shorter pages a different feel from more content-heavy pages. Does it go with the angle of light, shadow, depth, etc.? Does it _need_ to? I can sleep at night.
+
+I've broken down the gradient to its 3 colors, especially for a11y purposes, spread between top of the page, middle, and bottom:
+
+<ColorPalette>
+  <ColorItem
+    title="Background gradient colors"
+    colors={{
+      '--background-color-gradient-top': 'rgba(254, 250, 224, 1)',
+      '--background-color-gradient-mid': 'rgba(254, 252, 237, 1)',
+      '--background-color-gradient-bottom': 'rgba(254, 254, 250, 1)',
+    }}
+  />
+</ColorPalette>
 
 ## highlight.js syntax highlighting theme
 

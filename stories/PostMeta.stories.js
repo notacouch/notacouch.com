@@ -64,7 +64,7 @@ export default {
 export const postPreviewVersion = {
   decorators: [
     (Story) => `
-<section class="grid">
+<section class="grid" style="background-color: var(--background-color-gradient-mid); padding-bottom: var(--gutter-width);">
   <article class="post-preview grid__default--lt900 grid__body--gt900">
     ${Story()}
   </article>
@@ -90,7 +90,7 @@ export const postPreviewVersion = {
 export const postHeaderVersion = {
   decorators: [
     (Story) => `
-<article class="post grid">
+<article class="post grid" style="background-color: var(--background-color-gradient-top); padding-bottom: var(--gutter-width);">
   ${Story()}
 </article>
 `,
