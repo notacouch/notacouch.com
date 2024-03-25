@@ -11,7 +11,7 @@ body_class: page--home
     I enjoy making things better for&nbsp;people.
 {% endcapture %}
 
-{% comment %} 
+{% comment %}
     Hi, I&rsquo;m
     <strong><span class="sr-only">notacouch, </span>Abed</strong>, a
     multifaceted<br>
@@ -45,7 +45,7 @@ body_class: page--home
         </dt>
         <dd>
           got a taste of steering users to success through coaching and code in
-          their stack whether vanilla, Angular, React, or Vue. Hit the ground
+          their stack whether vanilla js, Angular, React, or Vue. Hit the ground
           running quickly becoming their dedicated map chart&nbsp;SME.
         </dd>
       </div>
@@ -73,14 +73,14 @@ body_class: page--home
           with SMS messaging. Launched zoojaja, our Muslim Netflix concept, iOS app
           built in PhoneGap, platform on
           <abbr title="ExpressionEngine">EE</abbr>, rolled our own recurring
-          billing. Built to scale with AWS ELB, EC2, S3, &amp;&nbsp;CloudFront. 
+          billing. Built to scale with AWS ELB, EC2, S3, &amp;&nbsp;CloudFront.
           <!-- secured HLS &amp; HDS streams through a reverse proxy with
               proprietary code, and iOS app built in PhoneGap. -->
         </dd>
       </div>
       <div>
         <dt>
-          <strong>FusionLab</strong>&hairsp;&mdash;&hairsp;visual studio design
+          <strong>Fusionlab</strong>&hairsp;&mdash;&hairsp;visual studio design
           firm in NYC:
         </dt>
         <dd>
@@ -123,7 +123,7 @@ body_class: page--home
 <section class="grid">
   <h2>Latest posts</h2>
   <p class="subtitle-color">I use this site to write about things I&rsquo;ve worked on and share things I&rsquo;ve learned.</p>
-  {% for post in collections.all reversed limit:5 %}  
+  {% for post in collections.all reversed limit:5 %}
     {% capture postLink %}/blog/{{ post.fileSlug }}/{% endcapture %}
     {% capture publishedDatetime %}{{ post.data.date | date: "%Y-%m-%d" }}{% endcapture %}
     {% capture publishedDate %}{{ post.data.date | date: "%-m.%-d.%Y" }}{% endcapture %}

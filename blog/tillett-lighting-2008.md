@@ -2,21 +2,20 @@
 title: Tillett Lighting (2008)
 tags: ["Frontend", "CSS", "JavaScript", "Work", "fusionlab"]
 date: 2024-03-15 12:00:00Z
-subtitle: "Cleaned up frontend while migrating to a CMS: use of image sprites and float-based layout."
+subtitle: "Cleaned up frontend while migrating to a CMS: use of image sprites, MooTools, and float-based layout."
 ---
 
 ## Background
 
-[fusionlab's](https://www.fusionlab.com/) client, [Tillett Lighting](https://www.tillettlighting.com/), wanted to manage their own content. So my task was to get them set up with ExpressionEngine and ensure content was easy for them to manage. While that portion was successful, what I'll write about here are some of the remnants of having been given some creative liberty to spruce up the frontend in the process.
+[fusionlab's](https://www.fusionlab.com/) client, [Tillett Lighting](https://www.tillettlighting.com/), wanted to manage their own content for what was previously a static site. So my task was to get them set up with ExpressionEngine and ensure content was easy for them to manage. That portion was straight forward and successful, what I wanted to write about here are some of the remnants of having been given some creative liberty to spruce up the frontend in the process.
 
 Reviewing their site, I found there were minor inconsistencies in layout between the different sections of the site. When living in the "pixel perfect" world, there's no pixel too minor. Those things bother me.
 
 I happened to find Tillett Lighting's work inspiring. It awakened in me paying attention to lighting wherever I am, so I wanted to give them at least some subtle "lighting" effects.
 
-## High fidelity markup prototype
+## High fidelity prototype
 
 I found a backup of the markup's prototype, you can [see the code on GitHub](https://github.com/notacouch/notacouch.com/tree/88cd58c569d4167b13b57598c4519b99547731c4/tangibles/fusionlab/tillett/markup-prototype) and [view the prototype here](/tangibles/fusionlab/tillett/markup-prototype/). The links on the right underlay the other pages and how they would align with the new grid, click the "fade full" link to hide the overlaying homepage, "no fade" to return it, and "no background graphic" to hide other pages (if any were clicked).
-
 
 {% Figure "img--grid--full", "", "", 'Image color transition with sprites (<span class="media-timestamp" data-media-id="tillett-lighting-prototype-demo" data-timestamp="4">4-8s</span>), clean up of layout (<span class="media-timestamp" data-media-id="tillett-lighting-prototype-demo" data-timestamp="20">20-31s</span>), float-based layout &mdash; review effect of overflow on float wrapper (<span class="media-timestamp" data-media-id="tillett-lighting-prototype-demo" data-timestamp="35">35-55s</span>).' %}
   <video id="tillett-lighting-prototype-demo" controls class="figure__img figure--img--body__img" width="1280" style="aspect-ratio: 4 / 3" poster="/blog-images/fusionlab/tillett/tillett-lighting-poster-optimized.png">
@@ -25,7 +24,7 @@ I found a backup of the markup's prototype, you can [see the code on GitHub](htt
   </video>
 {% endFigure %}
 
-### Float-based layouts
+### Something forgotten about float-based layouts
 
 On X (formerly Twitter), recently someone asked about CSS that people may not know about or use these days. As a matter of convenience, I figured I'd use this past project as an opportunity to mention float-based layouts for the first time on this site (as opposed to trying to dig up a project before 2008). Around <span class="media-timestamp" data-media-id="tillett-lighting-prototype-demo" data-timestamp="44">44 seconds</span> into the clip above, you can see the `#misc` and `#copy` sibling `<div>`s use `float: left;` which allows them to break out of normal flow to stack horizontally so to speak.
 
@@ -76,10 +75,10 @@ In terms of JavaScript I was a big fan of MooTools over jQuery, it just felt so 
 
 ## Tangent on MooTools
 
-Back then we did not have native `Function.bind`] [(docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind) nor a way to iterate objects such as `Object.entries` [(docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries) and `Array`'s `forEach` [(docs)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach). But MooTools provided a way to do all of these between their [Hash class](https://mootools.net/more/docs/1.6.0/Types/Hash), `Function.bind`, and `Array.each` methods. I could iterate over selected elements, bind that function's `this` context to the settings Hash so they were all pulling from the same place, and set their mouse _events_ for their list items while keeping the event's _effects_ bound to their anchors. It wasn't the kind of code you'd see with those opting for jQuery at the time (not trying to rank on jQuery, it remains an incredible project).
+Back then we did not have native [`Function.bind`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind) nor a way to iterate objects such as [`Object.entries`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries) and `Array`'s [`forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach). But MooTools provided a way to do all of these between their [Hash class](https://mootools.net/more/docs/1.6.0/Types/Hash), `Function.bind`, and `Array.each` methods. I could iterate over selected elements, bind that function's `this` context to the settings Hash so they were all pulling from the same place, and set their mouse _events_ for their list items while keeping the event's _effects_ bound to their anchors. It wasn't the kind of code you'd see with those opting for jQuery at the time (not trying to rank on jQuery, it remains an incredible project). (Well, you probably wouldn't see this kind of code anywhere else for that matter, the [Brainlink mantra stuck](/blog/diamond-guide-2000-do-things-different#stay-up-to-speed-by-doing-things-different), so when noone is looking and you're iterating through prototype after prototype, why not explore different design patterns while keeping code clean?)
 
-MooTools was awesome. It's sad to have seen it die out over time. It seems it lost out in popularity. More importantly, ongoing contribution cannot be subsidized by passion alone. At least it's good to know that [some of its contributors would take much of what they learned to help with React](https://www.freecodecamp.org/news/between-the-wires-an-interview-with-mootools-contributors-33d764957575/). There's a lot to be learned not just from its concepts, methods, and code, but for what it takes to maintain Open Source Software socially, technically, and financially over time.
+MooTools was awesome. It's sad to have seen it die out over time. It seems it lost out in popularity. There's a lot to be learned not just from its concepts, methods, and code, but for what it takes to maintain Open Source Software socially, technically, and financially over time. Can ongoing contribution and maintenance be subsidized by passion alone? At least it's good to know that [some of its contributors would take much of what they learned to help with React](https://www.freecodecamp.org/news/between-the-wires-an-interview-with-mootools-contributors-33d764957575/).
 
 ## Creative agencies
 
-To end on a brighter note. One of the things that's great about frontend-focused work is being given creative liberties if there's enough time in a project. You get to try out things you've been itching to try out, whether from a performance, animation, style, or script perspective. It's one of the things I really enjoyed about agency kind of work is being inspired by the designers and clients you worked with, and letting that manifest back in code. This was a small part of a larger project, but what is more memorable to me than the rest.
+To end on a brighter note. One of the things that's great about frontend-focused work is being given creative liberties. You get to try out things you've been itching to try out, whether from a performance, animation, style, programming, templating, or even architectural perspective. I really enjoyed about agency kind of work, being inspired by the designers and clients you worked with, and letting that manifest back in code. This smaller part of the project wasn't even a main point, but it's what's most memorable to me after customer satisfaction.

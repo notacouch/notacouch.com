@@ -317,6 +317,7 @@ code + * {
   margin-top: 1em;
 }
 
+p > a > code,
 p > code {
   font-size: 0.9em;
   background-color: var(--background-color-code-rgba);

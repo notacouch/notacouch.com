@@ -1,6 +1,6 @@
 # notacouch.com (2024)
 
-This site is 11ty 3 + Storybook (HTML + Vite) project. The Vite portion is not really leveraged at this time.
+This site is an 11ty 3 + Storybook (HTML + Vite) project. The Vite portion is not really leveraged at this time.
 
 ## Getting Started
 
