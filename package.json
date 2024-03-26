@@ -27,9 +27,14 @@
     "@thedigitalman/eleventy-plugin-toc-a11y": "^2.1.0",
     "eleventy-auto-cache-buster": "^0.3.0",
     "eleventy-plugin-time-to-read": "^1.3.0",
+    "notacouch-eleventy-plugin-toc-ally": "https://github.com/notacouch/eleventy-plugin-toc.git#feat-ios-compat",
     "markdown-it": "^14.0.0",
     "markdown-it-attrs": "^4.1.6",
     "markdown-it-named-headings": "^1.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/notacouch/notacouch.com.git"
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",

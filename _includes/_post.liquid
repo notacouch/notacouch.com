@@ -18,50 +18,54 @@ layout: _index.liquid
 {% assign blogLinkText = "Blog" %}
 {% endif %}
 
-<article class="post grid">
-  <!-- TODO: The opening of articles is no longer a hero, differentiate it at some point -->
-  <header class="hero grid__subgrid grid__subgrid--body grid__subgrid--hr">
-    <nav class="crumbs" aria-labelledby="breadcrumbs-label">
-      <span class="sr-only" id="breadcrumbs-label">Breadcrumbs:</span>
-      <ol>
-        <li class="crumb crumb--skip-to"><a href="#toc" class="skip-to-link">Skip to Table of Contents</a></li>
-        <li class="crumb"><a href="/">Home</a></li>
-        <li class="crumb"><a href="/{{ blogLink }}/">{{ blogLinkText }}</a></li>
-        {% if tags contains "Work" %}
-        <li class="crumb"><a href="/topics/{{ workLink }}/">{{ workLinkText }}</a></li>
-        {% endif %}
-      </ol>
-    </nav>
-    <h1 class="hero__title">{{ title }}</h1>
-    <div class="hero__sub-title">
-      <p>
-        {{ subtitle }}
-      </p>
-    </div>
-    {% comment %} metaPrefix, , , , readTime = '', modifiedDatetime = '', modifiedDate = '' {% endcomment %}
-    {% capture publishedDatetime %}{{ date | date: "%Y-%m-%d"}}{% endcapture %}
-    {% capture publishedDate %}{{ date | date: "%-m.%-d.%Y"}}{% endcapture %}
-    {% capture topicLinks %}
-      {% for tag in tags %}
-      <a href="/topics/{{ tag | downcase }}">{{ tag | downcase }}</a>{% if forloop.last != true %},{% endif %}
-      {% endfor %}
-    {% endcapture %}
-    {% assign readTime = content | timeToRead %}
-    {% assign modifiedDatetime = '' %}
-    {% assign modifiedDate = '' %}
-    {% if modified %}
-      {% assign modifiedDatetime = modified | date: "%Y-%m-%d" %}
-      {% assign modifiedDate = modified | date: "%-m.%-d.%Y" %}
-    {% endif %}
+<article>
 
-    {% PostMeta "hero", publishedDatetime, publishedDate, topicLinks, readTime, modifiedDatetime, modifiedDate %}
+  <div class="post grid">
+    <!-- TODO: The opening of articles is no longer a hero, differentiate it at some point -->
+    <header class="hero grid__subgrid grid__subgrid--body grid__subgrid--hr">
+      <nav class="crumbs" aria-labelledby="breadcrumbs-label">
+        <span class="sr-only" id="breadcrumbs-label">Breadcrumbs:</span>
+        <ol>
+          <li class="crumb crumb--skip-to"><a href="#toc-nav" class="skip-to-link">Skip to Table of Contents</a></li>
+          <li class="crumb"><a href="/">Home</a></li>
+          <li class="crumb"><a href="/{{ blogLink }}/">{{ blogLinkText }}</a></li>
+          {% if tags contains "Work" %}
+          <li class="crumb"><a href="/topics/{{ workLink }}/">{{ workLinkText }}</a></li>
+          {% endif %}
+        </ol>
+      </nav>
+      <h1 class="hero__title">{{ title }}</h1>
+      <div class="hero__sub-title">
+        <p>
+          {{ subtitle }}
+        </p>
+      </div>
+      {% comment %} metaPrefix, , , , readTime = '', modifiedDatetime = '', modifiedDate = '' {% endcomment %}
+      {% capture publishedDatetime %}{{ date | date: "%Y-%m-%d"}}{% endcapture %}
+      {% capture publishedDate %}{{ date | date: "%-m.%-d.%Y"}}{% endcapture %}
+      {% capture topicLinks %}
+        {% for tag in tags %}
+        <a href="/topics/{{ tag | downcase }}">{{ tag | downcase }}</a>{% if forloop.last != true %},{% endif %}
+        {% endfor %}
+      {% endcapture %}
+      {% assign readTime = content | timeToRead %}
+      {% assign modifiedDatetime = '' %}
+      {% assign modifiedDate = '' %}
+      {% if modified %}
+        {% assign modifiedDatetime = modified | date: "%Y-%m-%d" %}
+        {% assign modifiedDate = modified | date: "%-m.%-d.%Y" %}
+      {% endif %}
 
-  </header>
+      {% PostMeta "hero", publishedDatetime, publishedDate, topicLinks, readTime, modifiedDatetime, modifiedDate %}
 
-{% comment %} TODO: fork @thedigitalman/eleventy-plugin-toc-a11y plugin to allow skip to content links, make header focusable with tabindex -1 {% endcomment %}
-{{ content | toc }}
+    </header>
 
-<a id="post-toc-content" tabindex="-1"></a>
-{{ content }}
+    {% comment %} TODO: fork @thedigitalman/eleventy-plugin-toc-a11y plugin to allow skip to content links, make header focusable with tabindex -1 {% endcomment %}
+    {{ content | toc }}
+  </div>
+
+  <section id="post-toc-content" class="post grid" tabindex="-1">
+  {{ content }}
+  </section>
 
 </article>

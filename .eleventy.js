@@ -1,5 +1,6 @@
 import eleventyAutoCacheBuster from 'eleventy-auto-cache-buster';
-import eleventyPluginTOC from '@thedigitalman/eleventy-plugin-toc-a11y';
+import eleventyPluginTOC from 'notacouch-eleventy-plugin-toc-ally';
+// import eleventyPluginTOCDigitalMan from '@thedigitalman/eleventy-plugin-toc-a11y';
 import eleventyTimeToRead from 'eleventy-plugin-time-to-read';
 import markdownIt from 'markdown-it';
 import markdownItNamedHeadings from 'markdown-it-named-headings';
@@ -114,6 +115,9 @@ export default function (eleventyConfig) {
     headingClass: 'toc__header',
     headingText: 'Table of Contents',
     listClass: 'toc__ol',
+    skipLink: true,
+    skipLinkClass: 'skip-to-link',
+    skipLinkTargetId: 'post-toc-content',
   });
   eleventyConfig.addPlugin(eleventyTimeToRead, {
     // Unexpected: makes read time shorter than the default 1,000 characters...
