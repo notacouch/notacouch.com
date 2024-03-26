@@ -53,6 +53,10 @@ export default class HeaderNav {
       links += `<li><a ${linkAttrs}>${linkConfig.key}</a></li>`;
     });
 
+    // VoiceOver is not propogating focus for links, but does so for buttons.
+    // But then there's no blur event to manage so can't rehide.
+    // <button class="skip-to-link" href="#content" id="main-nav__skip-to-content">Skip to Content</button>
+
     return `
     <nav class="grid main-nav" aria-labelledby="main-nav-label">
       <span class="sr-only grid__start" id="main-nav-label"
@@ -65,7 +69,7 @@ export default class HeaderNav {
           class="n-for-notacouch"
       /></a>
       <ul class="main-nav__list grid__end-body-right-more" role="list">
-        ${links}
+      <li id="main-nav__skip-to-content-li"><a class="skip-to-link" href="#content" id="main-nav__skip-to-content">Skip to Content</a></li>${links}
       </ul>
     </nav>
     `;

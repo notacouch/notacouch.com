@@ -67,6 +67,11 @@ export default function (eleventyConfig) {
   });
   // eleventyConfig.addPassthroughCopy("styles.css");
 
+  // Components changes are not reflected on refresh. Below made no difference.
+  // eleventyConfig.setServerOptions({
+  //   watch: ['_src/components/**/*.js'],
+  // });
+
   // @url https://www.11ty.dev/docs/collections/#advanced-custom-filtering-and-sorting
   // @url https://github.com/11ty/eleventy/issues/927#issuecomment-627703544
   eleventyConfig.addCollection('tagList', function (collectionApi) {

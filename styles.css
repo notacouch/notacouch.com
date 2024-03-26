@@ -306,13 +306,44 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-nav__list > li > a {
-  transition-property: all;
+  transition-property: color;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 .main-nav__list > li > a:hover {
   color: var(--color-text-main-nav-hover);
   text-decoration: underline;
+}
+
+#main-nav__skip-to-content-li {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-82%);
+  margin: 0;
+}
+#main-nav__skip-to-content-li:focus-within:before {
+  content: " ";
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  bottom: calc(-.8em - 6px);
+  left: calc(50% - 10px);
+  border-right: 1px solid var(--color-text-main-nav-hover);
+  border-bottom: 1px solid var(--color-text-main-nav-hover);
+  transform: rotate(45deg) translateY(-50%);
+}
+#main-nav__skip-to-content-li:focus-within:after {
+  content: " ";
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  bottom: -.8em;
+  left: calc(50% - 10px);
+  border-right: 1px solid var(--color-text-main-nav-hover);
+  border-bottom: 1px solid var(--color-text-main-nav-hover);
+  transform: rotate(45deg) translateY(-50%);
 }
 
 .main-nav__list a[aria-current="page"] {
@@ -557,7 +588,7 @@ p {
   display: inline-block;
 }
 
-.crumb::after {
+.crumb:not(:has(.skip-to-link))::after, .crumb--skip-to:focus-within:after {
   display: inline-block;
   /* color: #000; */
   content: ">";
@@ -1227,7 +1258,42 @@ Try setting display to something other than block.
   }
 }
 
-.sr-only {
+
+/* VoiceOver triggers none of these except for maybe hover unless instead of <a> use <button> */
+/*
+.skip-to-link:active {
+  outline: red 2px solid;
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+.skip-to-link:focus {
+  outline: blue 3px solid;
+  text-decoration: underline;
+  text-decoration-color: blue;
+}
+.skip-to-link:focus-within {
+  outline: brown 4px solid;
+  text-decoration: underline;
+  text-decoration-color: brown;
+}
+.skip-to-link:target {
+  outline: #ccc 4px solid;
+  text-decoration: underline;
+  text-decoration-color: #ccc;
+}
+.skip-to-link:focus-visible {
+  outline: green 2px solid;
+  text-decoration: underline;
+  text-decoration-color: green;
+}
+.skip-to-link:hover {
+  outline: yellow 4px solid;
+  text-decoration: underline;
+  text-decoration-color: yellow;
+} */
+
+
+.sr-only, .skip-to-link {
   position: absolute;
   left: -10000px;
   top: auto;
@@ -1235,6 +1301,31 @@ Try setting display to something other than block.
   height: 1px;
   overflow: hidden;
 }
+
+/* .skip-to-link:not(:hover, :active, :target, :focus, :focus-visible)
+{
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+*/
+
+.skip-to-link:focus {
+  position:static;
+  width:auto;
+  height:auto;
+}
+
+/* .skip-to-link:hover {
+  position: relative;
+  left: auto;
+  width: fit-content;
+  height: auto;
+  overflow: visible;
+} */
 
 /* direct comparison of items to compensate for certain unnamed devtoools that don't facilitate computed values */
 .grid > .item {

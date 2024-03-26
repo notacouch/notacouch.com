@@ -50,7 +50,10 @@
   <body class="{{ body_class }}">
     {% HeaderNav page.url %}
 
-    <main>
+{% comment %} <output id="output-focus"></output><br />
+<output id="output-blur"></output> {% endcomment %}
+
+    <main id="content" tabindex="-1">
 {{ content }}
     </main>
 
@@ -93,5 +96,25 @@
       });
     </script>
     {% endif %}
+    {% comment %}
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        // VoiceOver does not propogate focus/blur
+        //const output = document.getElementById('output-focus');
+        //document.addEventListener("focus", (event) => {
+        //  output.innerText = document.activeElement.nodeName;
+        //}, true);
+        //const outputBlur = document.getElementById('output-blur');
+        //document.body.addEventListener("blur", (event) => {
+        //  outputBlur.innerText = document.activeElement.nodeName;
+        //}, true);
+        document.querySelectorAll("button.skip-to-link").forEach((skipButton) => {
+          skipButton.addEventListener("click", function goToHref(event) {
+            document.location = this.getAttribute("href");
+          });
+        });
+      });
+    </script>
+    {% endcomment %}
   </body>
 </html>

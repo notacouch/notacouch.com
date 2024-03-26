@@ -120,7 +120,7 @@ body_class: page--home
 
 {% HomeHero homeTitle, homeSubtitle %}
 
-<section class="grid">
+<section class="grid" tabindex="0">
   <h2>Latest posts</h2>
   <p class="subtitle-color">I use this site to write about things I&rsquo;ve worked on and share things I&rsquo;ve learned.</p>
   {% for post in collections.all reversed limit:5 %}

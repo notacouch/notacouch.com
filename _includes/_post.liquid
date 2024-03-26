@@ -24,6 +24,7 @@ layout: _index.liquid
     <nav class="crumbs" aria-labelledby="breadcrumbs-label">
       <span class="sr-only" id="breadcrumbs-label">Breadcrumbs:</span>
       <ol>
+        <li class="crumb crumb--skip-to"><a href="#toc" class="skip-to-link">Skip to Table of Contents</a></li>
         <li class="crumb"><a href="/">Home</a></li>
         <li class="crumb"><a href="/{{ blogLink }}/">{{ blogLinkText }}</a></li>
         {% if tags contains "Work" %}
@@ -57,8 +58,10 @@ layout: _index.liquid
 
   </header>
 
+{% comment %} TODO: fork @thedigitalman/eleventy-plugin-toc-a11y plugin to allow skip to content links {% endcomment %}
 {{ content | toc }}
 
+<a id="post-toc-content"></a>
 {{ content }}
 
 </article>
