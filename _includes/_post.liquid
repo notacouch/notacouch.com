@@ -58,10 +58,10 @@ layout: _index.liquid
 
   </header>
 
-{% comment %} TODO: fork @thedigitalman/eleventy-plugin-toc-a11y plugin to allow skip to content links {% endcomment %}
+{% comment %} TODO: fork @thedigitalman/eleventy-plugin-toc-a11y plugin to allow skip to content links, make header focusable with tabindex -1 {% endcomment %}
 {{ content | toc }}
 
-<a id="post-toc-content"></a>
+<a id="post-toc-content" tabindex="-1"></a>
 {{ content }}
 
 </article>

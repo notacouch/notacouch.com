@@ -588,15 +588,38 @@ p {
   display: inline-block;
 }
 
+
 .crumb:not(:has(.skip-to-link))::after, .crumb--skip-to:focus-within:after {
   display: inline-block;
-  /* color: #000; */
   content: ">";
+  /* iOS VoiceOver still reads this */
+  /* content: url("/blog-images/crumb.svg"); */
+  content: url("/blog-images/phosphor-caret-right.svg");
+  /* content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='#000000' viewBox='0 0 256 256'%3E%3Cpath d='M180.24,132.24l-80,80a6,6,0,0,1-8.48-8.48L167.51,128,91.76,52.24a6,6,0,0,1,8.48-8.48l80,80A6,6,0,0,1,180.24,132.24Z'%3E%3C/path%3E%3C/svg%3E"); */
   font-size: 80%;
   /* font-weight: bold; */
   padding: 0 3px;
   margin-left: 0.1em;
+  /* Doesn't work in iOS VoiceOver */
+  speak: never;
+  speak: none;
 }
+
+
+/* Does not work in VoiceOver iOS or anywhere really
+@url https://www.powermapper.com/tests/screen-readers/content/media-query-speech/ */
+/* @media speech {
+  .crumb:not(:has(.skip-to-link))::after, .crumb--skip-to:focus-within:after {
+    content: "";
+  }
+}
+*/
+/* Does not work in iOS VoiceOver, still gets read */
+/* @counter-style breadcrumbs {
+  system: cyclic;
+  symbols: ">";
+  suffix: ""
+} */
 
 .toc__ol li {
   margin-bottom: 0.67em;
@@ -1293,7 +1316,7 @@ Try setting display to something other than block.
 } */
 
 
-.sr-only, .skip-to-link {
+.sr-only {
   position: absolute;
   left: -10000px;
   top: auto;
@@ -1302,22 +1325,31 @@ Try setting display to something other than block.
   overflow: hidden;
 }
 
-/* .skip-to-link:not(:hover, :active, :target, :focus, :focus-visible)
+.skip-to-link:not(:hover, :active, :target, :focus, :focus-visible)
 {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+  /* Credit:
+  @url https://kittygiraudel.com/snippets/sr-only-class/ */
+  /* See also:
+  @url https://codepen.io/vincent-valentin/full/JjGmxzV */
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
 }
-*/
 
+/*
 .skip-to-link:focus {
   position:static;
   width:auto;
   height:auto;
-}
+} */
 
 /* .skip-to-link:hover {
   position: relative;
