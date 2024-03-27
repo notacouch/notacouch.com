@@ -19,6 +19,7 @@ I found a backup of the markup's prototype, you can [see the code on GitHub](htt
 
 {% Figure "img--grid--full", "", "", 'Image color transition with sprites (<span class="media-timestamp" data-media-id="tillett-lighting-prototype-demo" data-timestamp="4">4-8s</span>), clean up of layout (<span class="media-timestamp" data-media-id="tillett-lighting-prototype-demo" data-timestamp="20">20-31s</span>), float-based layout &mdash; review effect of overflow on float wrapper (<span class="media-timestamp" data-media-id="tillett-lighting-prototype-demo" data-timestamp="35">35-55s</span>).' %}
   <video id="tillett-lighting-prototype-demo" controls class="figure__img figure--img--body__img" width="1280" style="aspect-ratio: 4 / 3" poster="/blog-images/fusionlab/tillett/tillett-lighting-poster-optimized.png">
+    <source src="/blog-images/fusionlab/tillett/tillett-lighting.m3u8" type="application/x-mpegURL">
     <source src="/blog-images/fusionlab/tillett/tillett-lighting.mp4" type="video/mp4">
     <track kind="captions" srclang="en" label="English" src="/blog-images/fusionlab/tillett/tillett-lighting-en.vtt" default>
   </video>
