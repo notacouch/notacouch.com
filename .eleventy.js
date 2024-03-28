@@ -1,3 +1,4 @@
+// import eleventyPurgeCss from 'eleventy-plugin-purgecss';
 import eleventyAutoCacheBuster from 'eleventy-auto-cache-buster';
 import eleventyPluginTOC from 'notacouch-eleventy-plugin-toc-ally';
 // import eleventyPluginTOCDigitalMan from '@thedigitalman/eleventy-plugin-toc-a11y';
@@ -45,6 +46,14 @@ export default function (eleventyConfig) {
   // Watch components (doesn't seem to work)
   eleventyConfig.addWatchTarget('./_src/**/*.js');
 
+  // Really can't get ignores to stop ignoring
+  // eleventyConfig.ignores.delete('styles/');
+  // eleventyConfig.watchIgnores.delete('styles/');
+  // eleventyConfig.ignores.delete('styles/base.min.css');
+  // eleventyConfig.ignores.delete('styles/styles.min.css');
+  eleventyConfig.addWatchTarget('styles/base.min.css');
+  eleventyConfig.addWatchTarget('styles/styles.min.css');
+
   // Manage JS expectations in Liquid
   // @url https://www.11ty.dev/docs/languages/liquid/#javascript-truthiness-in-liquid
   eleventyConfig.setLiquidOptions({
@@ -56,12 +65,12 @@ export default function (eleventyConfig) {
 
   // Pass through assets
   const assets = [
-    'styles.css',
     'notacouch-icon.png',
     'notacouch-icon-256.png',
     'blog-images',
     'tangibles',
     'storybook',
+    'styles',
   ];
   assets.forEach(function passAsset(asset) {
     eleventyConfig.addPassthroughCopy(asset);
@@ -109,6 +118,12 @@ export default function (eleventyConfig) {
       .use(markdownItAttrs),
   );
 
+  // if (process.env.NODE_ENV === "production") {
+  //   eleventyConfig.addPlugin(purgeCssPlugin);
+  // }
+
+  // not working out of box with 11ty 3.x
+  // eleventyConfig.addPlugin(eleventyPurgeCss);
   eleventyConfig.addPlugin(eleventyAutoCacheBuster);
   eleventyConfig.addPlugin(eleventyPluginTOC, {
     wrapperClass: 'toc',

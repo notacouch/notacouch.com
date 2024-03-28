@@ -2,11 +2,13 @@
 import { INITIAL_VIEWPORTS, MINIMAL_VIEWPORTS } from '@storybook/addon-viewport';
 // import 'anysort';
 
+// These files are ../_src/styles/base.css:
 import '../node_modules/normalize.css/normalize.css';
-import '../styles.css';
 import '@phosphor-icons/web/light';
 import '@phosphor-icons/web/fill';
 import 'highlight.js/styles/github.min.css';
+// This is the way
+import '../_src/styles/styles.css';
 
 // Using ES6 import syntax
 import hljs from 'highlight.js/lib/core';

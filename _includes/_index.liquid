@@ -13,28 +13,30 @@
     <link rel="apple-touch-icon" href="/notacouch-icon.png" />
 
     {% comment %} TODO: CSPs for these {% endcomment %}
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    {% comment %} <link rel="preconnect" href="https://cdnjs.cloudflare.com"> {% endcomment %}
     <link rel="preconnect" href="https://unpkg.com">
     <link rel="preconnect" href="https://use.typekit.net">
 
+    <link rel="stylesheet" href="/styles/base.min.css" />
+
     {% comment %} TODO: Do build stuff w/ normalize css? or just use unpkg, too, (but it's not minimized there) or have other assets use cloudflare {% endcomment %}
-    <link
+    {% comment %} <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
       integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    />
+    /> {% endcomment %}
 
     {% comment %} TODO: Do build stuff w/ highlightjs css? {% endcomment %}
-    <link
+    {% comment %} <link
       rel="stylesheet"
       href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github.min.css"
-    />
+    /> {% endcomment %}
     <link rel="stylesheet" href="https://use.typekit.net/bhk0fhv.css">
 
     {% comment %} TODO: Do build stuff w/ icons css? {% endcomment %}
-    <link
+    {% comment %} <link
       rel="stylesheet"
       type="text/css"
       href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/light/style.css"
@@ -43,9 +45,9 @@
       rel="stylesheet"
       type="text/css"
       href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/fill/style.css"
-    />
+    /> {% endcomment %}
     {% comment %} TODO: Definitely do build stuff here, at least 11ty purgecss plugin {% endcomment %}
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/styles/styles.min.css" />
   </head>
   <body class="{{ body_class }}">
     {% HeaderNav page.url %}
