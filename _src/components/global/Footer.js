@@ -20,11 +20,11 @@ export default class Footer {
     return `
     <footer class="main-footer grid">
       <span
-        class="main-footer__copy grid__body-start--lt1250 grid__space-start--gt1250 grid__body-left--gt1500"
+        class="main-footer__copy main-footer__text grid__body-start--lt1250 grid__space-start--gt1250 grid__body-left--gt1500"
         >&copy; 2024 Abed&nbsp;Islam</span
       >
       <span
-        class="main-footer__built grid__body-start--gt1250 grid__mid-body--lt1250"
+        class="main-footer__built main-footer__text grid__body-start--gt1250 grid__mid-body--lt1250"
         >Built on <a href="https://11ty.dev/">11ty</a> with
         <!--<s>♥️</s>-->
         <span class="sr-only">mechanical keyboard</span

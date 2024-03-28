@@ -334,6 +334,11 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: underline;
 }
 
+.main-nav__storybook-icon {
+  position:relative;
+  top: .1em;
+}
+
 code {
   font-family: droid-sans-mono, monospace;
   white-space: pre;
@@ -921,6 +926,10 @@ figcaption {
 @media (max-width: 600px) {
   .figure--img--text-wrap {
     max-width: calc(50% - var(--gutter-width));
+  }
+  .main-footer__text {
+    font-size: .9em;
+    line-height: 1.4;
   }
 }
 

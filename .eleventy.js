@@ -8,7 +8,7 @@ import markdownItNamedHeadings from 'markdown-it-named-headings';
 import markdownItAttrs from 'markdown-it-attrs';
 
 // Components
-import HeaderNav from './_src/components/global/HeaderNav.js';
+// import HeaderNav from './_src/components/global/HeaderNav.js';
 import HomeHero from './_src/components/slices/HomeHero.js';
 import PostPreview from './_src/components/slices/PostPreview.js';
 import PostMeta from './_src/components/slices/PostMeta.js';
@@ -139,7 +139,8 @@ export default function (eleventyConfig) {
     // speed: "200 words per minute"
   });
 
-  eleventyConfig.addShortcode('HeaderNav', function HeaderNavShortcode(currentPageUrl) {
+  eleventyConfig.addShortcode('HeaderNav', async function HeaderNavShortcode(currentPageUrl) {
+    const { default: HeaderNav } = await import('./_src/components/global/HeaderNav.js');
     return componentRender(HeaderNav, arguments);
   });
 

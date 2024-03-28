@@ -26,7 +26,7 @@ To build Storybook for 11ty to pass through, in your project's root directory ru
 npm run build-storybook
 ```
 
-This should generate a `/storybook/` folder.
+This should generate a `/storybook/` folder. You&rsquo;ll want to do this first as 11ty is set up to ignore `/storybook/` but will pass it through at the onset.
 
 ## 11ty
 
@@ -68,9 +68,21 @@ To run 11ty just to build once:
 npx @11ty/eleventy
 ```
 
-## Unused CSS
+## TODOs
 
-Tried to get purgecss, having issues with ESM compatibility even directly in node.
+- Opengraph
+- Report to 11ty team: `--serve` not refreshing component js even with dynamic import (it rewrites but existing source is cached)
+- Work content
+- Then work page
+- Consent for Google Analytics:
+  - Consent mode banner and copy,
+  - Cookies Policy page,
+  - Consent settings
+- Dark mode
+
+### Unused CSS
+
+Tried to get purgecss working, having issues with ESM compatibility even directly in node.
 
 Then tried uncss, but it takes out too many of the styles, not worth the effort.
 

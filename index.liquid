@@ -122,7 +122,7 @@ body_class: page--home
 
 <section class="grid" tabindex="0">
   <h2>Latest posts</h2>
-  <p class="subtitle-color">I use this site to write about things I&rsquo;ve worked on and share things I&rsquo;ve learned.</p>
+  <p class="subtitle-color">This site is still in progress, I&rsquo;ll be using it to write about things I&rsquo;ve worked on and share things I&rsquo;ve learned.</p>
   {% for post in collections.all reversed limit:5 %}
     {% capture postLink %}/blog/{{ post.fileSlug }}/{% endcapture %}
     {% capture publishedDatetime %}{{ post.data.date | date: "%Y-%m-%d" }}{% endcapture %}
