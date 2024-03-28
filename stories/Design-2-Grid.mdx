@@ -4,18 +4,19 @@ import { Meta, Source, Title } from "@storybook/blocks";
 
 <Title>Grid</Title>
 
-Before starting this site, I had always wanted to make something following international/Swiss typographic style. I popped open my copy of Josef Müller-Brockmann&rsquo;s <u>Grid Systems in Graphic Design</u> and was very pleasantly surprised to read in the beginning:
+Before starting this site, I had always wanted to make something following Swiss/International typographic style. I popped open my copy of Josef Müller-Brockmann&rsquo;s <u>Grid Systems in Graphic Design</u> and read some golden things in the beginning:
 
-TODO: INSERT QUOTE FROM BOOK
+> ...the systematic presentation of facts, of sequences of events, and of solutions to problems should, for social and educational reasons, be a constructive contribution to the cultural state of society and an expression of our sense of responsibility.
 
-> block quote
+> Information presented with clear and logically set out titles, subtitles, texts, illustrations and captions will not only be read more quickly and easily but the information will also be better understood and retained in the memory.
 
 So. Content, [typography](../?path=/docs/design-typography--docs), comes before grid. Given I am verbose by default, this site was bound to be text heavy.
 
 The base of the grid stems from this: I settled on the size and measure of the text body and wanted it off center, to the left.
 
 I also wanted:
-- to be able to juxtapose media left and right of each other for a before/after effect
+- (see below) to be able to juxtapose media left and right of each other for a before/after effect
+  - This required splitting the centering grid columns into ones that allowed for left/right equal columns (where allowed by the viewport)
 - have an aside for brief tangents
 - have smaller media of lesser significant that text can wrap around
 - have media match the body more or less
@@ -25,17 +26,19 @@ I also wanted:
 
 There are other chunks of content that have not yet made it to the site, but that about covers it.
 
-TODO: HEY, YOU, SELF, AUTHOR: Link to Web Typography:
-https://book.webtypography.net/
+I feel this is very much a non-standard grid, but it does the things I wanted it to do.
+
+![Screenshot of grid lines with sample header, body text, and wide image](/blog-images/storybook/grid-notes.png)
 
 ## Base grid items
 
-The naming scheme for grid items follows [BEM]("https://en.bem.info/") and [Bootstrap]("https://getbootstrap.com/") (it&rsquo;s stuck in my system &mdash; almost all of Northwell Health&rsquo;s and CitusHealth&rsquo;s projects used one version of Bootstrap or another).
+The naming scheme for grid items follows [BEM](https://en.bem.info/) and [Bootstrap](https://getbootstrap.com/) (it&rsquo;s stuck in my system &mdash; almost all of Northwell Health&rsquo;s and CitusHealth&rsquo;s projects used one version of Bootstrap or another).
+
+_TODO: Need to write this document out._
 
 ## Breakpoints
 
-Though I was considering moving away from responsive design, maybe towards intrinsic design or something partially fluid, once I had content and some structure going it was basically about trying to fit things based upon the viewport&rsquo;s screen real estate. I tried whatever screens I have available, resizing in Chrome, and tried the 2 iOS phones I have as well. If something didn&rsquo;t fit, expand, contract, and/or move as needed.
-
+Though I was considering moving away from responsive design, maybe towards intrinsic design or something partially fluid, once I had content and some structure going it was basically about trying to fit things based upon the viewport&rsquo;s screen real estate. This is not an enterprise design system, it is for this site alone, so I can enjoy tailoring by hand instead of imposed breakpoints. I tried whatever screens I have available, resizing in Chrome, and tried the 2 iOS phones I have as well. If something didn&rsquo;t fit, expand, contract, and/or move as needed.
 
 ### < 900px
 

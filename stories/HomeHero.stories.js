@@ -7,6 +7,8 @@ import HomeHeroSubtitle from '../_src/components/toppings/HomeHeroSubtitle';
  * Toppings: Home Hero Title and Home Hero Subtitle
  *
  * <code>.grid__subgrid--hr</code> provides a bottom border that aligns with the grid.
+ *
+ * A11y: You can tab to the <code>&lt;dl&gt;</code> container and use keyboard arrows to scroll left/right. However, there's no JS yet for bidirectional syncing.
  */
 export default {
   title: 'Slices/Home Hero',

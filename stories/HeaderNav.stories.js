@@ -6,6 +6,8 @@ import HeaderNav from '../_src/components/global/HeaderNav';
 
 /**
  * Currently does not have any particular consideration for a future search input or mobile (since it should all fit).
+ *
+ * A11y: Tab to Skip to Content link.
  */
 export default {
   title: 'Global/HeaderNav',

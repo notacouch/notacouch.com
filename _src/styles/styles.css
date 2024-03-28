@@ -250,22 +250,6 @@ h1, h2, h3, h4, h5, h6 {
   scroll-margin-top: 2ex;
 }
 
-/* TODO: Remove these 2 clowns */
-.hurrr {
-  border-width: 0;
-  /* border-top: 5px solid #eaddcf; */
-  border-bottom: 7px solid #eaddcf;
-  width: 200px;
-  margin-inline: 0;
-  margin-bottom: 1em;
-}
-
-#center-this {
-  max-width: 900px;
-  margin: auto;
-  /* left: -80px; */
-}
-
 .notacouch-reflection {
   position: absolute;
   -webkit-box-reflect: below -0.6em linear-gradient(to top, rgba(255, 255, 255, 0.4), transparent

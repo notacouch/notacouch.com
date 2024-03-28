@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.0] - 2024-03-28
+
+### Changed
+
+- Upgraded Storybook
+- Storybook content now includes a11y notes
+- Storybook docs more public ready
+
 ## [0.4.0] - 2024-03-28
 
 ### Added

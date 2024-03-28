@@ -139,7 +139,7 @@ export const wideImageInGrid = {
   decorators: [
     (Story) => `
   ${Story()}
-  <p>What I'm unable to share is the first JavaScript (JS) challenge I was tasked with. The client wanted a news ticker scrolling on the top right of certain pages. I hadn't done anything like this before, [marquee](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/marquee) did not have universal support, and there were no such scripts on Dynamic Drive, a site where one would find dynamic HTML or dHTML scripts (which is what we called manipulation of the DOM back then). My approach to it was absolutely positioning a mask container div. </p>
+  <p>What I'm unable to share is the first JavaScript (JS) challenge I was tasked with. The client wanted a news ticker scrolling on the top right of certain pages. I hadn't done anything like this before, marquee did not have universal support, and there were no such scripts on Dynamic Drive, a site where one would find dynamic HTML or dHTML scripts (which is what we called manipulation of the DOM back then). My approach to it was absolutely positioning a mask container div. </p>
 `,
   ],
   args: {

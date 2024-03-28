@@ -97,48 +97,11 @@ const preview = {
     layout: 'fullscreen',
 
     options: {
-      // 8.0.4 upgrade fixed for dev server but not build.
-      // Posted here: @url https://github.com/storybookjs/storybook/issues/6327#issuecomment-2015765093
-      // Nothing works
-      // storySort: {
-      //   method: 'custom',
-      //   order: ['Slices', 'Design'],
-      // },
-      // This does not sort
-      // storySort: (previous, next) => {
-      //   // .title returns the title as seen in Meta tag, e.g. Design/Colors
-      //   console.log('previous: ', previous.title, 'next: ', next.title);
-      //   console.log('previous id: ', previous.id, 'next id: ', next.id);
-      //   const storyOrder = [
-      //     'Design/Typography',
-      //     'Design/Colors',
-      //     'Design/Grid',
-      //     'Design/Atomic Design: Slices & Toppings',
-      //   ];
-      //   const previousPosition = storyOrder.indexOf(previous.title);
-      //   const nextPosition = storyOrder.indexOf(next.title);
-      //   console.log('previous position? ', previousPosition, ' nextPosition? ', nextPosition);
-      //   return nextPosition > -1 ? nextPosition : storyOrder.length + 1;
-      // },
-      // None of these work at all for production
       // docs @url https://storybook.js.org/docs/api/parameters#optionsstorysort
       storySort: {
         method: 'custom',
-        // order: ['Design/Typography', ['Colors', 'Grid', '*'], '*'],
         order: ['Design', ['Typography', 'Grid', 'Colors', 'Atomic Design: Slices & Toppings']],
-        // order: ['Slices/Figure', 'Design', '*'],
       },
-      // Credit
-      // // @url https://github.com/storybookjs/storybook/issues/6327#issuecomment-664900197
-      // storySort: (previous, next) => {
-      //   // const [previousStory, previousMeta] = previous;
-      //   // const [nextStory, nextMeta] = next;
-      //   // this did not work either, "anysort is not defined", it's 5 years old, cjs
-      //   // Addendum:
-      //   // @url https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#v7-style-story-sort
-      //   // "storySort must be a self-contained function that does not reference external variables."
-      //   return anysort(previous.title, next.title, ['Design/Typography', '**']);
-      // },
     },
 
     // @url https://storybook.js.org/docs/essentials/viewport

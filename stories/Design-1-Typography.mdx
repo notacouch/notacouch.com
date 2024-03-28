@@ -4,24 +4,94 @@ import { Meta, Title, Typeset } from "@storybook/blocks";
 
 <Title>Typography</Title>
 
-_WIP_ ...
+Inspired by [Jeremy Keith&rsquo;s post on designing the Patterns Day site](https://clearleft.com/thinking/designing-the-patterns-day-site), I put books down and got started on my own. I wish I had gone through Richard Rutter&rsquo;s [Web Typography](https://book.webtypography.net/) book first, though! If you do anything related to web design, this is a must-have in your library, how I wish I had a physical copy.
 
 ## Choice of type
 
+While I did not leverage the timeless guidance in the aforementioned book, and even though I&rsquo;ve long-since wanted to fashion a site resembling Swiss/International style, I knew I wanted to pair a humanist and serif font. I&rsquo;ve had problems with Google Fonts in the past mostly due to strange routing issues with my ISP, so I just stuck to what Adobe Fonts (formerly Typekit) had to offer. I collected the typefaces that appealed most to me with one for code and one for utility/links usage and threw it in a page to test combinations:
+
+![Screenshot of html page with dropdowns for selecting font pairs](/blog-images/storybook/type-choice.png)
+
+In the end I went with:
+- Karmina
+- Source Serif Pro
+- DarkMode On
+- Droid Sans Mono
+
+(For code, I wanted something web-friendly as close to what I use in editors depending on platform, i.e. Meslo LG S & Menlo, but couldn&rsquo;t find a similar font within Adobe&rsquo;s roster.)
+
 ## Sizes
 
-## Measure
-
-## DPI
-
-## Vertically challenged
+In the past, we used to use much smaller font sizes. But testing across devices and screens at my disposal, playing with [Size Calculator](https://sizecalc.com/), I found browser default font sizes were actually pretty good now. I didn't see any need to increase size with wider displays, e.g. just making a window wider or smaller, I&rsquo;m still on the same screen. I have devices with similar resolution but are a fraction of each other&rsquo;s size, going larger in one was worse for the other and vice-versa.  Since there isn&rsquo;t a way of gauging actual device specs and actual approximate viewing distance, again, starting with browser defaults as a base works decently.
 
 ### x-height
 
+A great practice I picked up from <u>Web Typography</u> is comparing the x-height of your font against that of a timeless one. I did so with Source Serif Pro against Helvetica, so its equivalent of 16px is more like 17.x, closer to 18px. I left calculations at subpixel values, let&rsquo;s see how that goes.
+
+## Measure
+
+Is there research on how much text should go in a line? Not enough. If we do get there, it will probably not change anything. Again, <u>Web Typography</u>, solid measure for single-column is between 45 and 75 characters. So I tested that against display, header, and body texts using the following CSS:
+
+```css
+/*
+       For body text: 45-75ch (font) or 23-38em (screen)
+*/
+      .measure {
+        max-width: 75ch;
+        position: relative;
+      }
+
+      .measure::before {
+        content: " 45ch ";
+        text-align: right;
+        position: absolute;
+        top: -1.5em;
+        left: 0;
+        height: 100px;
+        width: 45ch;
+        border-right: 1px solid red;
+        z-index: -1;
+      }
+
+      .measure::after {
+        content: " 75ch ";
+        text-align: right;
+        position: absolute;
+        top: -1.5em;
+        left: 0;
+        height: 100px;
+        width: 75ch;
+        border-right: 1px solid violet;
+        z-index: -1;
+      }
+```
+
+![Screenshot of html page testing type measure](/blog-images/storybook/type-measure.png)
+
+I wound up going `71ch` for body text.
+
+Display text doesn&rsquo;t play by the same rules.
+
+## DPI
+
+I was surprised to see this be an issue. I was happy with my selection of Source Serif Pro at first. But then I realized I wasn&rsquo;t happy with it on low resolution single DPI screens. The above screenshot is weight 300 on a 2 DPI screen. On a 1 DPI screen, the normal weight (400) was way too thick:
+
+![Screenshot of html page testing type measure at 1 DPI, 400 font-weight](/blog-images/storybook/type-dpi-1-weight-400.png)
+
+At `font-weight: 300` on a 1 DPI screen, it&rsquo;s a little too light for my liking:
+
+![Screenshot of html page testing type measure at 1 DPI, 300 font-weight](/blog-images/storybook/type-dpi-1-weight-300.png)
+
+I stuck with it, though, and adjusted `line-height` depending on whether the DPI was 1 versus &gt; 1.
+
+## Vertically challenged
+
 ### She cannah take no more cap'n!
+
+_Don&rsquo;t shoot!_
 
 Things that I skipped out on for now:
 
 - typographic scale especially when pairing fonts or delineating sections and nesting in content
 - vertical rhythm (super excited to use `rlh` and `lh` units!)
-- a smarter approach to vertical margins and gutters, I think I&rsquo;ll continue to brute force my way through this so I have more instances and data to work with in an audit.
+- a smarter approach to vertical margins and gutters, I think I&rsquo;ll continue to brute force my way through this so I have more instances and data to work with in an audit. There&rsquo;s a lot I am looking forward to reconciling given the things new to me, e.g. gap, gap vs vs margin, new selectors, and new units.
