@@ -45,7 +45,7 @@
     "build-css": "npx lightningcss --minify --bundle ./_src/styles/base.css -o ./styles/base.min.css && npx lightningcss --minify ./_src/styles/styles.css -o ./styles/styles.min.css",
     "build-storybook": "storybook build --output-dir ./storybook",
     "storybook": "storybook dev -p 6006",
-    "postinstall": "cp -r ./node_modules/@phosphor-icons/web/src/light/Phosphor-Light.* ./styles && cp -r ./node_modules/@phosphor-icons/web/src/fill/Phosphor-Fill.* ./styles",
+    "postinstall": "mkdir -p styles && cp -r ./node_modules/@phosphor-icons/web/src/light/Phosphor-Light.* ./styles && cp -r ./node_modules/@phosphor-icons/web/src/fill/Phosphor-Fill.* ./styles",
     "watch-css": "turbowatch ./.turbowatch.js"
   }
 }
