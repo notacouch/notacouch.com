@@ -1,5 +1,12 @@
 # Changelog
 
+## [Server side] 2024-03-30
+
+### Added
+
+- Can you believe my host didn&rsquo;t have basic automatic serving stuff like gzip?
+- GitHub workflow for uploading to host on push
+
 ## [0.5.0] - 2024-03-28
 
 ### Changed

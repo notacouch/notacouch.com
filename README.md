@@ -75,10 +75,13 @@ npx @11ty/eleventy
 - Work content
 - Then work page
 - Consent for Google Analytics:
+  - disable their third party `ar_debug` cookie
   - Consent mode banner and copy,
   - Cookies Policy page,
   - Consent settings
+- Search
 - Dark mode
+- Web Mentions or similar
 
 ### Unused CSS
 

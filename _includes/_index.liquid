@@ -6,18 +6,20 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
+    <meta name="color-scheme" content="light">
     {% comment %} Credit: @url https://darn.es/you-should-add-a-generator-tag-to-your-eleventy-site/ {% endcomment %}
     <meta name="generator" content="{{ eleventy.generator }}">
     <title>{{ title }} - notacouch.com</title>
-    <link rel="icon" href="/notacouch-icon.png" />
-    <link rel="apple-touch-icon" href="/notacouch-icon.png" />
+    {% comment %} TODO: mv icons, actual icon format {% endcomment %}
+    <link rel="icon" href="/notacouch-icon.png">
+    <link rel="apple-touch-icon" href="/notacouch-icon.png">
 
     {% comment %} TODO: CSPs for these {% endcomment %}
     {% comment %} <link rel="preconnect" href="https://cdnjs.cloudflare.com"> {% endcomment %}
     <link rel="preconnect" href="https://unpkg.com">
     <link rel="preconnect" href="https://use.typekit.net">
 
-    <link rel="stylesheet" href="/styles/base.min.css" />
+    <link rel="stylesheet" href="/styles/base.min.css">
 
     {% comment %} TODO: Do build stuff w/ normalize css? or just use unpkg, too, (but it's not minimized there) or have other assets use cloudflare {% endcomment %}
     {% comment %} <link

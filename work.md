@@ -17,7 +17,7 @@ How can one showcase work that is either behind NDAs, lost to time, or otherwise
 
 - Projects / "Static-Stack":
   - notacouch.com:
-    - Lessons learned on grid
+    - Lessons learnt about CSS grid
     - New-to-me frontend things I got to play with
     - 11ty 3 and Storybook 8!
     - iOS VoiceOver and Skip to links
@@ -30,19 +30,21 @@ How can one showcase work that is either behind NDAs, lost to time, or otherwise
 - amCharts / "Support":
   - Select q/a samples from StackOverflow, Codepen, Stackblitz
 - Northwell Health / "Frontend+DX+Systems-Stack":
-  - Accessibility at Northwell Health
+  - Towards Design System at Northwell Health
+  - Accessibility examples at Northwell Health
   - Liberating monolith CSS with gulp
+  - The Northwell Health Badge (2016)
   - What can and cannot be taught
   - More...
 - zoojaja / "Video-Streaming-Stack":
-  - SPA with PhoneGap
+  - Paradigm shifts for first SPA (2013)
 - FKAD / "Full-[is-an-understatement-]Stack":
   - Testing the waters of AWS (2011)
   - How accessibility came to be important to me (2012)
 - Fusionlab / "Full-Stack":
-  - Jane Jacobs: Future of NY Exhibit (2007)
-  - Tumi Tech (2008)
   - MoHMA.org (2009 - present)
+  - Tumi Tech (2008)
+  - Jane Jacobs: Future of NY Exhibit (2007)
 
 </div>
 
