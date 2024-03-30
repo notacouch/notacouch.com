@@ -45,7 +45,7 @@ layout: _index.liquid
       {% capture publishedDate %}{{ date | date: "%-m.%-d.%Y"}}{% endcapture %}
       {% capture topicLinks %}
         {% for tag in tags %}
-        <a href="/topics/{{ tag | downcase }}">{{ tag | downcase }}</a>{% if forloop.last != true %},{% endif %}
+        <a href="/topics/{{ tag | downcase | slugify }}">{{ tag | downcase }}</a>{% if forloop.last != true %},{% endif %}
         {% endfor %}
       {% endcapture %}
       {% assign readTime = content | timeToRead %}

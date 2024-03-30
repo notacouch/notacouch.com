@@ -27,7 +27,7 @@ topic: all
 
     <ul>
     {% for tag in collections.tagList %}
-      <li><a {% if topic == tag %} aria-current="page" {% else %}href="/topics/{{ tag | downcase }}"{% endif %}>{{ tag }}</a></li>
+      <li><a {% if topic == tag %}aria-current="page"{% endif %} href="/topics/{{ tag | downcase }}">{{ tag }}</a></li>
     {% endfor %}
     </ul>
   </nav>
@@ -41,7 +41,7 @@ topic: all
     {% capture publishedDate %}{{ post.data.date | date: "%-m.%-d.%Y" }}{% endcapture %}
       {% capture topicLinks %}
           {% for tag in post.data.tags %}
-          <a href="/topics/{{ tag | downcase }}">{{ tag | downcase }}</a>{% if forloop.last != true %},{% endif %}
+          <a href="/topics/{{ tag | downcase | slugify}}">{{ tag | downcase }}</a>{% if forloop.last != true %},{% endif %}
           {% endfor %}
     {% endcapture %}
     {% PostPreview postLink, post.data.title, post.data.subtitle, publishedDatetime, publishedDate, topicLinks %}

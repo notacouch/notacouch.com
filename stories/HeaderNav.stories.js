@@ -27,7 +27,7 @@ export default {
       // control: { type: "text" },
       control: 'text',
       description:
-        'If the URL matches the link (/work/ or /blog/), the link should have `aria-current=page` and text links should become underlined without an `href`.',
+        'If the URL matches the link (/work/ or /blog/), the link should have `aria-current=page` and text links should become underlined.',
       table: {
         type: 'string',
       },
@@ -51,7 +51,7 @@ export default {
 };
 
 /**
- * `url === '/'`: Logo should no longer have `href` and instead have `aria-current="page"`
+ * `url === '/'`: Logo should have `aria-current="page"`
  */
 export const Home = {
   args: {
@@ -60,7 +60,7 @@ export const Home = {
 };
 
 /**
- * `url === '/work/'`: Work link should be underlined, no longer have `href`, and instead have `aria-current="page"`
+ * `url === '/work/'`: Work link should be underlined and have `aria-current="page"`
  */
 export const OnWork = {
   args: {
@@ -69,7 +69,7 @@ export const OnWork = {
 };
 
 /**
- * `url === '/blog/'`: Blog link should be underlined, no longer have `href`, and instead have `aria-current="page"`
+ * `url === '/blog/'`: Blog link should be underlined have `aria-current="page"`
  */
 export const OnBlog = {
   args: {
@@ -78,6 +78,6 @@ export const OnBlog = {
 };
 
 /**
- * In any other page, all the links should have `href`, none should have `aria-current="page"`
+ * In any other page, none of the links should have `aria-current="page"`
  */
 export const NonNavPage = {};

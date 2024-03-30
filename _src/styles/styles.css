@@ -564,6 +564,10 @@ p {
   color: var(--color-text-main-nav);
 }
 
+.blog__topics li a[aria-current="page"] {
+  text-decoration: none;
+}
+
 .crumbs {
   margin-bottom: 0;
 }

@@ -1,6 +1,6 @@
 ---
 title: Tillett Lighting (2008)
-tags: ["Frontend", "CSS", "JavaScript", "Work", "fusionlab"]
+tags: ["Frontend", "CSS", "JavaScript", "UI/UX", "Work", "fusionlab"]
 date: 2024-03-15 12:00:00Z
 subtitle: "Cleaned up frontend while migrating to a CMS: use of image sprites, MooTools, and float-based layout."
 ---

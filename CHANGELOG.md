@@ -7,6 +7,11 @@
 - Can you believe my host didn&rsquo;t have basic automatic serving stuff like gzip?
 - GitHub workflow for uploading to host on push
 
+### Changed
+
+- SEO fix: put `href` attrs back in for same page links
+- Topic links now slugify'd
+
 ## [0.5.0] - 2024-03-28
 
 ### Changed

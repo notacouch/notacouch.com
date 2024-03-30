@@ -20,17 +20,8 @@ export default class HeaderNav {
   render(currentPageUrl = '') {
     // TODO: dynamic import .main-nav css, or not, see above
 
-    // const blogUrl = '/blog/';
-    // const onBlog = (currentPageUrl && currentPageUrl === blogUrl);
-    // let blogLinkAttrs = '';
-    // if (onBlog) {
-    //   blogLinkAttrs = 'aria-current="page"';
-    // } else {
-    //   blogLinkAttrs = `href="${blogUrl}"`;
-    // }
-
     const ariaCurrent = 'aria-current="page"';
-    const homeLinkAttrs = currentPageUrl === '/' ? ariaCurrent : 'href="/"';
+    const homeLinkAttrs = currentPageUrl === '/' ? ariaCurrent + ' href="/"' : 'href="/"';
     let links = '';
 
     [
@@ -44,11 +35,9 @@ export default class HeaderNav {
       },
     ].forEach(function createLinks(linkConfig) {
       const onPage = currentPageUrl && currentPageUrl === linkConfig.url;
-      let linkAttrs = '';
+      let linkAttrs = `href="${linkConfig.url}"`;
       if (onPage) {
-        linkAttrs = ariaCurrent;
-      } else {
-        linkAttrs = `href="${linkConfig.url}"`;
+        linkAttrs += ' ' + ariaCurrent;
       }
       links += `<li><a ${linkAttrs}>${linkConfig.key}</a></li>`;
     });
