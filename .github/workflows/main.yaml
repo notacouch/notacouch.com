@@ -10,7 +10,7 @@ on:
       sync:
         description: "File synchronization"
         required: true
-        default: "full"
+        default: "delta"
 
 jobs:
 
@@ -39,6 +39,7 @@ jobs:
       - name: "Deploy main branch"
         uses: milanmk/actions-file-deployer@master
         with:
+          sync: "full"
           remote-protocol: "sftp"
           remote-port: 22
           remote-host: ${{ secrets.IONOS_SFTP_HOST }}
