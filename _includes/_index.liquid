@@ -61,6 +61,15 @@
       'ad_personalization': 'denied',
       'analytics_storage': 'denied'
     });
+    document.cookie.split('; ').some((cookie) => {
+      const cookiePrefsStr = 'sitePrefs=';
+      if (cookie.startsWith(cookiePrefsStr) && cookie.substring(cookiePrefsStr.length, cookie.length).trim() === 'approved') {
+        gtag('consent', 'update', {
+          'analytics_storage': 'granted',
+        })
+        return true;
+      }
+    });
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H3VSK2D9W9"></script>
   <script>
@@ -73,6 +82,21 @@
   <body class="{{ body_class }}">
     {% HeaderNav page.url %}
 
+    <details class="cookie-banner" open id="cookie-banner" tabindex="0" inert>
+    {% comment %} <!-- Originally the details had role="region" and aria-labelledby="cookie-banner__summary" bc of
+    @url: https://github.com/alphagov/govuk-frontend/issues/2102
+    but then you get axe-core error: aria-allowed-role @url https://dequeuniversity.com/rules/axe/4.8/aria-allowed-role?application=axeAPI
+    the details tag is good on its own, see @url https://stackoverflow.com/a/58105671/781824
+     --> {% endcomment %}
+      <summary class="cookie-banner__summary" id="cookie-banner__summary" tabindex="0"><span class="cookie-banner__summary__post-marker summary__post-marker"></span>This site uses cookies.
+      {% comment %} <!-- nested-interactive: @url https://dequeuniversity.com/rules/axe/4.8/nested-interactive?application=axeAPI --> <button id="cookie-banner__close" class="destyle-button"><span class="sr-only">Decline and close cookie banner</span><span class="ph-light ph-x-circle"></span></button> {% endcomment %}
+      </summary>
+      <div class="cookie-banner__content" tabindex="0">
+      <p>Cookies are small text files stored on your device. If you accept, I&rsquo;ll use cookies solely for analysis of website traffic. Declining still results in one cookie being used so we can remember your preference. To learn more, see <a href="/cookie-policy/">Cookie Policy</a>.</p>
+      <p><button class="button button-pair" id="cookie-banner__accept"><span class="ph-light ph-thumbs-up"></span> Accept</button> <button class="button button-pair" id="cookie-banner__decline"><span class="ph-fill ph-thumbs-down"></span> Decline</button></p>
+      </div>
+    </details>
+
 {% comment %} <output id="output-focus"></output><br />
 <output id="output-blur"></output> {% endcomment %}
 
@@ -81,6 +105,8 @@
     </main>
 
     {% Footer %}
+
+    <script src="/js/global.js" defer></script>
 
     {% comment %} TODO: Consider doing build stuff w/ highlightjs js {% endcomment %}
     {% if content contains "language-html" %}

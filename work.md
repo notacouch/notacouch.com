@@ -11,7 +11,7 @@ eleventyExcludeFromCollections: true
 How can one showcase work that is either behind NDAs, lost to time, or otherwise unavailable? One way is to write about it. In the interest of time, I am putting this site up while I continue to explore content from throughout my career. I&rsquo;ll theme this page along the way.
 { .subtitle-color }
 
-## Planned content (March-April 2024)
+## Planned content (March-June 2024)
 
 <div class="post">
 

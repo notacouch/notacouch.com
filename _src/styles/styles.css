@@ -370,9 +370,186 @@ nav {
   display: none !important;
 }
 
+details > p {
+  /* Credit Richard Rutter:
+  @url https://clagnut.com/blog/2395 */
+  -webkit-hyphens: auto;
+  -webkit-hyphenate-limit-before: 3;
+  -webkit-hyphenate-limit-after: 3;
+  -webkit-hyphenate-limit-chars: 6 3 3;
+  -webkit-hyphenate-limit-lines: 2;
+  -webkit-hyphenate-limit-last: always;
+  -webkit-hyphenate-limit-zone: 8%;
+
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  hyphenate-limit-lines: 2;
+  hyphenate-limit-last: always;
+  hyphenate-limit-zone: 8%;
+
+  text-wrap: pretty;
+}
+
+.cookie-banner {
+  position: fixed;
+  border: 1px solid var(--border-color-tertiary);
+  border-radius: 3px;
+  left: 2em;
+  bottom: 3em;
+  /* transform: translateX(-100%); */
+  background: var(--background-color-gradient-bottom);
+  min-width: 200px;
+  max-width: min(60ch, 75%);
+  z-index: 10;
+  box-shadow: var(--box-shadow-img);
+
+  /* TODO: animate in */
+  transition-behavior: allow-discrete;
+
+  &:focus, &:focus-visible {
+    outline-offset: 2px;
+  }
+
+  &:before {
+    speak: never;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    font-family: Phosphor-Fill !important;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    transform: translate(-40%, -45%);
+    font-size: 1.3em;
+    color: var(--border-color-code);
+  }
+}
+
+.cookie-banner[inert] {
+  /* TODO: animate */
+  display: none;
+}
+
+.cookie-banner__summary {
+  background: var(--background-color-gradient-top);
+  padding: .3em .2em;
+  /* align the marker with paragraph text */
+  padding-inline-start: 1em;
+  border-bottom: 1px solid var(--border-color-code);
+  line-height: 1.4; /* center with button */
+  position: relative;
+  overflow: hidden;
+}
+
+.cookie-banner:not([open]) .cookie-banner__summary {
+  /* don't look terrible */
+  padding-inline-end: 1.2em;
+}
+
+.cookie-banner__summary__post-marker {
+  margin-right: .5em;
+}
+
+.cookie-banner__content p {
+  padding: 0 1em;
+
+  /* prettify wrapping div focus */
+  &:first-of-type {
+    margin-top: 0;
+    padding-top: 1em;
+  }
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 1em;
+  }
+}
+
+button {
+  font-family: var(--font-family-utility);
+  touch-action: manipulation;
+}
+
+.button {
+  padding: .3em .7em;
+  background-color: var(--background-color-gradient-mid);
+  background-image:
+    linear-gradient(90deg, var(--border-color-code), transparent 4px),
+    linear-gradient(-90deg, var(--border-color-code), transparent 4px),
+    linear-gradient(0deg, var(--border-color-code), transparent 3px),
+    linear-gradient(180deg, var(--border-color-code), transparent 3px);
+  border-radius: 4px;
+  border: 1px solid var(--color-text-body);
+  color: var(--color-text-body);
+
+  /* transition: background-color ease-in 200ms; */
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &:hover, &:active {
+    background-color: var(--background-color-gradient-top);
+  }
+
+  &:focus {
+    outline-offset: 2px;
+  }
+  &:focus-visible {
+    border-color: transparent;
+  }
+}
+
+.button--a11y-fixture {
+  background-image: none;
+}
+
+.button-pair:first-of-type {
+  margin-right: 1em;
+}
+
+.destyle-button {
+  all: unset;
+}
+
+.destyle-button:focus {
+  outline: revert;
+}
+
+.cookie-banner summary button {
+  font-size: 1.25em;
+  line-height: 1;
+  cursor: pointer;
+
+  span.ph-light {
+    position: relative;
+    top: .12em;
+  }
+}
+
+.button .ph-thumbs-up {
+  position: relative;
+  top: .1em;
+}
+.button .ph-thumbs-down {
+  position: relative;
+  top: 1px;
+}
+
+#cookie-banner__close {
+  float: inline-end;
+  margin-right: .2em;
+  margin-left: 1em;
+}
+
 main {
   /* push footer to bottom, subtract header nav + footer + borders + margins/gaps */
-  min-height: calc(100dvh - 172px);
+  min-height: calc(100dvh - 182px);
 }
 
 /*
@@ -773,7 +950,7 @@ figcaption {
 
 .main-footer {
   /* display: flex; */
-  min-height: 60px;
+  min-height: 70px;
   border-top: 1px solid var(--border-color-tertiary);
   /* place-items: center; */
   /* text-align: center; */
@@ -783,12 +960,13 @@ figcaption {
   margin-top: calc(var(--gutter-width) * 2);
 }
 
-.main-footer::before {
+/* I no longer remember what this was even supposed to be, that was fast, huh? */
+/* .main-footer::before {
   content: "";
   display: block;
   height: 3px;
   background-color: var(--border-color-main-footer);
-}
+} */
 
 .main-footer__copy {
   /* text-align: right; */
@@ -801,6 +979,20 @@ figcaption {
 .main-footer__built .ph-light {
   position: relative;
   top: 2px;
+}
+
+.main-footer__links {
+  margin-bottom: 0;
+  margin-top: 7px;
+  color: var(--color-text-main-nav);
+  font-size: .813em;
+}
+
+.main-footer__links a {
+  color: currentColor;
+  &:hover {
+    color: var(--color-text-main-nav-hover);
+  }
 }
 
 .main-footer__social-media {
@@ -855,6 +1047,9 @@ figcaption {
   display: grid;
   grid-template-columns: subgrid;
   grid-column-start: 1;
+}
+.main-footer__copy-plus-container {
+  grid-column-end: 4;
 }
 .grid__subgrid--body > * {
   grid-column-start: body;
@@ -925,16 +1120,6 @@ figcaption {
   max-width: 300px;
   margin-left: var(--gutter-width);
   clear: right;
-}
-
-@media (max-width: 600px) {
-  .figure--img--text-wrap {
-    max-width: calc(50% - var(--gutter-width));
-  }
-  .main-footer__text {
-    font-size: .9em;
-    line-height: 1.4;
-  }
 }
 
 .p > .figure--img--text-wrap:first-child {
@@ -1036,6 +1221,21 @@ Try setting display to something other than block.
   grid-column-end: span 5;
 }
 
+@media (max-width: 600px) {
+  .figure--img--text-wrap {
+    max-width: calc(50% - var(--gutter-width));
+  }
+  .main-footer__text {
+    font-size: .9em;
+    line-height: 1.4;
+    grid-column-start: body;
+    grid-column-end: body-right;
+  }
+  .main-footer__links {
+    margin-top: 3px;
+  }
+}
+
 @media (max-width: 900px) {
   html {
     background-image: linear-gradient(
@@ -1064,7 +1264,6 @@ Try setting display to something other than block.
   .grid__subgrid--body > * {
     grid-column-end: space-end-2;
   }
-
   .grid__default--lt900 {
     grid-column-start: body;
     grid-column-end: space-end-1;
@@ -1093,6 +1292,9 @@ Try setting display to something other than block.
 }
 
 @media (max-width: 1250px) {
+  .main-footer__copy-plus-container {
+    grid-column-end: body;
+  }
   .grid__body-start--lt1250 {
     grid-column-start: body;
     grid-column-end: span 1;

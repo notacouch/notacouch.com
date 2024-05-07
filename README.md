@@ -1,3 +1,5 @@
+<a href="https://github.com/storybooks/storybook" target="_blank"><img src="https://raw.githubusercontent.com/storybooks/brand/master/badge/badge-storybook.svg"></a>
+
 # notacouch.com (2024)
 
 This site is an 11ty 3 + Storybook 8 (HTML + Vite) project. The Vite portion is not really leveraged at this time.
@@ -76,12 +78,11 @@ npx @11ty/eleventy
 - Then work page
 - Consent for Google Analytics:
   - disable their third party `ar_debug` cookie
-  - Consent mode banner and copy,
-  - Cookies Policy page,
-  - Consent settings
+  - Accessible toast messages for consent actions
 - Search
 - Dark mode
 - Web Mentions or similar
+- Go greener. +CDN for assets (but image plugin? without Git LFG?). Question marks.
 
 ### Unused CSS
 

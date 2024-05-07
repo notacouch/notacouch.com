@@ -53,6 +53,7 @@ export default function (eleventyConfig) {
   // eleventyConfig.ignores.delete('styles/styles.min.css');
   eleventyConfig.addWatchTarget('styles/base.min.css');
   eleventyConfig.addWatchTarget('styles/styles.min.css');
+  eleventyConfig.addWatchTarget('js/global.js');
 
   // Manage JS expectations in Liquid
   // @url https://www.11ty.dev/docs/languages/liquid/#javascript-truthiness-in-liquid
@@ -71,6 +72,7 @@ export default function (eleventyConfig) {
     'tangibles',
     'storybook',
     'styles',
+    'js',
   ];
   assets.forEach(function passAsset(asset) {
     eleventyConfig.addPassthroughCopy(asset);
