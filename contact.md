@@ -12,9 +12,18 @@ Hit me up in one of the possible ways:
 
 <div class="post">
 
-- Links to be loaded by API:
-  - <script>document.writeln("yes")</script>
+-
+{#contact-placeholder}
 
 </div>
 
 </article>
+
+<script>(async function() {
+        const links = await( await fetch(`/api/contact`)).json();
+        let linksHTML = '';
+        links.forEach((link) => {
+          linksHTML += `<li><a href="${link.url}">${link.text}</a></li>`;
+        });
+        document.querySelector('#contact-placeholder').innerHTML = linksHTML;
+    }());</script>
